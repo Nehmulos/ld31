@@ -1,0 +1,30 @@
+Player:
+	different modes:
+		  control entityMode
+		  pick card & place enemy mode
+		  Choose upgrade for enemy
+        get hurt on attack
+	bow attack
+	punishment round on entity death (when player Entity)
+		  
+scene:
+	load next
+	portal entity to set the next scene
+	more maps & maybe random generation or 1 list of randomly choosen maps
+
+Cards: Summon(skeleton, goblin, minotaur, cerberus)
+       Control strongest Monster
+       Spawn Rolling boulder
+
+Enemy: 
+       walk left right
+       don't drop from tile
+       attack when player.x < 32* range
+
+
+
+       
+       
+#If I've got loads of time left:
+Pickup hourglass on stage1
+story

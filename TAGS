@@ -1,0 +1,4174 @@
+
+src/AnimatedSprite.c,456
+AnimatedSprite* AnimatedSprite_create(3,29
+void AnimatedSprite_destroy(12,353
+void AnimatedSprite_setFrame(16,439
+void AnimatedSprite_setAnimation(21,595
+void AnimationProgress_init(35,996
+void AnimationProgress_update(43,1299
+void AnimationProgress_resetFrameLoop(66,1919
+Animation* Animation_create(74,2190
+void Animation_destroy(82,2383
+Frame* Frame_create(86,2441
+void Frame_destroy(96,2685
+void AnimatedSprite_emptyOnAnimationEnd(100,2735
+
+src/Camera.c,263
+Camera* Camera_create(4,41
+void Camera_destroy(22,434
+void Camera_update(26,489
+bool Camera_setTo(35,911
+bool Camera_moveBy(58,1546
+cpVect Camera_translatePhysics(65,1720
+SDL_Point Camera_translateViewport(74,2081
+SDL_Point Camera_translateWindow(82,2282
+
+src/Chipmunk.c,86
+void Chipmunk_removeEachShapeFromSpace(3,23
+void Chipmunk_addEachShapeToSpace(8,204
+
+src/ChipmunkDebugDraw.c,359
+cpSpaceDebugDrawOptions ChipmunkDebugDrawSDL2_make(5,70
+void ChipmunkDebugDrawSDL2_drawCircle(28,939
+void ChipmunkDebugDrawSDL2_drawSegment(51,2185
+void ChipmunkDebugDrawSDL2_drawFatSegment(61,2707
+void ChipmunkDebugDrawSDL2_drawPolygon(78,3642
+void ChipmunkDebugDrawSDL2_drawDot(113,5052
+cpSpaceDebugColor ChipmunkDebugDrawSDL2_colorForShape(119,5444
+
+src/Collectable.c,398
+Collectable* Collectable_create(7,92
+void Collectable_destroy(20,692
+void Collectable_draw(25,786
+bool Collectable_onCollision(30,982
+Collectable* Collectable_createCoin(41,1408
+Collectable* Collectable_createKey(61,2583
+Collectable* Collectable_createPotion(83,3921
+void Collectable_onCollectCoin(101,4895
+void Collectable_onCollectKey(105,5025
+void Collectable_onCollectPotion(109,5166
+
+src/CollisionHandler.c,110
+void Entity_Ground_separate(4,51
+void Entity_Ground_postSolve(14,417
+void CollisionHandler_register(22,728
+
+src/Editor.c,226
+struct Editor* Editor_create(6,82
+void Editor_destroy(16,398
+void Editor_update(21,522
+bool Editor_hasActiveMouseAction(25,568
+void EditorMouseAction_reset(29,682
+void Editor_handleInput(35,860
+void Editor_draw(66,2217
+
+src/EditorTool.c,159
+void EditorToolAddTerrain_onLeftClickLine(4,45
+void EditorToolAddTerrain_onRightClick(8,258
+struct EditorToolAddTerrain* EditorToolAddTerrain_create(12,388
+
+src/Enemy.c,117
+Enemy* Enemy_createWhiteKnight(5,65
+void Enemy_draw(48,2243
+void Enemy_update(52,2426
+void Enemy_destroy(56,2477
+
+src/Entity.c,464
+Entity* Entity_create(10,186
+void Entity_destroy(40,1195
+bool Entity_collides(50,1543
+void EntityPhysics_init(68,2171
+void Entity_update(108,3595
+bool Entity_jump(147,4928
+bool Entity_wouldCollide(164,5457
+void Entity_AnimationEnded(207,7005
+void EntityPhysics_destroy(218,7522
+void Entity_hurt(222,7591
+void Entity_modifyHealth(229,7776
+void Entity_emptyDraw(238,8020
+bool Entity_emptyOnCollision(239,8100
+void Entity_emptyOnHealthModified(240,8183
+
+src/Game.c,190
+Game* Game_create(13,177
+void Game_destroy(25,555
+void Game_init(44,1119
+void Game_recreateScene(54,1387
+void Game_setupPlayer(62,1645
+void Game_update(68,1832
+void Game_draw(88,2372
+
+src/GameEngine.c,216
+GameEngine* GameEngine_create(15,218
+void GameEngine_destroy(51,1591
+void GameEngine_initSubsystems(69,2020
+void GameEngine_setActiveModule(81,2297
+void GameEngine_debugDraw(92,2633
+int GameEngine_run(103,3008
+
+src/GameModule.c,70
+GameModule* GameModule_create(11,123
+void GameModule_destroy(23,439
+
+src/GameOverModule.c,353
+GameOverModule* GameOverModule_create(5,74
+void GameOverModule_destroy(19,602
+void GameOverModule_init(26,762
+void GameOverModule_onStartButton(57,2177
+void GameOverModule_onEditorButton(62,2365
+void GameOverModule_onExitButton(67,2562
+void GameOverModule_update(72,2726
+void GameOverModule_draw(81,2991
+void GameOverModule_handleEvent(87,3172
+
+src/GuileTypes.c,77
+void* GuileTypes_guile_registerAll(5,45
+void GuileTypes_registerAll(10,146
+
+src/Healthbar.c,154
+Healthbar* Healthbar_create(3,24
+void Healthbar_destroy(24,1051
+void Healthbar_draw(29,1182
+void Healthbar_set(36,1518
+void Healthbar_update(42,1762
+
+src/Hitbox.c,85
+Hitbox* Hitbox_create(5,41
+void Hitbox_destroy(14,209
+bool Hitbox_collides(18,261
+
+src/Hourglass.c,123
+Hourglass* Hourglass_create(4,25
+void Hourglass_destroy(16,384
+void Hourglass_draw(21,473
+void Hourglass_update(25,577
+
+src/Input.c,621
+Input* Input_create(4,39
+void Input_destroy(37,1012
+void Input_addHotkey(42,1116
+void Input_addKeyboardKey(47,1323
+void Input_loadDefault_1(54,1619
+void Input_loadDefault_2(75,2575
+SDL_Keycode Input_stringToKeycode(178,6866
+ActionId Input_stringToActionId(432,17045
+char* Input_keycodeToPrintable(445,17517
+const char* Input_keycodeToConstantName(465,18305
+int Input_getAxis(715,28292
+float Input_getAxisMultiplier(741,29288
+bool Input_isDown(749,29507
+bool Input_keysymIsDown(768,30173
+void Input_update(772,30348
+SDL_Keycode Input_getHotkeyForAction(780,30729
+InputHotkey* InputHotkey_create(790,31097
+
+src/Intro.c,490
+#define INTRO_TIME 11,116
+#define INTRO_FADEIN_START 13,141
+#define INTRO_FADEIN_END 14,170
+#define INTRO_FADEIN_TIME 15,210
+#define INTRO_REST_START 17,277
+#define INTRO_REST_END 18,319
+#define INTRO_REST_TIME 19,359
+#define INTRO_FADEOUT_START 21,420
+#define INTRO_FADEOUT_END 22,463
+#define INTRO_FADEOUT_TIME 23,500
+Intro* Intro_create(26,571
+void Intro_init(38,917
+void Intro_destroy(74,2217
+void Intro_resize(86,2534
+void Intro_update(98,2874
+void Intro_draw(113,3530
+
+src/List.c,354
+List* List_create(3,19
+void List_destroy(10,147
+void List_pushBack(20,337
+void List_pushFront(28,531
+void List_eraseByData(37,752
+int List_getIndexForData(60,1347
+ListNode* List_getNodeForData(73,1586
+ListNode* ListNode_create(85,1806
+void ListNode_destroy(96,2067
+int List_length(100,2126
+void List_qSort(107,2257
+void List_qSortIt(115,2445
+
+src/Main.c,17
+int main(12,141
+
+src/MainMenu.c,293
+MainMenu* MainMenu_create(5,68
+void MainMenu_destroy(18,509
+void MainMenu_init(25,657
+void MainMenu_onStartButton(50,1675
+void MainMenu_onEditorButton(55,1851
+void MainMenu_onExitButton(60,2036
+void MainMenu_update(65,2188
+void MainMenu_draw(74,2441
+void MainMenu_handleEvent(80,2610
+
+src/Math.c,35
+SDL_Point Math_pointOnCircle(3,19
+
+src/Player.c,577
+Player* Player_create(10,171
+Entity* _Player_onEntityDestroyed(30,818
+void Player_destroy(39,1072
+void Player_loadIndicator(47,1294
+void Player_updateEntity(53,1548
+void Player_destroyEntity(56,1605
+void Player_onEntityHealthModified(59,1651
+void Player_update(65,1873
+Entity* Player_spawnPlayerEntity(70,1983
+void Player_processInput(120,4422
+void Player_drawEntity(158,6110
+void Player_draw(163,6302
+void ControlledEntity_onEntityDestroyed(167,6424
+void ControlledEntity_release(178,6787
+void ControlledEntity_set(192,7201
+void ControlledEntity_draw(206,7659
+
+src/PlayerCursor.c,107
+PlayerCursor* PlayerCursor_create(5,72
+void PlayerCursor_destroy(44,1807
+void PlayerCursor_draw(49,1903
+
+src/Scene.c,659
+Scene* Scene_create(11,191
+cpShape* Scene_makeGround(42,1261
+SCM Scene_guile_addSegment(51,1639
+void Scene_makeBox(59,1969
+void Scene_guile_registerType(74,2499
+void Scene_createEditorEnvironment(83,2871
+struct Scene_guile_evalFileData 90,3116
+    Scene* scene;91,3150
+    const char* filePath;92,3168
+void* Scene_evaluate(95,3198
+Scene* Scene_createForPath(112,3741
+void Scene_destroy(121,4030
+void Scene_update(134,4489
+void Scene_draw(156,5240
+void Scene_transfereEntity(170,5680
+void Scene_addEntity(175,5843
+void Scene_addShape(183,6236
+void Scene_setBounds(188,6395
+void Scene_openDoors(199,6806
+void Scene_spawnCollectable(203,6907
+
+src/Sky.c,262
+struct Sky* Sky_create(5,55
+double p 48,1887
+SDL_Color Sky_gradientTransition(50,1902
+void Sky_drawGradient(63,2271
+#   define checkRange(69,2417
+void Sky_draw(103,4217
+void Sky_updateForDateTime(112,4554
+SDL_Point Sky_celestialPositionForAngle(150,5810
+
+src/Sprite.c,263
+Sprite* Sprite_create(10,96
+void Sprite_destroy(27,478
+void Sprite_destroyWithImage(31,530
+bool Sprite_setFrameSizeFromImage(36,635
+void Sprite_setFrameSize(46,866
+void Sprite_draw(53,1006
+void Sprite_drawRelative(58,1169
+void Sprite_drawOnCamera(69,1517
+
+src/Terrain.c,128
+struct Terrain* Terrain_create(6,72
+void Terrain_destroy(23,697
+void Terrain_setPrevious(29,855
+void Terrain_remove(36,1029
+
+src/TextureCache.c,345
+TextureCache* TextureCache_create(10,108
+void TextureCache_destroy(17,298
+SDL_Texture* TextureCache_get(30,604
+TextureEntry* TextureCache_getExistingEntry(41,964
+SDL_Texture* TextureCache_getForUnconstantPath(54,1313
+SDL_Texture* TextureCache_loadImage(74,1983
+TextureEntry* TextureEntry_create(88,2484
+void TextureEntry_destroy(97,2736
+
+src/Tile.c,110
+Tile* Tile_create(4,37
+void Tile_destroy(16,330
+bool Tile_initByType(21,409
+void Tile_setPosition(38,1017
+
+src/Trigger.c,56
+#define TRIGGER_MTABLE 4,41
+void Trigger_destroy(6,80
+
+src/Utils.c,336
+void emptyInit(3,20
+void emptyUpdate(4,53
+void emptyDraw(5,100
+void emptyResize(6,156
+void emptyDestroy(7,207
+void emptyHandleEvent(8,243
+SCM Utils_evaluateSchemeFile(10,301
+char* Utils_readFileContent(18,540
+bool SDL_Rect_touches(34,887
+bool SDL_Rect_above(41,1089
+bool SDL_Rect_isInside(45,1171
+void SDL_Rect_init(50,1315
+
+src/Vector.c,389
+Vector* Vector_Create(4,31
+void Vector_AddElement(12,213
+void Vector_InsertInFirstFreeSpace(19,489
+ElementType Vector_getLastElement(25,662
+void Vector_ShrinkCache(34,876
+ElementType Vector_Get(42,1257
+void Vector_Set(49,1406
+bool Vector_Overwrite(55,1555
+void Vector_Destroy(66,1832
+void _Vector_AddElementWithoutSizeCheck(73,1944
+void _Vector_RecreateWithoutSizeCheck(79,2175
+
+src/ui/UiMenuList.c,256
+UiMenuList* UiMenuList_create(4,47
+void UiMenuList_destroy(11,246
+void UiMenuList_addElement(16,332
+UiMenuElement* UiMenuElement_create(24,655
+void UiMenuElement_destroy(60,1829
+void UiMenuElement_draw(68,2018
+bool UiMenuElement_handleEvent(78,2324
+
+src/ui/UiNode.c,355
+UiNode* UiNode_create(4,43
+void UiNode_destroy(28,600
+void UiNode_draw(35,718
+bool UiNode_handleEvent(45,982
+void UiNode_eventDefaultActions(64,1444
+void UiNode_removeChild(81,1904
+void UiNode_moveTo(90,2139
+void UiNode_emptyDestroy(104,2494
+void UiNode_emptyDraw(105,2537
+bool UiNode_emptyHandleEvent(106,2601
+void UiNode_emptyResize(107,2680
+
+src/AnimatedSprite.h,278
+CLASS(6,75
+CLASS(11,136
+typedef struct AnimatedSprite AnimatedSprite;17,205
+CLASS(18,251
+struct AnimatedSprite 26,385
+	Sprite* sprite;27,409
+	List* animations;28,426
+	AnimationProgress progress;29,445
+	void* context;30,474
+	void (*onAnimationEnd)onAnimationEnd31,490
+
+src/Camera.h,163
+typedef struct Camera 5,38
+    SDL_Rect viewport;6,62
+    SDL_Rect bounds;7,85
+    SDL_Point translation;8,106
+    void* trackedEntity;9,133
+} Camera;10,196
+
+src/ChipmunkDebugDraw.h,100
+struct ChipmunkDebugDrawData 6,58
+    SDL_Renderer* renderer;7,89
+    const Camera* camera;8,117
+
+src/Collectable.h,217
+#define COLLECTABLE_COIN 7,78
+#define COLLECTABLE_COIN_BIG 8,105
+#define COLLECTABLE_KEY_4 9,136
+#define COLLECTABLE_KEY_5 10,164
+#define COLLECTABLE_KEY_6 11,192
+#define COLLECTABLE_POTION 12,220
+CLASS(14,250
+
+src/CollisionHandler.h,119
+#define COLLISION_TYPE_GROUND 4,37
+#define COLLISION_TYPE_ENTITY_MAIN 6,70
+#define COLLISION_TYPE_ENTITY_FEET 7,108
+
+src/Constants.h,861
+#define _GNU_SOURCE10,113
+typedef Uint32 RawTime;26,345
+#define UPDATES_PER_SECOND 28,392
+#define UPDATE_TIME 29,424
+#define MAX_UPDATE_TIME 30,472
+#define PHYSICS_SCALE 32,536
+#define PIXEL_TO_PHYSICS(33,562
+#define PHYSICS_TO_PIXEL(34,616
+#define PLAYER_COUNT 36,671
+#define YOM_WINDOW_W 38,695
+#define YOM_WINDOW_H 39,723
+#define SCENE_WIDTH 41,752
+#define SCENE_HEIGHT 42,785
+#define SCENE_SPACER_WIDTH 43,819
+#define SCENE_SPACER_HEIGHT 44,849
+#define TILE_W 46,882
+#define TILE_H 47,900
+#define SCENE_TILES_X 48,918
+#define SCENE_TILES_Y 49,943
+#define DEFAULT_BPP 51,969
+#define DEFAULT_WINDOW_FLAGS 52,992
+#define CANCEL_IF_FALSE(55,1051
+#define CLASS(56,1106
+#define STR_HELPER(60,1281
+#define STR(61,1306
+static inline int imax(63,1336
+static inline int imin(66,1403
+#define inRange(70,1471
+#define inRangeOrEqual(71,1521
+
+src/DefinitionMacros.h,564
+#define E_serialized 1,0
+#define E_guile 2,25
+#define E_default 3,45
+#define E_defaultParm(6,121
+#define E_Void(8,168
+#define defineStructAndExtras_h(10,195
+#define defineExtras_c(17,512
+#define defineStructField(23,739
+#define constructor_h(26,800
+#define destructor_h(29,891
+#define constructor_c(32,996
+#define destructor_c(40,1303
+#define constructor_initField(46,1526
+#define serialize_h(50,1579
+#define guile_h(54,1610
+#define guile_h_field(57,1663
+#define is_extraField(63,1873
+#define is_guileField(73,2176
+#define ExampleFields(76,2228
+
+src/Editor.h,645
+struct EditorTerrain 12,127
+    Vector* terrain;13,150
+    Vector* types;14,171
+struct EditorMouseAction 17,218
+    Vector* points;18,245
+    SDL_Point lastClick;20,266
+    SDL_Point currentPosition;21,291
+    int clicksDone;22,322
+    struct Editor* editor;23,342
+struct EditorTool 26,373
+    void (*onLeftClick)onLeftClick27,393
+    void (*onLeftClickLine)onLeftClickLine28,467
+    void (*onRightClick)onRightClick29,545
+    void* dataStruct;30,620
+struct Editor 34,647
+    struct EditorTool tool;36,690
+    struct EditorMouseAction mouseAction;37,718
+    struct EditorTerrain terrain;38,760
+    struct Game* game;39,794
+
+src/EditorTool.h,76
+struct EditorToolAddTerrain 8,79
+    struct Terrain_EditorData data;9,109
+
+src/Enemy.h,12
+CLASS(6,58
+
+src/Entity.h,577
+#define COLLISION_GROUP_NONE 10,143
+#define COLLISION_GROUP_ALL 11,176
+#define COLLISION_GROUP_TERRAIN 12,214
+#define COLLISION_GROUP_PLAYER 13,250
+#define COLLISION_GROUP_COLLECTABLE 14,290
+#define COLLISION_GROUP_ENEMY 15,335
+#define COLLISION_GROUP_CURSOR 16,374
+#define ANIMATION_IDLE 18,415
+#define ANIMATION_PREPARE_ATTACK1 19,445
+#define ANIMATION_ATTACK1 20,496
+enum GroundedStatus 22,533
+    grounded,23,555
+    grounded, inAir,23,555
+    grounded, inAir, onLadder,23,555
+    grounded, inAir, onLadder, immuneToGravity23,555
+CLASS(26,619
+CLASS(40,882
+
+src/Game.h,14
+CLASS(15,221
+
+src/GameEngine.h,347
+typedef struct GameEngine 15,186
+    bool windowIsRunning;16,214
+    SDL_Window* screen;17,240
+    SDL_Renderer* renderer;18,264
+    Input* input[input19,292
+    cpSpace* space;21,348
+    GameModule* module;22,392
+    GameModule* nextModule;23,416
+    TextureCache* textureCache;24,444
+    SDL_Surface* icon;25,476
+} GameEngine;26,499
+
+src/GameModule.h,262
+typedef struct GameModule 12,117
+	void (*init)init13,145
+	void (*destroy)destroy14,174
+	void (*update)update15,207
+	void (*draw)draw16,251
+	void (*resize)resize17,305
+	void (*handleEvent)handleEvent18,353
+	void* context;19,408
+} GameModule;20,424
+
+src/GameOverModule.h,14
+CLASS(11,149
+
+src/Healthbar.h,53
+#define HEALTHBAR_FULL_TRANSITION 7,92
+CLASS(9,132
+
+src/Hitbox.h,143
+typedef enum HitboxState 4,37
+	passive,5,64
+	passive, aggressive,5,64
+	passive, aggressive, defensive5,64
+} HitboxState;6,96
+CLASS(8,112
+
+src/Hourglass.h,70
+#define ROUND_TIME 7,82
+#define TRANSITION_TIME 8,117
+CLASS(10,158
+
+src/Input.h,1033
+#define AXIS_MIN_TRIGGER 5,57
+#define AXIS_MAX 6,86
+typedef enum ActionId 9,193
+    none,10,217
+    horizontal,12,248
+    horizontal, vertical,12,248
+    horizontal, vertical, jump,12,248
+    horizontal, vertical, jump, attackSword,12,248
+    horizontal, vertical, jump, attackSword, attackBow,12,248
+    horizontal, vertical, jump, attackSword, attackBow, action,12,248
+    openMenu,14,324
+    reloadScene,16,352
+    reloadScene, editorPlace,16,352
+    reloadScene, editorPlace, editorTerrain,16,352
+    reloadScene, editorPlace, editorTerrain, editorObjects,16,352
+    editorToggleStartSimulation,17,412
+    editorToggleStartSimulation, editorStopSimulation17,412
+} ActionId;18,466
+CLASS(20,479
+CLASS(25,541
+#define HOTKEY_TYPE_KEYBOARD 33,683
+#define HOTKEY_TYPE_JOYSTICK 34,714
+CLASS(35,745
+        KeyHotkey key;37,778
+        JoystickHotkey joystick;38,801
+struct MouseState 44,891
+    int x;45,911
+    int y;46,922
+    int xDelta;47,933
+    int yDelta;48,949
+    Uint32 mod;49,965
+CLASS(52,985
+
+src/Intro.h,309
+typedef struct Intro 15,180
+	Sprite* logo;16,203
+	Sprite* title;17,218
+	Sprite* slogan;18,234
+	SDL_Surface* blendSurface;19,251
+	Uint8 blendAlpha;20,279
+	TTF_Font* font;21,298
+	GameModule* module;22,315
+	RawTime timePassed;23,336
+	Mix_Music* music;24,357
+	GameEngine* engine;25,376
+} Intro;26,397
+
+src/List.h,286
+typedef struct ListNode ListNode;4,34
+struct ListNode 5,68
+    ListNode* previous;6,86
+    ListNode* next;7,110
+    void* data;8,130
+typedef struct List List;11,178
+struct List 12,204
+    ListNode* first;13,218
+    ListNode* last;14,239
+#define List_destroyWithContent(33,850
+
+src/MainMenu.h,14
+CLASS(11,149
+
+src/Math.h,140
+# define M_PI 7,68
+#define Math_radiansToDegrees(10,129
+#define Math_degreesToRadians(11,183
+#define Math_angleFromOriginToPoint(13,238
+
+src/Player.h,111
+#define PLAYER_SPAWN_ENEMY_DELAY 6,76
+#define PLAYER_SELECTION_CHANGE_DELAY 7,114
+CLASS(9,157
+CLASS(19,418
+
+src/PlayerCursor.h,12
+CLASS(6,58
+
+src/Scene.h,49
+CLASS(13,224
+scm_t_bits Scene_guile_tag;26,462
+
+src/Sky.h,607
+struct SkyColor 11,153
+    SDL_Color top;12,171
+    SDL_Color bottom;13,190
+struct SkyColorTime 16,216
+    int range[range17,238
+    struct SkyColor currentColor;18,256
+    struct SkyColor nextColor;19,290
+#define SkyColors_DATA(22,325
+struct SkyColors 32,711
+struct Sky 36,772
+    Sprite* sun;37,785
+    Sprite* moon;38,802
+    Vector* clouds;39,820
+    Vector* stars;40,840
+    Vector* fixStars;41,859
+    cpFloat windSpeedX;43,882
+    double scrollY;44,906
+    SDL_Rect bounds;46,927
+    SDL_Color colorTop;47,948
+    SDL_Color colorBottom;48,972
+    struct SkyColors colors;49,999
+
+src/Sprite.h,209
+typedef struct Sprite 5,57
+	SDL_Texture* image;6,81
+	SDL_Rect bounds;7,102
+	SDL_Rect frame;8,120
+	float scrollX,9,137
+	float scrollX, scrollY;9,137
+	int angle;10,191
+	bool flip;11,203
+} Sprite;12,215
+
+src/Terrain.h,562
+struct Terrain_EditorData 5,38
+    const char* name;6,66
+    float jumpModifier;7,88
+    cpFloat friction;8,112
+struct Terrain 12,180
+    const char* name;13,197
+    float jumpModifier;14,238
+    cpShape* shape;15,295
+    struct Terrain_EditorData* editorData;16,315
+    cpVect a;18,359
+    cpVect b;19,373
+    struct Terrain* next;21,388
+    struct Terrain* previous;22,414
+enum TerrainRemoveType 25,448
+    connectInMiddle,26,473
+    connectPreviousToNext,27,494
+    connectNextToPrevious,28,521
+    sever29,548
+#define TERRAIN_EARTH 32,562
+
+src/TextureCache.h,309
+#define SAFE_TEXTURE_PATH 14,140
+typedef struct TextureCache 16,186
+	Vector* images;17,216
+	SDL_Renderer* renderer;18,233
+} TextureCache;19,258
+typedef struct TextureEntry 21,275
+	const char* key;22,305
+	char* ownedKey;23,323
+	SDL_Texture* image;24,362
+	bool ownsImage;25,383
+} TextureEntry;26,400
+
+src/Tile.h,189
+#define TILE_NONE 7,84
+#define TILE_BRICK 8,104
+#define TILE_LADDER 9,125
+#define TILE_DOOR_4 11,148
+#define TILE_DOOR_5 12,170
+#define TILE_DOOR_6 13,192
+CLASS(15,215
+CLASS(19,258
+
+src/Trigger.h,14
+CLASS(12,132
+
+src/Utils.h,536
+#define nnIf(19,477
+#define withFileContent(23,554
+#define safeFree(28,730
+#define withAllocOfType(32,858
+#define anyArgs(36,995
+#define withSprintf(38,1105
+#define allocType(48,1616
+#define allocTypeN(51,1668
+#define allocStruct(54,1727
+#define allocStructN(57,1788
+#define VECTOR_EACH(60,1856
+#define FREE_VECTOR_WITH_ELMENTS(67,2037
+#define FREE_LIST_WITH_ELMENTS(76,2298
+#define DEFAULT_CREATE_DESTROY_H(89,2704
+#define DEFAULT_CREATE_DESTROY(93,2856
+#define STRING_TO_ENUM(105,3311
+#define ENUM_TO_STRING(106,3382
+
+src/Vector.h,242
+#define C_VECTOR_H2,19
+#define CacheIncreaseRate 7,220
+#define ElementType 8,248
+    #define NULL 14,330
+    ElementType* elements;19,375
+    unsigned int usedElements;20,402
+    unsigned int _allocatedElements;21,433
+} Vector;22,470
+
+src/ui/UiMenuList.h,26
+CLASS(7,79
+CLASS(15,233
+
+src/ui/UiNode.h,26
+CLASS(5,63
+CLASS(21,410
+
+/usr/local/include/guile/2.0/libguile/__scm.h,4693
+#define SCM___SCM_H4,44
+# define SCM_GNUC_PREREQ(69,2724
+# define SCM_GNUC_PREREQ(72,2829
+#define SCM_NORETURN 80,3019
+#define SCM_NORETURN82,3077
+#define SCM_UNUSED 93,3399
+#define SCM_UNUSED95,3449
+# define SCM_EXPECT 103,3685
+# define SCM_EXPECT(105,3731
+#define SCM_LIKELY(108,3782
+#define SCM_UNLIKELY(109,3835
+#define SCM_INTERNAL 115,4167
+# define SCM_DEPRECATED 122,4569
+# define SCM_DEPRECATED 124,4641
+# define SCM_ALIGNED(131,4940
+# define SCM_ALIGNED(133,5026
+# undef SCM_ALIGNED136,5119
+# define SCM_MALLOC 143,5399
+# define SCM_MALLOC145,5455
+#undef ENGNOT159,5656
+#undef SICP170,5867
+#define STACK_CHECKING176,5943
+#undef NO_CEVAL_STACK_CHECKING177,5966
+# define SCM_API 185,6174
+# define SCM_API 187,6293
+# define SCM_API 189,6362
+# define SCM_API 191,6414
+#   define SCM_C_EXTERN_INLINE	215,7414
+#   define SCM_C_EXTERN_INLINE 218,7521
+# define SCM_CAN_INLINE 231,8057
+# define SCM_INLINE 232,8083
+# define SCM_INLINE_IMPLEMENTATION233,8111
+# define SCM_CAN_INLINE 236,8221
+#  define SCM_INLINE 238,8275
+#  define SCM_INLINE 241,8396
+# define SCM_INLINE_IMPLEMENTATION 243,8445
+# define SCM_CAN_INLINE 246,8549
+# define SCM_INLINE 247,8575
+#define SCM_DEBUG 279,9865
+#define SCM_DEBUG_MARKING_API 287,10089
+#define SCM_DEBUG_CELL_ACCESSES 296,10442
+#define SCM_DEBUG_INTERRUPTS 303,10655
+#define SCM_DEBUG_PAIR_ACCESSES 311,10912
+#define SCM_DEBUG_REST_ARGUMENT 320,11305
+#define SCM_DEBUG_TYPING_STRICTNESS 345,12589
+#define SCM_DEBUG_DEBUGGING_SUPPORT 361,13488
+#define SCM_ENABLE_DEPRECATED 389,14637
+# define SCM_CHAR_BIT 428,16124
+# define SCM_CHAR_BIT 430,16161
+# define SCM_LONG_BIT 434,16209
+# define SCM_LONG_BIT 436,16246
+#define SCM_I_UTYPE_MAX(439,16298
+#define SCM_I_TYPE_MAX(440,16344
+#define SCM_I_TYPE_MIN(441,16398
+#define SCM_T_UINT8_MAX 443,16458
+#define SCM_T_INT8_MIN 444,16513
+#define SCM_T_INT8_MAX 445,16582
+#define SCM_T_UINT16_MAX 447,16652
+#define SCM_T_INT16_MIN 448,16708
+#define SCM_T_INT16_MAX 449,16779
+#define SCM_T_UINT32_MAX 451,16851
+#define SCM_T_INT32_MIN 452,16907
+#define SCM_T_INT32_MAX 453,16978
+#define SCM_T_UINT64_MAX 455,17050
+#define SCM_T_INT64_MIN 456,17106
+#define SCM_T_INT64_MAX 457,17177
+#define SCM_I_ULLONG_MAX 460,17274
+#define SCM_I_LLONG_MIN 461,17336
+#define SCM_I_LLONG_MAX 462,17405
+#define SCM_T_UINTMAX_MAX 465,17482
+#define SCM_T_INTMAX_MIN 466,17539
+#define SCM_T_INTMAX_MAX 467,17612
+#define SCM_T_UINTPTR_MAX 469,17686
+#define SCM_T_INTPTR_MIN 470,17743
+#define SCM_T_INTPTR_MAX 471,17816
+#define SCM_I_SIZE_MAX 473,17890
+#define SCM_I_SSIZE_MIN 474,17940
+#define SCM_I_SSIZE_MAX 475,18005
+typedef SCM (* scm_t_subr)489,18434
+typedef void *scm_t_subr;scm_t_subr491,18471
+   typedef int jmp_buf[jmp_buf497,18547
+#  define setjmp 500,18657
+#  define longjmp 501,18682
+    typedef int jmp_buf[jmp_buf507,18785
+#  define setjmp 510,18899
+#  define longjmp 511,18924
+      ucontext_t ctx;518,19130
+      int fresh;519,19152
+    } scm_i_jmp_buf;520,19169
+#   define SCM_I_SETJMP(521,19190
+#   define SCM_I_LONGJMP(525,19354
+#define scm_i_jmp_buf 537,19819
+#define SCM_I_SETJMP 538,19849
+#define SCM_I_LONGJMP 539,19877
+# define SCM_FLUSH_REGISTER_WINDOWS 548,20177
+# define SCM_FLUSH_REGISTER_WINDOWS 550,20231
+# define SHORT_ALIGN558,20374
+# define SHORT_ALIGN561,20415
+# define SHORT_ALIGN564,20458
+typedef short SCM_STACKITEM;568,20506
+typedef long SCM_STACKITEM;570,20541
+#define SCM_STACK_PTR(575,20684
+# define SCM_ASYNC_TICK 583,20845
+# define SCM_ASYNC_TICK_WITH_CODE(592,21348
+# define SCM_ASYNC_TICK 605,22047
+#define SCM_FENCE 626,22745
+#define SCM_FENCE 628,22840
+#define SCM_FENCE630,22883
+#define SCM_TICK 633,22909
+#define SCM_ASSERT(647,23048
+#define SCM_ASSERT_TYPE(648,23093
+#define SCM_ASSERT(650,23155
+#define SCM_ASSERT_TYPE(653,23312
+#define SCM_WTA_DISPATCH_0(669,23776
+#define SCM_GASSERT0(673,23951
+#define SCM_WTA_DISPATCH_1(679,24111
+#define SCM_WTA_DISPATCH_1_SUBR(685,24351
+#define SCM_GASSERT1(690,24608
+#define SCM_WTA_DISPATCH_2(696,24800
+#define SCM_GASSERT2(702,25045
+#define SCM_WTA_DISPATCH_n(708,25239
+#define SCM_GASSERTn(715,25521
+#define SCM_ARGn 728,25998
+#define SCM_ARG1 729,26019
+#define SCM_ARG2 730,26040
+#define SCM_ARG3 731,26061
+#define SCM_ARG4 732,26082
+#define SCM_ARG5 733,26103
+#define SCM_ARG6 734,26124
+#define SCM_ARG7 735,26145
+#define SCM_EXIT_SUCCESS 749,26510
+#define SCM_EXIT_SUCCESS 751,26543
+#define SCM_EXIT_FAILURE 756,26662
+#define SCM_EXIT_FAILURE 758,26695
+#define SCM_C_INLINE_KEYWORD 768,26959
+#define SCM_C_INLINE_KEYWORD770,27007
+# define SCM_THREAD_LOCAL 776,27126
+# define SCM_THREAD_LOCAL778,27167
+
+/usr/local/include/guile/2.0/libguile/alist.h,25
+#define SCM_ALIST_H4,44
+
+/usr/local/include/guile/2.0/libguile/arbiters.h,28
+#define SCM_ARBITERS_H4,47
+
+/usr/local/include/guile/2.0/libguile/array-handle.h,1878
+#define SCM_ARRAY_HANDLE_H4,51
+typedef SCM (*scm_i_t_array_ref)scm_i_t_array_ref35,1072
+typedef void (*scm_i_t_array_set)scm_i_t_array_set36,1144
+  scm_t_bits tag;40,1240
+  scm_t_bits mask;41,1258
+  scm_i_t_array_ref vref;42,1277
+  scm_i_t_array_set vset;43,1303
+  void (*get_handle)get_handle44,1329
+} scm_t_array_implementation;45,1384
+#define SCM_ARRAY_IMPLEMENTATION(47,1417
+typedef struct scm_t_array_dim63,2119
+  ssize_t lbnd;65,2152
+  ssize_t ubnd;66,2168
+  ssize_t inc;67,2184
+} scm_t_array_dim;68,2199
+    SCM_ARRAY_ELEMENT_TYPE_SCM 72,2236
+    SCM_ARRAY_ELEMENT_TYPE_CHAR 73,2291
+    SCM_ARRAY_ELEMENT_TYPE_BIT 74,2346
+    SCM_ARRAY_ELEMENT_TYPE_VU8 75,2412
+    SCM_ARRAY_ELEMENT_TYPE_U8 76,2448
+    SCM_ARRAY_ELEMENT_TYPE_S8 77,2483
+    SCM_ARRAY_ELEMENT_TYPE_U16 78,2518
+    SCM_ARRAY_ELEMENT_TYPE_S16 79,2554
+    SCM_ARRAY_ELEMENT_TYPE_U32 80,2590
+    SCM_ARRAY_ELEMENT_TYPE_S32 81,2626
+    SCM_ARRAY_ELEMENT_TYPE_U64 82,2662
+    SCM_ARRAY_ELEMENT_TYPE_S64 83,2699
+    SCM_ARRAY_ELEMENT_TYPE_F32 84,2736
+    SCM_ARRAY_ELEMENT_TYPE_F64 85,2773
+    SCM_ARRAY_ELEMENT_TYPE_C32 86,2810
+    SCM_ARRAY_ELEMENT_TYPE_C64 87,2847
+    SCM_ARRAY_ELEMENT_TYPE_LAST 88,2884
+  } scm_t_array_element_type;89,2921
+SCM_INTERNAL SCM scm_i_array_element_types[scm_i_array_element_types91,2952
+typedef struct scm_t_array_handle 94,3000
+  SCM array;95,3036
+  scm_t_array_implementation *impl;impl96,3049
+  size_t base;103,3435
+  size_t ndims;104,3450
+  scm_t_array_dim *dims;dims105,3503
+  scm_t_array_dim dim0;106,3528
+  scm_t_array_element_type element_type;107,3552
+  const void *elements;elements108,3593
+  void *writable_elements;writable_elements109,3617
+} scm_t_array_handle;110,3644
+#define scm_array_handle_rank(112,3667
+#define scm_array_handle_dims(113,3713
+scm_array_handle_ref 132,4660
+scm_array_handle_set 142,4970
+
+/usr/local/include/guile/2.0/libguile/array-map.h,29
+#define SCM_ARRAY_MAP_H4,48
+
+/usr/local/include/guile/2.0/libguile/arrays.h,410
+#define SCM_ARRAY_H4,44
+typedef struct scm_i_t_array57,1953
+  SCM v;59,1984
+  unsigned long base;60,2062
+} scm_i_t_array;61,2084
+#define SCM_I_ARRAY_FLAG_CONTIGUOUS 63,2102
+#define SCM_I_ARRAYP(65,2148
+#define SCM_I_ARRAY_NDIM(66,2215
+#define SCM_I_ARRAY_CONTP(67,2281
+#define SCM_I_ARRAY_MEM(69,2371
+#define SCM_I_ARRAY_V(70,2439
+#define SCM_I_ARRAY_BASE(71,2492
+#define SCM_I_ARRAY_DIMS(72,2548
+
+/usr/local/include/guile/2.0/libguile/async.h,391
+#define SCM_ASYNC_H4,44
+SCM_INTERNAL scm_i_pthread_mutex_t scm_i_critical_section_mutex;60,2117
+# define SCM_CRITICAL_SECTION_START	67,2304
+# define SCM_CRITICAL_SECTION_END	73,2540
+# define scm_i_pthread_mutex_lock_block_asyncs(81,2808
+# define scm_i_pthread_mutex_unlock_unblock_asyncs(89,3163
+# define SCM_CRITICAL_SECTION_START 99,3550
+# define SCM_CRITICAL_SECTION_END 100,3617
+
+/usr/local/include/guile/2.0/libguile/backtrace.h,29
+#define SCM_BACKTRACE_H4,48
+
+/usr/local/include/guile/2.0/libguile/bdw-gc.h,265
+#define SCM_BDW_GC_H2,21
+# define GC_THREADS 32,1141
+# define GC_REDIRECT_TO_LOCAL 33,1163
+# define GC_NO_THREAD_REDIRECTS 38,1346
+#define GC_WIN32_PTHREADS42,1429
+#define SCM_I_IS_POINTER_TO_THE_HEAP(55,1682
+#define SCM_I_REGISTER_DISAPPEARING_LINK(63,2054
+
+/usr/local/include/guile/2.0/libguile/bitvectors.h,30
+#define SCM_BITVECTORS_H4,49
+
+/usr/local/include/guile/2.0/libguile/boolean.h,678
+#define SCM_BOOLEAN_H4,46
+#define scm_is_false_and_not_nil(40,1268
+#define scm_is_true_or_nil(41,1338
+#define scm_is_false_assume_not_nil(47,1495
+#define scm_is_true_assume_not_nil(48,1565
+#define scm_is_false_or_nil(55,1806
+#define scm_is_true_and_not_nil(57,1906
+#define scm_is_false(60,1990
+#define scm_is_true(61,2041
+#define scm_is_bool_or_nil(79,2856
+#define scm_is_bool_and_not_nil(81,2953
+#define scm_is_bool(86,3085
+#define scm_from_bool(88,3136
+#define SCM_FALSEP(95,3310
+#define SCM_NFALSEP(96,3352
+#define SCM_BOOLP(97,3394
+#define SCM_BOOL(98,3444
+#define SCM_NEGATE_BOOL(99,3485
+#define SCM_BOOL_NOT(100,3535
+#define scm_is_lisp_false(122,4434
+
+/usr/local/include/guile/2.0/libguile/bytevectors.h,581
+#define SCM_BYTEVECTORS_H2,26
+#define SCM_BYTEVECTOR_HEADER_SIZE 31,1040
+#define SCM_BYTEVECTOR_LENGTH(33,1081
+#define SCM_BYTEVECTOR_CONTENTS(35,1154
+SCM_API SCM scm_endianness_big;39,1238
+SCM_API SCM scm_endianness_little;40,1270
+#define SCM_BYTEVECTOR_P(117,4873
+#define SCM_BYTEVECTOR_FLAGS(119,4960
+#define SCM_SET_BYTEVECTOR_FLAGS(121,5028
+#define SCM_BYTEVECTOR_ELEMENT_TYPE(125,5166
+#define SCM_BYTEVECTOR_CONTIGUOUS_P(127,5249
+#define SCM_GC_BYTEVECTOR 131,5393
+SCM_INTERNAL SCM scm_i_native_endianness;140,5757
+SCM_INTERNAL SCM scm_null_bytevector;147,6068
+
+/usr/local/include/guile/2.0/libguile/chars.h,393
+#define SCM_CHARS_H4,44
+typedef scm_t_int32 scm_t_wchar;29,964
+#define SCM_T_WCHAR_DEFINED30,997
+#define SCM_CHARP(36,1089
+#define SCM_CHAR(37,1141
+#define SCM_MAKE_CHAR(45,1483
+#define SCM_CODEPOINT_DOTTED_CIRCLE 50,1760
+#define SCM_CODEPOINT_SURROGATE_START 51,1805
+#define SCM_CODEPOINT_SURROGATE_END 52,1852
+#define SCM_CODEPOINT_MAX 53,1897
+#define SCM_IS_UNICODE_CHAR(54,1934
+
+/usr/local/include/guile/2.0/libguile/continuations.h,401
+#define SCM_CONTINUATIONS_H4,52
+#define SCM_CONTINUATIONP(34,1036
+  scm_i_jmp_buf jmpbuf;47,1503
+  SCM dynenv;48,1527
+  void *backing_store;backing_store50,1557
+  unsigned long backing_store_size;51,1580
+  size_t num_stack_items;53,1638
+  SCM root;54,1698
+  SCM vm;55,1763
+  SCM vm_cont;56,1800
+  scm_t_ptrdiff offset;66,2169
+  SCM_STACKITEM stack[stack68,2194
+} scm_t_contregs;69,2269
+
+/usr/local/include/guile/2.0/libguile/control.h,515
+#define SCM_CONTROL_H20,830
+#define SCM_F_PROMPT_ESCAPE 23,854
+#define SCM_PROMPT_P(25,887
+#define SCM_PROMPT_FLAGS(26,960
+#define SCM_PROMPT_ESCAPE_P(27,1018
+#define SCM_PROMPT_TAG(28,1094
+#define SCM_PROMPT_REGISTERS(29,1147
+#define SCM_PROMPT_DYNWINDS(30,1234
+#define SCM_PROMPT_SETJMP(32,1293
+struct scm_prompt_registers34,1371
+  scm_t_uint8 *ip;ip36,1401
+  SCM *sp;sp37,1420
+  SCM *fp;fp38,1431
+  scm_t_int64 cookie;39,1442
+  scm_i_jmp_buf regs;40,1464
+SCM_INTERNAL void scm_c_abort 51,1841
+
+/usr/local/include/guile/2.0/libguile/debug-malloc.h,32
+#define SCM_DEBUG_MALLOC_H4,51
+
+/usr/local/include/guile/2.0/libguile/debug.h,463
+#define SCM_DEBUG_H4,44
+typedef union scm_t_debug_info35,1009
+  struct { SCM exp,37,1042
+  struct { SCM exp, env;37,1042
+  struct { SCM exp, env; } e;37,1042
+  struct { SCM proc,38,1072
+  struct { SCM proc, args;38,1072
+  struct { SCM proc, args; } a;38,1072
+  SCM id;39,1104
+} scm_t_debug_info;40,1114
+#define CHECK_ENTRY 59,1527
+#define CHECK_APPLY	60,1570
+#define CHECK_EXIT 61,1609
+#define SCM_DEBUGGINGP 64,1700
+#define scm_debug_mode 65,1740
+
+/usr/local/include/guile/2.0/libguile/deprecated.h,5022
+#define SCM_DEPRECATED_H6,158
+#define SCM_IFRINC 36,1325
+#define SCM_ICDR 37,1370
+#define SCM_IFRAME(38,1415
+#define SCM_IDIST(40,1539
+#define SCM_ICDRP(41,1593
+SCM_API char *scm_isymnames[scm_isymnames46,1768
+#define SCM_ISYMNUM(47,1799
+#define SCM_ISYMCHARS(48,1832
+#define SCM_TYP16S(53,2031
+#define SCM_SLOPPY_INEXACTP(58,2237
+#define SCM_SLOPPY_REALP(59,2302
+#define SCM_SLOPPY_COMPLEXP(60,2363
+#define scm_vtable_index_vtable 65,2498
+#define scm_vtable_index_printer 66,2552
+#define scm_struct_i_free 67,2619
+#define scm_struct_i_flags 68,2680
+#define SCM_STRUCTF_MASK 69,2730
+#define SCM_SET_VTABLE_DESTRUCTOR(70,2772
+#define scm_substring_move_left_x 72,2869
+#define scm_substring_move_right_x 73,2924
+#define scm_sizet 75,2981
+#define SCM_WNA 79,3083
+#define SCM_OUTOFRANGE 80,3103
+#define SCM_NALLOC 81,3137
+#define SCM_SETAND_CAR(90,3462
+#define SCM_SETOR_CAR(92,3557
+#define SCM_SETAND_CDR(94,3650
+#define SCM_SETOR_CDR(96,3744
+#define SCM_FREEP(98,3837
+#define SCM_NFREEP(99,3862
+#define SCM_GCTYP16(100,3888
+#define SCM_GCCDR(101,3925
+#define scm_port 108,4161
+#define scm_ptob_descriptor 109,4189
+#define scm_port_rw_active 110,4239
+#define scm_rstate 114,4348
+#define scm_rng 115,4380
+#define SCM_SLOPPY_CONSP(117,4407
+#define SCM_SLOPPY_NCONSP(118,4467
+#define scm_tc7_ssymbol	120,4520
+#define scm_tc7_msymbol	121,4560
+#define scm_tcs_symbols 122,4600
+typedef SCM (*scm_t_inner)scm_t_inner150,5483
+#define SCM_LIST0 157,5846
+#define SCM_LIST1(158,5872
+#define SCM_LIST2(159,5919
+#define SCM_LIST3(160,5977
+#define SCM_LIST4(161,6047
+#define SCM_LIST5(163,6134
+#define SCM_LIST6(165,6230
+#define SCM_LIST7(167,6337
+#define SCM_LIST8(169,6453
+#define SCM_LIST9(171,6580
+#define scm_listify 175,6726
+#define scm_subr_entry 183,6972
+#define SCM_SUBR_DOC(185,7013
+#define SCM_CHARS(212,7853
+#define SCM_UCHARS(213,7898
+#define SCM_LENGTH(217,8002
+#define scm_strhash(219,8048
+#define SCM_OPDIRP(241,9044
+#define scm_fport 242,9105
+#define scm_option 243,9135
+#define scm_srcprops 244,9167
+#define scm_srcprops_chunk 245,9203
+#define scm_array 246,9251
+#define scm_array_dim 247,9281
+#define SCM_FUNC_NAME 248,9319
+#define SCM_WTA(250,9372
+#define RETURN_SCM_WTA(253,9460
+#define SCM_VALIDATE_NUMBER_COPY(256,9562
+#define SCM_VALIDATE_NUMBER_DEF_COPY(271,9949
+#define SCM_VALIDATE_OPDIR(279,10174
+#define SCM_CELL_WORD_LOC(284,10325
+#define SCM_MAKINUM(293,10602
+#define SCM_INUM(294,10644
+#define SCM_INUMP(295,10683
+#define SCM_NINUMP(296,10723
+#define SCM_VALIDATE_INUM(298,10765
+#define SCM_VALIDATE_INUM_COPY(300,10855
+#define SCM_VALIDATE_BIGINT(306,11010
+#define SCM_VALIDATE_INUM_MIN(308,11094
+#define SCM_VALIDATE_INUM_MIN_COPY(314,11275
+#define SCM_VALIDATE_INUM_MIN_DEF_COPY(321,11495
+#define SCM_VALIDATE_INUM_DEF(330,11791
+#define SCM_VALIDATE_INUM_DEF_COPY(337,11987
+#define SCM_VALIDATE_INUM_RANGE(352,12321
+#define SCM_VALIDATE_INUM_RANGE_COPY(359,12586
+#define SCM_STRING_COERCE_0TERMINATION_X(366,12831
+#define SCM_VALIDATE_STRING_COPY(418,14987
+#define SCM_VALIDATE_SUBSTRING_SPEC_COPY(427,15340
+#define SCM_SYMBOL_CHARS(449,16256
+#define SCM_SYMBOL_LENGTH(450,16318
+#define SCM_KEYWORDP(459,16618
+#define SCM_KEYWORDSYM(460,16662
+#define SCM_VECTOR_MAX_LENGTH 465,16810
+#define SCM_VECTORP(475,17234
+#define SCM_VECTOR_LENGTH(476,17282
+#define SCM_VELTS(477,17336
+#define SCM_WRITABLE_VELTS(478,17382
+#define SCM_VECTOR_REF(479,17437
+#define SCM_VECTOR_SET(480,17490
+typedef scm_i_t_array scm_t_array;482,17546
+#define SCM_ARRAYP(492,17919
+#define SCM_ARRAY_NDIM(493,17962
+#define SCM_ARRAY_CONTP(494,18009
+#define SCM_ARRAY_MEM(495,18057
+#define SCM_ARRAY_V(496,18103
+#define SCM_ARRAY_BASE(497,18147
+#define SCM_ARRAY_DIMS(498,18194
+#define scm_cur_inp 513,18748
+#define scm_cur_outp 514,18795
+#define scm_cur_errp 515,18843
+#define scm_cur_loadp 516,18891
+#define scm_progargs 517,18940
+#define scm_dynwinds 518,18988
+#define scm_stack_base 519,19047
+#define SCM_FLUIDP(531,19476
+#define SCM_DEFER_INTS 567,21141
+#define SCM_ALLOW_INTS 568,21188
+#define SCM_REDEFER_INTS 569,21235
+#define SCM_REALLOW_INTS 570,21284
+#define scm_mask_ints 574,21487
+SCM_DEPRECATED unsigned long scm_mallocated;593,22120
+SCM_DEPRECATED unsigned long scm_mtrigger;594,22165
+SCM_DEPRECATED size_t scm_max_segment_size;596,22209
+#define SCM_PROCEDURE_WITH_SETTER_P(616,22781
+#define SCM_PROCEDURE(617,22872
+#define SCM_SETTER(618,22929
+#define scm_subr_p(624,23082
+#define scm_whash_handle 771,28891
+#define SCM_STRUCT_TABLE_NAME(786,29446
+#define SCM_SET_STRUCT_TABLE_NAME(787,29491
+#define SCM_STRUCT_TABLE_CLASS(788,29555
+#define SCM_SET_STRUCT_TABLE_CLASS(789,29601
+SCM_DEPRECATED SCM scm_struct_table;791,29669
+#define SCM_ASRTGO(808,30188
+#define SCM_TOP_LEVEL_LOOKUP_CLOSURE 821,30598
+SCM_DEPRECATED scm_t_bits scm_tc16_eval_closure;827,30852
+#define SCM_EVAL_CLOSURE_P(829,30902
+# define SCM_CHAR_CODE_LIMIT 843,31328
+# define SCM_CHAR_CODE_LIMIT 845,31380
+
+/usr/local/include/guile/2.0/libguile/deprecation.h,31
+#define SCM_DEPRECATION_H4,50
+
+/usr/local/include/guile/2.0/libguile/dynl.h,24
+#define SCM_DYNL_H4,43
+
+/usr/local/include/guile/2.0/libguile/dynwind.h,202
+#define SCM_DYNWIND_H4,46
+typedef void (*scm_t_guard)scm_t_guard30,953
+  SCM_F_DYNWIND_REWINDABLE 41,1318
+} scm_t_dynwind_flags;42,1356
+  SCM_F_WIND_EXPLICITLY 45,1395
+} scm_t_wind_flags;46,1430
+
+/usr/local/include/guile/2.0/libguile/eq.h,48
+#define SCM_EQ_H4,41
+#define SCM_EQ_P(33,1017
+
+/usr/local/include/guile/2.0/libguile/error.h,342
+#define SCM_ERROR_H4,44
+SCM_API SCM scm_system_error_key;29,943
+SCM_API SCM scm_num_overflow_key;30,977
+SCM_API SCM scm_out_of_range_key;31,1011
+SCM_API SCM scm_args_number_key;32,1045
+SCM_API SCM scm_arg_type_key;33,1078
+SCM_API SCM scm_memory_alloc_key;34,1108
+SCM_API SCM scm_misc_error_key;35,1142
+SCM_API void scm_error 39,1178
+
+/usr/local/include/guile/2.0/libguile/eval.h,360
+#define SCM_EVAL_H4,43
+#define SCM_ILOCP(45,1137
+typedef SCM (*scm_t_trampoline_0)scm_t_trampoline_052,1212
+typedef SCM (*scm_t_trampoline_1)scm_t_trampoline_153,1258
+typedef SCM (*scm_t_trampoline_2)scm_t_trampoline_254,1314
+#define SCM_EXTEND_ENV 58,1384
+#define scm_dapply(85,2777
+#define scm_primitive_eval_x(89,2992
+#define scm_eval_x(91,3095
+
+/usr/local/include/guile/2.0/libguile/evalext.h,57
+#define SCM_EVALEXT_H4,46
+#define scm_definedp 36,1102
+
+/usr/local/include/guile/2.0/libguile/expand.h,7420
+#define SCM_EXPAND_H4,45
+    SCM_EXPANDED_VOID,39,1110
+    SCM_EXPANDED_CONST,40,1133
+    SCM_EXPANDED_PRIMITIVE_REF,41,1157
+    SCM_EXPANDED_LEXICAL_REF,42,1189
+    SCM_EXPANDED_LEXICAL_SET,43,1219
+    SCM_EXPANDED_MODULE_REF,44,1249
+    SCM_EXPANDED_MODULE_SET,45,1278
+    SCM_EXPANDED_TOPLEVEL_REF,46,1307
+    SCM_EXPANDED_TOPLEVEL_SET,47,1338
+    SCM_EXPANDED_TOPLEVEL_DEFINE,48,1369
+    SCM_EXPANDED_CONDITIONAL,49,1403
+    SCM_EXPANDED_APPLICATION,50,1433
+    SCM_EXPANDED_SEQUENCE,51,1463
+    SCM_EXPANDED_LAMBDA,52,1490
+    SCM_EXPANDED_LAMBDA_CASE,53,1515
+    SCM_EXPANDED_LET,54,1545
+    SCM_EXPANDED_LETREC,55,1567
+    SCM_EXPANDED_DYNLET,56,1592
+    SCM_NUM_EXPANDED_TYPES,57,1617
+  } scm_t_expanded_type;58,1645
+SCM_INTERNAL SCM scm_exp_vtable_vtable;67,1702
+    SCM_EXPANDED_TYPE_NAME 71,1752
+    SCM_EXPANDED_TYPE_NAME = scm_vtable_offset_user,71,1752
+    SCM_EXPANDED_TYPE_CODE,72,1805
+    SCM_EXPANDED_TYPE_FIELDS,73,1833
+#define SCM_EXPANDED_P(76,1869
+#define SCM_EXPANDED_REF(79,2103
+#define SCM_EXPANDED_TYPE(81,2214
+#define SCM_EXPANDED_VOID_TYPE_NAME 88,2321
+#define SCM_EXPANDED_VOID_FIELD_NAMES 89,2364
+    SCM_EXPANDED_VOID_SRC,93,2427
+    SCM_NUM_EXPANDED_VOID_FIELDS,94,2454
+#define SCM_MAKE_EXPANDED_VOID(96,2493
+#define SCM_EXPANDED_CONST_TYPE_NAME 99,2636
+#define SCM_EXPANDED_CONST_FIELD_NAMES 100,2681
+    SCM_EXPANDED_CONST_SRC,104,2760
+    SCM_EXPANDED_CONST_EXP,105,2788
+    SCM_NUM_EXPANDED_CONST_FIELDS,106,2816
+#define SCM_MAKE_EXPANDED_CONST(108,2856
+#define SCM_EXPANDED_PRIMITIVE_REF_TYPE_NAME 111,3025
+#define SCM_EXPANDED_PRIMITIVE_REF_FIELD_NAMES 112,3086
+    SCM_EXPANDED_PRIMITIVE_REF_SRC,116,3166
+    SCM_EXPANDED_PRIMITIVE_REF_NAME,117,3202
+    SCM_NUM_EXPANDED_PRIMITIVE_REF_FIELDS,118,3239
+#define SCM_MAKE_EXPANDED_PRIMITIVE_REF(120,3287
+#define SCM_EXPANDED_LEXICAL_REF_TYPE_NAME 123,3482
+#define SCM_EXPANDED_LEXICAL_REF_FIELD_NAMES 124,3539
+    SCM_EXPANDED_LEXICAL_REF_SRC,128,3629
+    SCM_EXPANDED_LEXICAL_REF_NAME,129,3663
+    SCM_EXPANDED_LEXICAL_REF_GENSYM,130,3698
+    SCM_NUM_EXPANDED_LEXICAL_REF_FIELDS,131,3735
+#define SCM_MAKE_EXPANDED_LEXICAL_REF(133,3781
+#define SCM_EXPANDED_LEXICAL_SET_TYPE_NAME 136,3999
+#define SCM_EXPANDED_LEXICAL_SET_FIELD_NAMES 137,4056
+    SCM_EXPANDED_LEXICAL_SET_SRC,141,4153
+    SCM_EXPANDED_LEXICAL_SET_NAME,142,4187
+    SCM_EXPANDED_LEXICAL_SET_GENSYM,143,4222
+    SCM_EXPANDED_LEXICAL_SET_EXP,144,4259
+    SCM_NUM_EXPANDED_LEXICAL_SET_FIELDS,145,4293
+#define SCM_MAKE_EXPANDED_LEXICAL_SET(147,4339
+#define SCM_EXPANDED_MODULE_REF_TYPE_NAME 150,4580
+#define SCM_EXPANDED_MODULE_REF_FIELD_NAMES 151,4635
+    SCM_EXPANDED_MODULE_REF_SRC,155,4733
+    SCM_EXPANDED_MODULE_REF_MOD,156,4766
+    SCM_EXPANDED_MODULE_REF_NAME,157,4799
+    SCM_EXPANDED_MODULE_REF_PUBLIC,158,4833
+    SCM_NUM_EXPANDED_MODULE_REF_FIELDS,159,4869
+#define SCM_MAKE_EXPANDED_MODULE_REF(161,4914
+#define SCM_EXPANDED_MODULE_SET_TYPE_NAME 164,5152
+#define SCM_EXPANDED_MODULE_SET_FIELD_NAMES 165,5207
+    SCM_EXPANDED_MODULE_SET_SRC,169,5312
+    SCM_EXPANDED_MODULE_SET_MOD,170,5345
+    SCM_EXPANDED_MODULE_SET_NAME,171,5378
+    SCM_EXPANDED_MODULE_SET_PUBLIC,172,5412
+    SCM_EXPANDED_MODULE_SET_EXP,173,5448
+    SCM_NUM_EXPANDED_MODULE_SET_FIELDS,174,5481
+#define SCM_MAKE_EXPANDED_MODULE_SET(176,5526
+#define SCM_EXPANDED_TOPLEVEL_REF_TYPE_NAME 179,5787
+#define SCM_EXPANDED_TOPLEVEL_REF_FIELD_NAMES 180,5846
+    SCM_EXPANDED_TOPLEVEL_REF_SRC,184,5926
+    SCM_EXPANDED_TOPLEVEL_REF_NAME,185,5961
+    SCM_NUM_EXPANDED_TOPLEVEL_REF_FIELDS,186,5997
+#define SCM_MAKE_EXPANDED_TOPLEVEL_REF(188,6044
+#define SCM_EXPANDED_TOPLEVEL_SET_TYPE_NAME 191,6236
+#define SCM_EXPANDED_TOPLEVEL_SET_FIELD_NAMES 192,6295
+    SCM_EXPANDED_TOPLEVEL_SET_SRC,196,6382
+    SCM_EXPANDED_TOPLEVEL_SET_NAME,197,6417
+    SCM_EXPANDED_TOPLEVEL_SET_EXP,198,6453
+    SCM_NUM_EXPANDED_TOPLEVEL_SET_FIELDS,199,6488
+#define SCM_MAKE_EXPANDED_TOPLEVEL_SET(201,6535
+#define SCM_EXPANDED_TOPLEVEL_DEFINE_TYPE_NAME 204,6750
+#define SCM_EXPANDED_TOPLEVEL_DEFINE_FIELD_NAMES 205,6815
+    SCM_EXPANDED_TOPLEVEL_DEFINE_SRC,209,6910
+    SCM_EXPANDED_TOPLEVEL_DEFINE_NAME,210,6948
+    SCM_EXPANDED_TOPLEVEL_DEFINE_EXP,211,6987
+    SCM_NUM_EXPANDED_TOPLEVEL_DEFINE_FIELDS,212,7025
+#define SCM_MAKE_EXPANDED_TOPLEVEL_DEFINE(214,7075
+#define SCM_EXPANDED_CONDITIONAL_TYPE_NAME 217,7299
+#define SCM_EXPANDED_CONDITIONAL_FIELD_NAMES 218,7356
+    SCM_EXPANDED_CONDITIONAL_SRC,222,7463
+    SCM_EXPANDED_CONDITIONAL_TEST,223,7497
+    SCM_EXPANDED_CONDITIONAL_CONSEQUENT,224,7532
+    SCM_EXPANDED_CONDITIONAL_ALTERNATE,225,7573
+    SCM_NUM_EXPANDED_CONDITIONAL_FIELDS,226,7613
+#define SCM_MAKE_EXPANDED_CONDITIONAL(228,7659
+#define SCM_EXPANDED_APPLICATION_TYPE_NAME 231,7920
+#define SCM_EXPANDED_APPLICATION_FIELD_NAMES 232,7977
+    SCM_EXPANDED_APPLICATION_SRC,236,8065
+    SCM_EXPANDED_APPLICATION_PROC,237,8099
+    SCM_EXPANDED_APPLICATION_ARGS,238,8134
+    SCM_NUM_EXPANDED_APPLICATION_FIELDS,239,8169
+#define SCM_MAKE_EXPANDED_APPLICATION(241,8215
+#define SCM_EXPANDED_SEQUENCE_TYPE_NAME 244,8429
+#define SCM_EXPANDED_SEQUENCE_FIELD_NAMES 245,8480
+    SCM_EXPANDED_SEQUENCE_SRC,249,8561
+    SCM_EXPANDED_SEQUENCE_EXPS,250,8592
+    SCM_NUM_EXPANDED_SEQUENCE_FIELDS,251,8624
+#define SCM_MAKE_EXPANDED_SEQUENCE(253,8667
+#define SCM_EXPANDED_LAMBDA_TYPE_NAME 256,8847
+#define SCM_EXPANDED_LAMBDA_FIELD_NAMES 257,8894
+    SCM_EXPANDED_LAMBDA_SRC,261,8982
+    SCM_EXPANDED_LAMBDA_META,262,9011
+    SCM_EXPANDED_LAMBDA_BODY,263,9041
+    SCM_NUM_EXPANDED_LAMBDA_FIELDS,264,9071
+#define SCM_MAKE_EXPANDED_LAMBDA(266,9112
+#define SCM_EXPANDED_LAMBDA_CASE_TYPE_NAME 269,9311
+#define SCM_EXPANDED_LAMBDA_CASE_FIELD_NAMES 270,9368
+    SCM_EXPANDED_LAMBDA_CASE_SRC,274,9509
+    SCM_EXPANDED_LAMBDA_CASE_REQ,275,9543
+    SCM_EXPANDED_LAMBDA_CASE_OPT,276,9577
+    SCM_EXPANDED_LAMBDA_CASE_REST,277,9611
+    SCM_EXPANDED_LAMBDA_CASE_KW,278,9646
+    SCM_EXPANDED_LAMBDA_CASE_INITS,279,9679
+    SCM_EXPANDED_LAMBDA_CASE_GENSYMS,280,9715
+    SCM_EXPANDED_LAMBDA_CASE_BODY,281,9753
+    SCM_EXPANDED_LAMBDA_CASE_ALTERNATE,282,9788
+    SCM_NUM_EXPANDED_LAMBDA_CASE_FIELDS,283,9828
+#define SCM_MAKE_EXPANDED_LAMBDA_CASE(285,9874
+#define SCM_EXPANDED_LET_TYPE_NAME 288,10248
+#define SCM_EXPANDED_LET_FIELD_NAMES 289,10289
+    SCM_EXPANDED_LET_SRC,293,10397
+    SCM_EXPANDED_LET_NAMES,294,10423
+    SCM_EXPANDED_LET_GENSYMS,295,10451
+    SCM_EXPANDED_LET_VALS,296,10481
+    SCM_EXPANDED_LET_BODY,297,10508
+    SCM_NUM_EXPANDED_LET_FIELDS,298,10535
+#define SCM_MAKE_EXPANDED_LET(300,10573
+#define SCM_EXPANDED_LETREC_TYPE_NAME 303,10821
+#define SCM_EXPANDED_LETREC_FIELD_NAMES 304,10868
+    SCM_EXPANDED_LETREC_SRC,308,10989
+    SCM_EXPANDED_LETREC_IN_ORDER_P,309,11018
+    SCM_EXPANDED_LETREC_NAMES,310,11054
+    SCM_EXPANDED_LETREC_GENSYMS,311,11085
+    SCM_EXPANDED_LETREC_VALS,312,11118
+    SCM_EXPANDED_LETREC_BODY,313,11148
+    SCM_NUM_EXPANDED_LETREC_FIELDS,314,11178
+#define SCM_MAKE_EXPANDED_LETREC(316,11219
+#define SCM_EXPANDED_DYNLET_TYPE_NAME 319,11513
+#define SCM_EXPANDED_DYNLET_FIELD_NAMES 320,11560
+    SCM_EXPANDED_DYNLET_SRC,324,11658
+    SCM_EXPANDED_DYNLET_FLUIDS,325,11687
+    SCM_EXPANDED_DYNLET_VALS,326,11719
+    SCM_EXPANDED_DYNLET_BODY,327,11749
+    SCM_NUM_EXPANDED_DYNLET_FIELDS,328,11779
+#define SCM_MAKE_EXPANDED_DYNLET(330,11820
+
+/usr/local/include/guile/2.0/libguile/extensions.h,105
+#define SCM_EXTENSIONS_H4,49
+typedef void (*scm_t_extension_init_func)scm_t_extension_init_func30,923
+
+/usr/local/include/guile/2.0/libguile/feature.h,81
+#define SCM_FEATURE_H4,46
+SCM_INTERNAL SCM scm_program_arguments_fluid;34,1176
+
+/usr/local/include/guile/2.0/libguile/filesys.h,160
+#define SCM_FILESYS_H4,46
+SCM_API scm_t_bits scm_tc16_dir;31,970
+#define SCM_DIR_FLAG_OPEN 33,1004
+#define SCM_DIRP(35,1041
+#define SCM_DIR_OPEN_P(36,1111
+
+/usr/local/include/guile/2.0/libguile/finalizers.h,95
+#define SCM_FINALIZERS_H2,25
+typedef void (*scm_t_finalizer_proc)scm_t_finalizer_proc28,887
+
+/usr/local/include/guile/2.0/libguile/fluids.h,409
+#define SCM_FLUIDS_H4,45
+#define SCM_WITH_FLUIDS_P(35,1238
+#define SCM_WITH_FLUIDS_LEN(36,1320
+#define SCM_WITH_FLUIDS_NTH_FLUID(37,1381
+#define SCM_WITH_FLUIDS_NTH_VAL(38,1455
+#define SCM_WITH_FLUIDS_SET_NTH_VAL(39,1527
+#define SCM_FLUID_P(57,2270
+#define SCM_I_FLUID_NUM(59,2375
+#define SCM_I_FLUID_DEFAULT(60,2446
+#define SCM_I_DYNAMIC_STATE_P(86,3445
+#define SCM_I_DYNAMIC_STATE_FLUIDS(87,3534
+
+/usr/local/include/guile/2.0/libguile/foreign.h,787
+#define SCM_FOREIGN_H2,22
+enum scm_t_foreign_type31,1178
+    SCM_FOREIGN_TYPE_VOID,33,1206
+    SCM_FOREIGN_TYPE_FLOAT,34,1233
+    SCM_FOREIGN_TYPE_DOUBLE,35,1261
+    SCM_FOREIGN_TYPE_UINT8,36,1290
+    SCM_FOREIGN_TYPE_INT8,37,1318
+    SCM_FOREIGN_TYPE_UINT16,38,1345
+    SCM_FOREIGN_TYPE_INT16,39,1374
+    SCM_FOREIGN_TYPE_UINT32,40,1402
+    SCM_FOREIGN_TYPE_INT32,41,1431
+    SCM_FOREIGN_TYPE_UINT64,42,1459
+    SCM_FOREIGN_TYPE_INT64,43,1488
+    SCM_FOREIGN_TYPE_LAST 44,1516
+    SCM_FOREIGN_TYPE_LAST = SCM_FOREIGN_TYPE_INT6444,1516
+typedef enum scm_t_foreign_type scm_t_foreign_type;47,1573
+typedef void (*scm_t_pointer_finalizer)scm_t_pointer_finalizer49,1626
+#define SCM_POINTER_P(51,1677
+#define SCM_VALIDATE_POINTER(53,1802
+#define SCM_POINTER_VALUE(55,1882
+
+/usr/local/include/guile/2.0/libguile/fports.h,367
+#define SCM_FPORTS_H4,45
+typedef struct scm_t_fport 33,1029
+  int fdes;34,1058
+} scm_t_fport;35,1096
+SCM_API scm_t_bits scm_tc16_fport;37,1112
+#define SCM_FSTREAM(39,1148
+#define SCM_FPORT_FDES(40,1204
+#define SCM_FPORTP(42,1255
+#define SCM_OPFPORTP(43,1329
+#define SCM_OPINFPORTP(44,1405
+#define SCM_OPOUTFPORTP(45,1486
+#define SCM_FDES_RANDOM_P(48,1619
+
+/usr/local/include/guile/2.0/libguile/frames.h,1332
+#define _SCM_FRAMES_H_20,845
+struct scm_vm_frame64,2185
+  SCM *dynamic_link;dynamic_link66,2207
+  scm_t_uint8 *mv_return_address;mv_return_address67,2228
+  scm_t_uint8 *return_address;return_address68,2262
+  SCM program;69,2293
+  SCM stack[stack70,2308
+#define SCM_FRAME_STRUCT(73,2350
+#define SCM_FRAME_DATA_ADDRESS(76,2441
+#define SCM_FRAME_STACK_ADDRESS(77,2497
+#define SCM_FRAME_UPPER_ADDRESS(78,2564
+#define SCM_FRAME_LOWER_ADDRESS(79,2647
+#define SCM_FRAME_BYTE_CAST(81,2714
+#define SCM_FRAME_STACK_CAST(82,2779
+#define SCM_FRAME_RETURN_ADDRESS(84,2838
+#define SCM_FRAME_SET_RETURN_ADDRESS(86,2930
+#define SCM_FRAME_MV_RETURN_ADDRESS(88,3027
+#define SCM_FRAME_SET_MV_RETURN_ADDRESS(90,3122
+#define SCM_FRAME_DYNAMIC_LINK(92,3232
+#define SCM_FRAME_SET_DYNAMIC_LINK(94,3322
+#define SCM_FRAME_VARIABLE(96,3409
+#define SCM_FRAME_PROGRAM(98,3495
+struct scm_frame 106,3606
+  SCM stack_holder;108,3626
+  SCM *fp;fp109,3646
+  SCM *sp;sp110,3657
+  scm_t_uint8 *ip;ip111,3668
+  scm_t_ptrdiff offset;112,3687
+#define SCM_VM_FRAME_P(115,3715
+#define SCM_VM_FRAME_DATA(116,3789
+#define SCM_VM_FRAME_STACK_HOLDER(117,3859
+#define SCM_VM_FRAME_FP(118,3931
+#define SCM_VM_FRAME_SP(119,3983
+#define SCM_VM_FRAME_IP(120,4035
+#define SCM_VM_FRAME_OFFSET(121,4087
+#define SCM_VALIDATE_VM_FRAME(122,4147
+
+/usr/local/include/guile/2.0/libguile/gc.h,3048
+#define SCM_GC_H4,41
+typedef struct scm_t_cell33,1048
+  SCM word_0;35,1076
+  SCM word_1;36,1090
+} scm_t_cell;37,1104
+#  define SCM2PTR(47,1537
+#  define PTR2SCM(48,1597
+#  define SCM2PTR(50,1661
+#  define PTR2SCM(51,1716
+#define SCM_GC_CELL_OBJECT(62,2154
+#define SCM_GC_CELL_WORD(63,2214
+#define SCM_GC_SET_CELL_OBJECT(65,2293
+#define SCM_GC_SET_CELL_WORD(66,2368
+#define SCM_GC_CELL_TYPE(69,2462
+#  define SCM_VALIDATE_CELL(80,2972
+#  define SCM_VALIDATE_CELL(82,3057
+#define SCM_CELL_WORD(85,3112
+#define SCM_CELL_WORD_0(87,3197
+#define SCM_CELL_WORD_1(88,3247
+#define SCM_CELL_WORD_2(89,3297
+#define SCM_CELL_WORD_3(90,3347
+#define SCM_CELL_OBJECT(92,3398
+#define SCM_CELL_OBJECT_0(94,3487
+#define SCM_CELL_OBJECT_1(95,3541
+#define SCM_CELL_OBJECT_2(96,3595
+#define SCM_CELL_OBJECT_3(97,3649
+#define SCM_SET_CELL_WORD(99,3704
+#define SCM_SET_CELL_WORD_0(101,3805
+#define SCM_SET_CELL_WORD_1(102,3871
+#define SCM_SET_CELL_WORD_2(103,3937
+#define SCM_SET_CELL_WORD_3(104,4003
+#define SCM_SET_CELL_OBJECT(106,4070
+#define SCM_SET_CELL_OBJECT_0(108,4175
+#define SCM_SET_CELL_OBJECT_1(109,4245
+#define SCM_SET_CELL_OBJECT_2(110,4315
+#define SCM_SET_CELL_OBJECT_3(111,4385
+#define SCM_CELL_OBJECT_LOC(113,4456
+#define SCM_CARLOC(114,4547
+#define SCM_CDRLOC(115,4612
+#define SCM_CELL_TYPE(117,4678
+#define SCM_SET_CELL_TYPE(118,4723
+SCM_API int scm_debug_cell_accesses_p;124,4896
+SCM_API int scm_expensive_debug_cell_accesses_p;125,4935
+SCM_API int scm_debug_cells_gc_interval 126,4984
+SCM_INTERNAL scm_i_pthread_mutex_t scm_i_gc_admin_mutex;130,5092
+#define scm_gc_running_p 132,5150
+SCM_INTERNAL scm_i_pthread_mutex_t scm_i_sweep_mutex;133,5178
+SCM_DEPRECATED size_t scm_default_init_heap_size_1;143,5382
+SCM_DEPRECATED int scm_default_min_yield_1;144,5434
+SCM_DEPRECATED size_t scm_default_init_heap_size_2;145,5478
+SCM_DEPRECATED int scm_default_min_yield_2;146,5530
+SCM_DEPRECATED size_t scm_default_max_segment_size;147,5574
+#define  scm_default_init_heap_size_1 149,5632
+#define  scm_default_min_yield_1 150,5681
+#define  scm_default_init_heap_size_2 151,5725
+#define  scm_default_min_yield_2 152,5774
+#define  scm_default_max_segment_size 153,5818
+SCM_API unsigned long scm_gc_ports_collected;156,5875
+SCM_API SCM scm_after_gc_hook;158,5922
+SCM_API scm_t_c_hook scm_before_gc_c_hook;160,5954
+SCM_API scm_t_c_hook scm_before_mark_c_hook;161,5997
+SCM_API scm_t_c_hook scm_before_sweep_c_hook;162,6042
+SCM_API scm_t_c_hook scm_after_sweep_c_hook;163,6088
+SCM_API scm_t_c_hook scm_after_gc_c_hook;164,6133
+SCM_API void *scm_malloc scm_malloc187,6695
+#define scm_gc_typed_calloc(210,7747
+#define SCM_GC_MALLOC(214,7872
+#define SCM_GC_MALLOC_POINTERLESS(215,7917
+#define SCM_GC_MALLOC(217,7987
+#define SCM_GC_MALLOC_POINTERLESS(218,8042
+scm_double_cell 245,8958
+scm_words 285,10454
+#define scm_remember_upto_here_1(336,12503
+#define scm_remember_upto_here_2(340,12667
+SCM_DEPRECATED SCM scm_protects;357,13364
+#define SCM_NEWCELL(368,13679
+#define SCM_NEWCELL2(370,13762
+
+/usr/local/include/guile/2.0/libguile/gdb_interface.h,376
+#define GDB_INTERFACE_H4,48
+#define GDB_INTERFACE 38,1560
+#define GDB_INTERFACE 55,2099
+#define GDB_INTERFACE_INIT 58,2215
+#define GDB_HAVE_BINDINGS 79,3009
+SCM_API unsigned short gdb_options;81,3038
+SCM_API char *gdb_language;gdb_language86,3222
+SCM_API GDB_TYPE gdb_result;90,3328
+SCM_API char *gdb_output;gdb_output97,3594
+SCM_API int gdb_output_length;99,3621
+
+/usr/local/include/guile/2.0/libguile/gdbint.h,68
+#define SCM_GDBINT_H4,45
+SCM_API int scm_print_carefully_p;30,920
+
+/usr/local/include/guile/2.0/libguile/generalized-arrays.h,38
+#define SCM_GENERALIZED_ARRAYS_H4,57
+
+/usr/local/include/guile/2.0/libguile/generalized-vectors.h,82
+#define SCM_GENERALIZED_VECTORS_H4,58
+#define SCM_VECTOR_IMPLEMENTATION(43,1534
+
+/usr/local/include/guile/2.0/libguile/gettext.h,27
+#define SCM_GETTEXT_H4,46
+
+/usr/local/include/guile/2.0/libguile/goops.h,5238
+#define SCM_GOOPS_H4,44
+#define SCM_VTABLE_FLAG_GOOPS_CLASS 43,1421
+#define SCM_VTABLE_FLAG_GOOPS_VALID 44,1481
+#define SCM_VTABLE_FLAG_GOOPS_PURE_GENERIC 45,1541
+#define SCM_CLASS_OF(47,1609
+#define SCM_CLASS_FLAGS(48,1663
+#define SCM_OBJ_CLASS_FLAGS(49,1721
+#define SCM_SET_CLASS_FLAGS(50,1786
+#define SCM_CLEAR_CLASS_FLAGS(51,1850
+#define SCM_CLASSF_METACLASS 53,1919
+#define SCM_CLASSF_PURE_GENERIC 54,2005
+#define SCM_CLASSF_GOOPS_VALID 55,2073
+#define SCM_CLASSF_GOOPS 56,2134
+#define SCM_CLASSF_GOOPS_OR_VALID 57,2195
+#define SCM_CLASS_CLASS_LAYOUT 64,2369
+#define scm_si_redefined 85,3341
+#define scm_si_h0 86,3403
+#define scm_si_hashsets 87,3465
+#define scm_si_h1 88,3508
+#define scm_si_h2 89,3570
+#define scm_si_h3 90,3632
+#define scm_si_h4 91,3694
+#define scm_si_h5 92,3756
+#define scm_si_h6 93,3818
+#define scm_si_h7 94,3880
+#define scm_si_direct_supers 95,3942
+#define scm_si_direct_slots	96,4020
+#define scm_si_direct_subclasses 97,4108
+#define scm_si_direct_methods	98,4189
+#define scm_si_cpl	99,4270
+#define scm_si_slotdef_class	100,4339
+#define scm_si_slots	101,4399
+#define scm_si_name_access	102,4481
+#define scm_si_getters_n_setters 103,4539
+#define scm_si_keyword_access	104,4591
+#define scm_si_nfields	105,4652
+#define SCM_N_CLASS_SLOTS	106,4724
+typedef struct scm_t_method 108,4782
+  SCM generic_function;109,4812
+  SCM specializers;110,4836
+  SCM procedure;111,4856
+} scm_t_method;112,4873
+#define SCM_METHOD(114,4890
+#define SCM_OBJ_CLASS_REDEF(116,4956
+#define SCM_INST(117,5047
+#define SCM_CLASS_OF(119,5095
+#define SCM_ACCESSORS_OF(120,5148
+#define SCM_CLASSP(122,5246
+#define SCM_VALIDATE_CLASS(124,5344
+#define SCM_INSTANCEP(126,5428
+#define SCM_VALIDATE_INSTANCE(128,5527
+#define SCM_PUREGENERICP(130,5620
+#define SCM_VALIDATE_PUREGENERIC(132,5729
+#define SCM_SLOT(134,5841
+#define SCM_SET_SLOT(135,5901
+#define SCM_INSTANCE_HASH(136,5964
+#define SCM_SET_HASHSET(137,6035
+#define SCM_SUBCLASSP(139,6115
+#define SCM_IS_A_P(140,6205
+#define SCM_GENERICP(143,6294
+#define SCM_VALIDATE_GENERIC(145,6397
+#define SCM_METHODP(147,6496
+#define SCM_VALIDATE_METHOD(149,6597
+#define SCM_SET_CLASS_DESTRUCTOR(151,6684
+#define SCM_SET_GENERIC_DISPATCH_PROCEDURE(153,6757
+#define SCM_CLEAR_GENERIC_EFFECTIVE_METHODS(154,6863
+#define SCM_GENERIC_SETTER(156,6973
+#define SCM_SET_GENERIC_SETTER(157,7060
+#define scm_si_dispatch_procedure 159,7160
+#define scm_si_methods 160,7240
+#define scm_si_n_specialized	161,7276
+#define scm_si_extended_by	162,7309
+#define scm_si_effective_methods 163,7340
+#define scm_si_generic_setter 164,7376
+#define scm_si_generic_function	166,7413
+#define scm_si_specializers	167,7490
+#define scm_si_procedure 168,7563
+#define scm_si_formals	169,7634
+#define scm_si_body	170,7703
+#define scm_si_make_procedure	171,7769
+SCM_API SCM scm_class_boolean;174,7863
+SCM_API SCM scm_class_char;175,7894
+SCM_API SCM scm_class_pair;176,7922
+SCM_API SCM scm_class_procedure;177,7950
+SCM_API SCM scm_class_string;178,7983
+SCM_API SCM scm_class_symbol;179,8013
+SCM_API SCM scm_class_primitive_generic;180,8043
+SCM_API SCM scm_class_vector;181,8084
+SCM_API SCM scm_class_null;182,8114
+SCM_API SCM scm_class_real;183,8142
+SCM_API SCM scm_class_complex;184,8170
+SCM_API SCM scm_class_integer;185,8201
+SCM_API SCM scm_class_fraction;186,8232
+SCM_API SCM scm_class_unknown;187,8264
+SCM_API SCM scm_port_class[scm_port_class188,8295
+SCM_API SCM scm_smob_class[scm_smob_class189,8325
+SCM_API SCM scm_class_top;190,8355
+SCM_API SCM scm_class_object;191,8382
+SCM_API SCM scm_class_class;192,8412
+SCM_API SCM scm_class_applicable;193,8441
+SCM_API SCM scm_class_applicable_struct;194,8475
+SCM_API SCM scm_class_applicable_struct_with_setter;195,8516
+SCM_API SCM scm_class_generic;196,8569
+SCM_API SCM scm_class_generic_with_setter;197,8600
+SCM_API SCM scm_class_accessor;198,8643
+SCM_API SCM scm_class_extended_generic;199,8675
+SCM_API SCM scm_class_extended_generic_with_setter;200,8715
+SCM_API SCM scm_class_extended_accessor;201,8767
+SCM_API SCM scm_class_method;202,8808
+SCM_API SCM scm_class_accessor_method;203,8838
+SCM_API SCM scm_class_procedure_class;204,8877
+SCM_API SCM scm_class_applicable_struct_class;205,8916
+SCM_API SCM scm_class_number;206,8963
+SCM_API SCM scm_class_list;207,8993
+SCM_API SCM scm_class_keyword;208,9021
+SCM_API SCM scm_class_port;209,9052
+SCM_API SCM scm_class_input_output_port;210,9080
+SCM_API SCM scm_class_input_port;211,9121
+SCM_API SCM scm_class_output_port;212,9155
+SCM_API SCM scm_class_foreign_slot;213,9190
+SCM_API SCM scm_class_self;214,9226
+SCM_API SCM scm_class_protected;215,9254
+SCM_API SCM scm_class_hidden;216,9287
+SCM_API SCM scm_class_opaque;217,9317
+SCM_API SCM scm_class_read_only;218,9347
+SCM_API SCM scm_class_protected_hidden;219,9380
+SCM_API SCM scm_class_protected_opaque;220,9420
+SCM_API SCM scm_class_protected_read_only;221,9460
+SCM_API SCM scm_class_scm;222,9503
+SCM_API SCM scm_class_int;223,9530
+SCM_API SCM scm_class_float;224,9557
+SCM_API SCM scm_class_double;225,9586
+SCM_API const char *scm_s_slot_set_x;scm_s_slot_set_x226,9616
+SCM_API SCM scm_no_applicable_method;228,9655
+SCM_API SCM scm_module_goops;230,9694
+
+/usr/local/include/guile/2.0/libguile/gsubr.h,260
+#define SCM_GSUBR_H4,44
+#define SCM_GSUBR_MAX 42,1220
+#define SCM_PRIMITIVE_P(44,1246
+#define SCM_PRIMITIVE_GENERIC_P(46,1326
+#define SCM_SUBRF(48,1422
+#define SCM_SUBR_NAME(52,1556
+#define SCM_SUBR_GENERIC(54,1636
+#define SCM_SET_SUBR_GENERIC(58,1768
+
+/usr/local/include/guile/2.0/libguile/guardians.h,29
+#define SCM_GUARDIANS_H4,48
+
+/usr/local/include/guile/2.0/libguile/hash.h,24
+#define SCM_HASH_H4,43
+
+/usr/local/include/guile/2.0/libguile/hashtab.h,1440
+#define SCM_HASHTAB_H4,46
+#define SCM_HASHTABLEF_WEAK_CAR 32,975
+#define SCM_HASHTABLEF_WEAK_CDR 33,1027
+#define SCM_HASHTABLE_P(35,1082
+#define SCM_VALIDATE_HASHTABLE(36,1160
+#define SCM_HASHTABLE_VECTOR(38,1265
+#define SCM_SET_HASHTABLE_VECTOR(39,1320
+#define SCM_HASHTABLE(40,1392
+#define SCM_HASHTABLE_FLAGS(41,1462
+#define SCM_HASHTABLE_WEAK_KEY_P(42,1523
+#define SCM_HASHTABLE_WEAK_VALUE_P(44,1615
+#define SCM_HASHTABLE_DOUBLY_WEAK_P(46,1709
+#define SCM_HASHTABLE_WEAK_P(50,1907
+#define SCM_HASHTABLE_N_ITEMS(51,1966
+#define SCM_SET_HASHTABLE_N_ITEMS(52,2030
+#define SCM_HASHTABLE_INCREMENT(53,2105
+#define SCM_HASHTABLE_DECREMENT(54,2169
+#define SCM_HASHTABLE_UPPER(55,2233
+#define SCM_HASHTABLE_LOWER(56,2295
+#define SCM_HASHTABLE_N_BUCKETS(58,2358
+#define SCM_HASHTABLE_BUCKET(60,2448
+#define SCM_SET_HASHTABLE_BUCKET(62,2539
+typedef unsigned long (*scm_t_hash_fn)scm_t_hash_fn66,2697
+typedef SCM (*scm_t_assoc_fn)scm_t_assoc_fn71,2896
+typedef int (*scm_t_hash_predicate_fn)scm_t_hash_predicate_fn75,3081
+typedef SCM (*scm_t_hash_fold_fn)scm_t_hash_fold_fn78,3205
+typedef SCM (*scm_t_hash_handle_fn)scm_t_hash_handle_fn83,3378
+typedef struct scm_t_hashtable 85,3444
+  int flags;86,3477
+  unsigned long n_items;87,3518
+  unsigned long lower;88,3574
+  unsigned long upper;89,3619
+  int size_index;90,3662
+  int min_size_index;91,3713
+  scm_t_hash_fn hash_fn;92,3761
+} scm_t_hashtable;93,3819
+
+/usr/local/include/guile/2.0/libguile/hooks.h,773
+#define SCM_HOOKS_H4,44
+typedef enum scm_t_c_hook_type 37,1097
+  SCM_C_HOOK_NORMAL,38,1130
+  SCM_C_HOOK_OR,39,1151
+  SCM_C_HOOK_AND40,1168
+} scm_t_c_hook_type;41,1185
+typedef void  *(*scm_t_c_hook_function)scm_t_c_hook_function43,1207
+typedef struct scm_t_c_hook_entry 47,1306
+  struct scm_t_c_hook_entry *next;next48,1342
+  scm_t_c_hook_function func;49,1377
+  void *data;data50,1407
+} scm_t_c_hook_entry;51,1421
+typedef struct scm_t_c_hook 53,1444
+  scm_t_c_hook_entry *first;first54,1474
+  scm_t_c_hook_type type;55,1503
+  void *data;data56,1529
+} scm_t_c_hook;57,1543
+SCM_API scm_t_bits scm_tc16_hook;75,1999
+#define SCM_HOOKP(77,2034
+#define SCM_HOOK_ARITY(78,2095
+#define SCM_HOOK_PROCEDURES(79,2147
+#define SCM_SET_HOOK_PROCEDURES(80,2204
+
+/usr/local/include/guile/2.0/libguile/i18n.h,62
+#define SCM_I18N_H4,43
+SCM_API SCM scm_global_locale;26,905
+
+/usr/local/include/guile/2.0/libguile/init.h,123
+#define SCM_INIT_H4,43
+SCM_INTERNAL scm_i_pthread_mutex_t scm_i_init_mutex;30,961
+SCM_API int scm_initialized_p;31,1014
+
+/usr/local/include/guile/2.0/libguile/inline.h,168
+#define SCM_INLINE_H4,45
+scm_is_pair 62,2125
+scm_is_string 89,3283
+scm_get_byte_or_eof 97,3417
+scm_peek_byte_or_eof 110,3798
+scm_putc 122,4107
+scm_puts 129,4273
+
+/usr/local/include/guile/2.0/libguile/instructions.h,222
+#define _SCM_INSTRUCTIONS_H_20,837
+#define SCM_VM_NUM_INSTRUCTIONS 24,890
+#define SCM_VM_INSTRUCTION_MASK 25,929
+enum scm_opcode 27,990
+#define VM_INSTRUCTION_TO_OPCODE 28,1008
+#undef VM_INSTRUCTION_TO_OPCODE33,1177
+
+/usr/local/include/guile/2.0/libguile/ioext.h,25
+#define SCM_IOEXT_H4,44
+
+/usr/local/include/guile/2.0/libguile/iselect.h,56
+#define SCM_ISELECT_H4,46
+#define SELECT_TYPE 39,1160
+
+/usr/local/include/guile/2.0/libguile/keywords.h,370
+#define SCM_KEYWORDS_H4,47
+SCM_API scm_t_bits scm_tc16_keyword;30,939
+enum scm_keyword_arguments_flags44,1389
+  SCM_ALLOW_OTHER_KEYS 46,1424
+  SCM_ALLOW_OTHER_KEYS            = (1U U46,1424
+  SCM_ALLOW_NON_KEYWORD_ARGUMENTS 47,1471
+  SCM_ALLOW_NON_KEYWORD_ARGUMENTS = (1U U47,1471
+typedef enum scm_keyword_arguments_flags scm_t_keyword_arguments_flags;50,1521
+
+/usr/local/include/guile/2.0/libguile/list.h,24
+#define SCM_LIST_H4,43
+
+/usr/local/include/guile/2.0/libguile/load.h,24
+#define SCM_LOAD_H4,43
+
+/usr/local/include/guile/2.0/libguile/macros.h,92
+#define SCM_MACROS_H4,45
+typedef SCM (*scm_t_macro_primitive)scm_t_macro_primitive30,947
+
+/usr/local/include/guile/2.0/libguile/mallocs.h,165
+#define SCM_MALLOCS_H4,46
+SCM_API scm_t_bits scm_tc16_malloc;29,921
+#define SCM_MALLOCP(31,958
+#define SCM_MALLOCDATA(32,1026
+#define SCM_SETMALLOCDATA(33,1085
+
+/usr/local/include/guile/2.0/libguile/memoize.h,1796
+#define SCM_MEMOIZE_H4,46
+SCM_API SCM scm_sym_and;32,959
+SCM_API SCM scm_sym_begin;33,984
+SCM_API SCM scm_sym_case;34,1011
+SCM_API SCM scm_sym_cond;35,1037
+SCM_API SCM scm_sym_define;36,1063
+SCM_API SCM scm_sym_do;37,1091
+SCM_API SCM scm_sym_if;38,1115
+SCM_API SCM scm_sym_lambda;39,1139
+SCM_API SCM scm_sym_let;40,1167
+SCM_API SCM scm_sym_letstar;41,1192
+SCM_API SCM scm_sym_letrec;42,1221
+SCM_API SCM scm_sym_quote;43,1249
+SCM_API SCM scm_sym_quasiquote;44,1276
+SCM_API SCM scm_sym_unquote;45,1308
+SCM_API SCM scm_sym_uq_splicing;46,1337
+SCM_API SCM scm_sym_with_fluids;47,1370
+SCM_API SCM scm_sym_at;49,1404
+SCM_API SCM scm_sym_atat;50,1428
+SCM_API SCM scm_sym_atapply;51,1454
+SCM_API SCM scm_sym_atcall_cc;52,1483
+SCM_API SCM scm_sym_at_call_with_values;53,1514
+SCM_API SCM scm_sym_at_prompt;54,1555
+SCM_API SCM scm_sym_delay;55,1586
+SCM_API SCM scm_sym_at_dynamic_wind;56,1613
+SCM_API SCM scm_sym_eval_when;57,1650
+SCM_API SCM scm_sym_arrow;58,1681
+SCM_API SCM scm_sym_else;59,1708
+SCM_API SCM scm_sym_apply;60,1734
+SCM_API SCM scm_sym_set_x;61,1761
+SCM_API SCM scm_sym_args;62,1788
+SCM_INTERNAL scm_t_bits scm_tc16_memoized;67,1841
+#define SCM_MEMOIZED_P(69,1885
+#define SCM_MEMOIZED_TAG(70,1958
+#define SCM_MEMOIZED_ARGS(71,2008
+    SCM_M_BEGIN,75,2070
+    SCM_M_IF,76,2087
+    SCM_M_LAMBDA,77,2101
+    SCM_M_LET,78,2119
+    SCM_M_QUOTE,79,2134
+    SCM_M_DEFINE,80,2151
+    SCM_M_DYNWIND,81,2169
+    SCM_M_WITH_FLUIDS,82,2188
+    SCM_M_APPLY,83,2211
+    SCM_M_CONT,84,2228
+    SCM_M_CALL_WITH_VALUES,85,2244
+    SCM_M_CALL,86,2272
+    SCM_M_LEXICAL_REF,87,2288
+    SCM_M_LEXICAL_SET,88,2311
+    SCM_M_TOPLEVEL_REF,89,2334
+    SCM_M_TOPLEVEL_SET,90,2358
+    SCM_M_MODULE_REF,91,2382
+    SCM_M_MODULE_SET,92,2404
+    SCM_M_PROMPT93,2426
+
+/usr/local/include/guile/2.0/libguile/modules.h,775
+#define SCM_MODULES_H4,46
+SCM_API int scm_module_system_booted_p;32,991
+SCM_API scm_t_bits scm_module_tag;33,1031
+#define SCM_MODULEP(35,1067
+#define SCM_VALIDATE_MODULE(38,1155
+#define scm_module_index_obarray	44,1358
+#define scm_module_index_uses	45,1393
+#define scm_module_index_binder	46,1426
+#define scm_module_index_eval_closure	47,1461
+#define scm_module_index_transformer	48,1501
+#define scm_module_index_duplicate_handlers 49,1540
+#define scm_module_index_import_obarray 50,1586
+#define SCM_MODULE_OBARRAY(52,1629
+#define SCM_MODULE_USES(54,1731
+#define SCM_MODULE_BINDER(56,1827
+#define SCM_MODULE_EVAL_CLOSURE(58,1927
+#define SCM_MODULE_TRANSFORMER(60,2038
+#define SCM_MODULE_DUPLICATE_HANDLERS(62,2147
+#define SCM_MODULE_IMPORT_OBARRAY(64,2270
+
+/usr/local/include/guile/2.0/libguile/net_db.h,26
+#define SCM_NET_DB_H4,45
+
+/usr/local/include/guile/2.0/libguile/null-threads.h,1705
+#define SCM_NULL_THREADS_H4,51
+#define scm_i_pthread_t 41,1313
+#define scm_i_pthread_self(42,1361
+#define scm_i_pthread_create(43,1407
+#define scm_i_pthread_detach(44,1479
+#define scm_i_pthread_exit(45,1540
+#define scm_i_pthread_cancel(46,1604
+#define scm_i_pthread_cleanup_push(47,1650
+#define scm_i_pthread_cleanup_pop(48,1696
+#define scm_i_sched_yield(49,1742
+#define scm_i_pthread_sigmask 53,1804
+#define SCM_I_PTHREAD_MUTEX_INITIALIZER 57,1876
+#define scm_i_pthread_mutex_t 58,1922
+#define scm_i_pthread_mutex_init(59,1970
+#define scm_i_pthread_mutex_destroy(60,2025
+#define scm_i_pthread_mutex_trylock(61,2096
+#define scm_i_pthread_mutex_lock(62,2151
+#define scm_i_pthread_mutex_unlock(63,2206
+#define scm_i_pthread_mutexattr_recursive 64,2261
+#define SCM_I_PTHREAD_COND_INITIALIZER 68,2335
+#define scm_i_pthread_cond_t 69,2381
+#define scm_i_pthread_cond_init(70,2429
+#define scm_i_pthread_cond_destroy(71,2484
+#define scm_i_pthread_cond_signal(72,2555
+#define scm_i_pthread_cond_broadcast(73,2610
+#define scm_i_pthread_cond_wait(74,2665
+#define scm_i_pthread_cond_timedwait(75,2722
+#define scm_i_pthread_once_t 79,2793
+#define SCM_I_PTHREAD_ONCE_INIT 80,2841
+#define scm_i_pthread_once(81,2887
+typedef struct scm_i_pthread_key_t 87,3101
+  struct scm_i_pthread_key_t *next;next88,3138
+  void *value;value89,3174
+  void (*destr_func)destr_func90,3189
+} scm_i_pthread_key_t;91,3220
+#define scm_i_pthread_setspecific(95,3348
+#define scm_i_pthread_getspecific(96,3410
+#define scm_i_scm_pthread_mutex_lock 100,3496
+#define scm_i_dynwind_pthread_mutex_lock 101,3565
+#define scm_i_scm_pthread_cond_wait 102,3634
+#define scm_i_scm_pthread_cond_timedwait 103,3702
+
+/usr/local/include/guile/2.0/libguile/numbers.h,3698
+#define SCM_NUMBERS_H4,46
+typedef scm_t_int32 scm_t_wchar;33,1063
+#define SCM_T_WCHAR_DEFINED34,1096
+#define SCM_I_FIXNUM_BIT 48,1461
+#define SCM_MOST_POSITIVE_FIXNUM 49,1513
+#define SCM_MOST_NEGATIVE_FIXNUM 50,1576
+# define SCM_SRS(59,2008
+# define SCM_SRS(61,2051
+# define SCM_I_INUM(77,2733
+# define SCM_I_INUM(79,2813
+#define SCM_I_INUMP(85,3037
+#define SCM_I_NINUMP(86,3081
+#define SCM_I_MAKINUM(87,3124
+#define SCM_POSFIXABLE(91,3285
+#define SCM_NEGFIXABLE(92,3345
+#define SCM_FIXABLE(93,3405
+#define SCM_INUM0 96,3473
+#define SCM_INUM1 97,3531
+#   define copysign 108,3808
+#   define finite 109,3838
+# define SCM_MAXEXP 115,3968
+# define SCM_MAXEXP 117,4009
+# define SCM_FLTMAX 121,4101
+# define SCM_FLTMAX 123,4135
+#define SCM_INTBUFLEN 132,4429
+#define scm_tc16_big	146,4819
+#define scm_tc16_real 147,4869
+#define scm_tc16_complex 148,4929
+#define scm_tc16_fraction 149,4989
+#define SCM_INEXACTP(151,5050
+#define SCM_REALP(153,5142
+#define SCM_COMPLEXP(154,5212
+#define SCM_REAL_VALUE(156,5289
+#define SCM_COMPLEX_REAL(157,5354
+#define SCM_COMPLEX_IMAG(158,5422
+#define SCM_I_BIG_MPZ(161,5570
+#define SCM_BIGP(162,5639
+#define SCM_NUMBERP(164,5708
+#define SCM_NUMP(165,5763
+#define SCM_FRACTIONP(168,5859
+#define SCM_FRACTION_NUMERATOR(169,5937
+#define SCM_FRACTION_DENOMINATOR(170,5995
+typedef struct scm_t_double174,6059
+  SCM type;176,6089
+  SCM pad;177,6101
+  double real;178,6112
+} scm_t_double;179,6127
+typedef struct scm_t_complex181,6144
+  SCM type;183,6175
+  SCM pad;184,6187
+  double real;185,6198
+  double imag;186,6213
+} scm_t_complex;187,6228
+#define scm_to_schar 418,15304
+#define scm_from_schar 419,15339
+#define scm_to_uchar 420,15376
+#define scm_from_uchar 421,15412
+#define scm_to_char 423,15468
+#define scm_from_char 424,15504
+#define scm_to_char 426,15548
+#define scm_from_char 427,15583
+#define scm_to_short 434,15697
+#define scm_from_short 435,15733
+#define scm_to_ushort 436,15771
+#define scm_from_ushort 437,15808
+#define scm_to_short 440,15879
+#define scm_from_short 441,15916
+#define scm_to_ushort 442,15955
+#define scm_from_ushort 443,15993
+#define scm_to_short 446,16065
+#define scm_from_short 447,16102
+#define scm_to_ushort 448,16141
+#define scm_from_ushort 449,16179
+#define scm_to_int 457,16311
+#define scm_from_int 458,16346
+#define scm_to_uint 459,16383
+#define scm_from_uint 460,16419
+#define scm_to_int 463,16487
+#define scm_from_int 464,16522
+#define scm_to_uint 465,16559
+#define scm_from_uint 466,16595
+#define scm_to_long 473,16713
+#define scm_from_long 474,16749
+#define scm_to_ulong 475,16787
+#define scm_from_ulong 476,16824
+#define scm_to_long 479,16894
+#define scm_from_long 480,16930
+#define scm_to_ulong 481,16968
+#define scm_from_ulong 482,17005
+#define scm_to_intmax 489,17127
+#define scm_from_intmax 490,17165
+#define scm_to_uintmax 491,17205
+#define scm_from_uintmax 492,17244
+#define scm_to_intmax 495,17318
+#define scm_from_intmax 496,17356
+#define scm_to_uintmax 497,17396
+#define scm_from_uintmax 498,17435
+#define scm_to_long_long 507,17606
+#define scm_from_long_long 508,17647
+#define scm_to_ulong_long 509,17690
+#define scm_from_ulong_long 510,17732
+#define scm_to_ssize_t 517,17859
+#define scm_from_ssize_t 518,17898
+#define scm_to_size_t 519,17939
+#define scm_from_size_t 520,17979
+#define scm_to_ssize_t 523,18054
+#define scm_from_ssize_t 524,18093
+#define scm_to_size_t 525,18134
+#define scm_from_size_t 526,18174
+#define scm_to_ptrdiff_t 533,18308
+#define scm_from_ptrdiff_t 534,18349
+#define scm_to_ptrdiff_t 537,18432
+#define scm_from_ptrdiff_t 538,18473
+SCM_API int scm_install_gmp_memory_functions;564,19230
+
+/usr/local/include/guile/2.0/libguile/objcodes.h,915
+#define _SCM_OBJCODES_H_20,844
+struct scm_objcode25,962
+  scm_t_uint32 len;27,983
+  scm_t_uint32 metalen;28,1049
+#define SCM_C_OBJCODE_BASE(35,1294
+#define SCM_OBJCODE_TYPE_MMAP 38,1387
+#define SCM_OBJCODE_TYPE_BYTEVECTOR 39,1427
+#define SCM_OBJCODE_TYPE_SLICE 40,1467
+#define SCM_OBJCODE_TYPE_STATIC 41,1507
+#define SCM_OBJCODE_P(43,1548
+#define SCM_OBJCODE_DATA(44,1623
+#define SCM_VALIDATE_OBJCODE(45,1696
+#define SCM_OBJCODE_LEN(47,1767
+#define SCM_OBJCODE_META_LEN(48,1822
+#define SCM_OBJCODE_TOTAL_LEN(49,1886
+#define SCM_OBJCODE_BASE(50,1968
+#define SCM_MAKE_OBJCODE_TAG(52,2041
+#define SCM_OBJCODE_TYPE(53,2131
+#define SCM_OBJCODE_FLAGS(54,2195
+#define SCM_OBJCODE_IS_MMAP(55,2252
+#define SCM_OBJCODE_IS_BYTEVECTOR(56,2331
+#define SCM_OBJCODE_IS_SLICE(57,2422
+#define SCM_OBJCODE_IS_STATIC(58,2503
+#define SCM_OBJCODE_NATIVE_CODE(60,2587
+#define SCM_SET_OBJCODE_NATIVE_CODE(61,2644
+
+/usr/local/include/guile/2.0/libguile/objprop.h,27
+#define SCM_OBJPROP_H4,46
+
+/usr/local/include/guile/2.0/libguile/options.h,301
+#define SCM_OPTIONS_H4,46
+typedef struct scm_t_option30,932
+  unsigned int type;32,962
+  const char *name;name33,983
+  scm_t_bits val;34,1003
+  char *doc;doc35,1021
+} scm_t_option;36,1034
+#define SCM_OPTION_BOOLEAN 39,1052
+#define SCM_OPTION_INTEGER 40,1081
+#define SCM_OPTION_SCM 41,1110
+
+/usr/local/include/guile/2.0/libguile/pairs.h,1302
+#define SCM_PAIRS_H4,44
+# define SCM_VALIDATE_PAIR(31,981
+# define SCM_VALIDATE_PAIR(34,1102
+#define scm_is_null_and_not_nil(41,1272
+#define scm_is_null_assume_not_nil(48,1440
+#define scm_is_null_or_nil(55,1677
+#define SCM_NILP(62,1840
+#define SCM_NULL_OR_NIL_P(63,1893
+#define SCM_NULLP(64,1947
+#define SCM_NNULLP(65,1986
+#define SCM_CONSP(66,2027
+#define SCM_NCONSP(67,2077
+#define scm_is_null(73,2151
+#define SCM_CAR(75,2200
+#define SCM_CDR(76,2267
+#define SCM_SETCAR(78,2335
+#define SCM_SETCDR(79,2418
+#define SCM_CAAR(81,2502
+#define SCM_CDAR(82,2549
+#define SCM_CADR(83,2596
+#define SCM_CDDR(84,2643
+#define SCM_CAAAR(86,2691
+#define SCM_CDAAR(87,2749
+#define SCM_CADAR(88,2807
+#define SCM_CDDAR(89,2865
+#define SCM_CAADR(90,2923
+#define SCM_CDADR(91,2981
+#define SCM_CADDR(92,3039
+#define SCM_CDDDR(93,3097
+#define SCM_CAAAAR(95,3156
+#define SCM_CDAAAR(96,3225
+#define SCM_CADAAR(97,3294
+#define SCM_CDDAAR(98,3363
+#define SCM_CAADAR(99,3432
+#define SCM_CDADAR(100,3501
+#define SCM_CADDAR(101,3570
+#define SCM_CDDDAR(102,3639
+#define SCM_CAAADR(103,3708
+#define SCM_CDAADR(104,3777
+#define SCM_CADADR(105,3846
+#define SCM_CDDADR(106,3915
+#define SCM_CAADDR(107,3984
+#define SCM_CDADDR(108,4053
+#define SCM_CADDDR(109,4122
+#define SCM_CDDDDR(110,4191
+
+/usr/local/include/guile/2.0/libguile/poll.h,24
+#define SCM_POLL_H4,43
+
+/usr/local/include/guile/2.0/libguile/ports.h,3164
+#define SCM_PORTS_H4,44
+#define SCM_INITIAL_PUTBACK_BUF_SIZE 37,1134
+typedef enum scm_t_port_rw_active 40,1212
+  SCM_PORT_NEITHER 41,1248
+  SCM_PORT_READ 42,1272
+  SCM_PORT_WRITE 43,1293
+} scm_t_port_rw_active;44,1314
+  SCM port;50,1400
+  int revealed;51,1451
+  scm_t_bits stream;55,1619
+  SCM file_name;57,1641
+  long line_number;58,1685
+  int column_number;59,1732
+  char *encoding;encoding62,1817
+  scm_t_string_failed_conversion_handler ilseq_handler;63,1835
+  unsigned char *read_buf;read_buf74,2282
+  const unsigned char *read_pos;read_pos75,2330
+  unsigned char *read_end;read_end76,2391
+  scm_t_off read_buf_size;77,2465
+  unsigned char *saved_read_buf;saved_read_buf83,2767
+  const unsigned char *saved_read_pos;saved_read_pos84,2800
+  unsigned char *saved_read_end;saved_read_end85,2839
+  scm_t_off saved_read_buf_size;86,2872
+  unsigned char *write_buf;write_buf92,3057
+  unsigned char *write_pos;write_pos93,3110
+  unsigned char *write_end;write_end94,3184
+  scm_t_off write_buf_size;95,3253
+  unsigned char shortbuf;97,3310
+  int rw_random;99,3383
+  scm_t_port_rw_active rw_active;104,3580
+  unsigned char *putback_buf;putback_buf112,3957
+  size_t putback_buf_size;113,3987
+  void *input_cd;input_cd129,4713
+  void *output_cd;output_cd130,4785
+} scm_t_port;131,4831
+SCM_INTERNAL scm_i_pthread_mutex_t scm_i_port_table_mutex;134,4847
+SCM_INTERNAL SCM scm_i_port_weak_hash;135,4906
+#define SCM_READ_BUFFER_EMPTY_P(138,4947
+#define SCM_EOF_OBJECT_P(142,5030
+#define SCM_OPN	149,5264
+#define SCM_RDNG	150,5314
+#define SCM_WRTNG	151,5369
+#define SCM_BUF0	152,5418
+#define SCM_BUFLINE 153,5468
+#define SCM_PORTP(155,5530
+#define SCM_OPPORTP(156,5600
+#define SCM_OPINPORTP(157,5708
+#define SCM_OPOUTPORTP(158,5840
+#define SCM_INPUT_PORT_P(159,5975
+#define SCM_OUTPUT_PORT_P(162,6101
+#define SCM_OPENP(165,6228
+#define SCM_CLOSEDP(166,6298
+#define SCM_CLR_PORT_OPEN_FLAG(167,6337
+#define SCM_PTAB_ENTRY(170,6434
+#define SCM_SETPTAB_ENTRY(171,6505
+#define SCM_STREAM(172,6588
+#define SCM_SETSTREAM(173,6650
+#define SCM_FILENAME(174,6732
+#define SCM_SET_FILENAME(175,6797
+#define SCM_LINUM(176,6868
+#define SCM_COL(177,6935
+#define SCM_REVEALED(178,7004
+#define SCM_SETREVEALED(179,7068
+#define SCM_INCLINE(181,7140
+#define SCM_ZEROCOL(182,7226
+#define SCM_INCCOL(183,7289
+#define SCM_DECCOL(184,7352
+#define SCM_TABCOL(185,7439
+#define SCM_I_MAX_PORT_TYPE_COUNT 188,7561
+typedef struct scm_t_ptob_descriptor193,7634
+  char *name;name195,7673
+  SCM (*mark)mark196,7687
+  size_t (*free)free197,7708
+  int (*print)print198,7732
+  SCM (*equalp)equalp199,7793
+  int (*close)close200,7821
+  void (*write)write202,7849
+  void (*flush)flush203,7908
+  void (*end_input)end_input205,7937
+  int (*fill_input)fill_input206,7981
+  int (*input_waiting)input_waiting207,8013
+  scm_t_off (*seek)seek209,8049
+  void (*truncate)truncate210,8111
+} scm_t_ptob_descriptor;212,8161
+#define SCM_TC2PTOBNUM(214,8187
+#define SCM_PTOBNUM(215,8234
+#define SCM_PTOBNAME(217,8341
+SCM_API scm_t_ptob_descriptor *scm_ptobs;scm_ptobs224,8557
+SCM_API long scm_numptob;225,8599
+
+/usr/local/include/guile/2.0/libguile/posix.h,88
+#define SCM_POSIX_H4,44
+SCM_INTERNAL scm_i_pthread_mutex_t scm_i_locale_mutex;97,3548
+
+/usr/local/include/guile/2.0/libguile/print.h,895
+#define SCM_PRINT_H4,44
+#define SCM_PRINT_STATE_P(35,1081
+#define SCM_PRINT_STATE(38,1222
+#define RESET_PRINT_STATE(40,1296
+#define SCM_WRITINGP(46,1402
+#define SCM_SET_WRITINGP(47,1452
+#define SCM_PORT_WITH_PS_P(49,1519
+#define SCM_PORT_WITH_PS_PORT(50,1599
+#define SCM_PORT_WITH_PS_PS(51,1664
+#define SCM_COERCE_OUTPORT(53,1730
+#define SCM_PRINT_STATE_LAYOUT 56,1822
+typedef struct scm_print_state 57,1880
+  SCM handle;58,1913
+  int revealed;59,1949
+  unsigned long writingp;60,2020
+  unsigned long fancyp;61,2061
+  unsigned long level;62,2108
+  unsigned long length;63,2148
+  SCM hot_ref;64,2211
+  unsigned long list_offset;65,2248
+  unsigned long top;66,2277
+  unsigned long ceiling;67,2328
+  SCM ref_vect;68,2387
+  SCM highlight_objects;71,2512
+} scm_print_state;72,2584
+SCM_API SCM scm_print_state_vtable;74,2604
+SCM_API scm_t_bits scm_tc16_port_with_ps;76,2641
+
+/usr/local/include/guile/2.0/libguile/procprop.h,149
+#define SCM_PROCPROP_H4,47
+SCM_API SCM scm_sym_name;30,946
+SCM_DEPRECATED SCM scm_sym_arity;32,1005
+SCM_API SCM scm_sym_system_procedure;34,1046
+
+/usr/local/include/guile/2.0/libguile/procs.h,73
+#define SCM_PROCS_H4,44
+SCM_INTERNAL SCM scm_sym_documentation;40,1324
+
+/usr/local/include/guile/2.0/libguile/programs.h,858
+#define _SCM_PROGRAMS_H_20,845
+#define SCM_F_PROGRAM_IS_BOOT 29,945
+#define SCM_F_PROGRAM_IS_PRIMITIVE 30,981
+#define SCM_F_PROGRAM_IS_PRIMITIVE_GENERIC 31,1022
+#define SCM_F_PROGRAM_IS_CONTINUATION 32,1071
+#define SCM_F_PROGRAM_IS_PARTIAL_CONTINUATION 33,1115
+#define SCM_PROGRAM_P(35,1169
+#define SCM_PROGRAM_OBJCODE(36,1243
+#define SCM_PROGRAM_OBJTABLE(37,1298
+#define SCM_PROGRAM_FREE_VARIABLES(38,1354
+#define SCM_PROGRAM_FREE_VARIABLE_REF(39,1421
+#define SCM_PROGRAM_FREE_VARIABLE_SET(40,1500
+#define SCM_PROGRAM_NUM_FREE_VARIABLES(41,1585
+#define SCM_PROGRAM_DATA(42,1655
+#define SCM_VALIDATE_PROGRAM(43,1728
+#define SCM_PROGRAM_IS_BOOT(44,1798
+#define SCM_PROGRAM_IS_PRIMITIVE(45,1875
+#define SCM_PROGRAM_IS_PRIMITIVE_GENERIC(46,1962
+#define SCM_PROGRAM_IS_CONTINUATION(47,2065
+#define SCM_PROGRAM_IS_PARTIAL_CONTINUATION(48,2158
+
+/usr/local/include/guile/2.0/libguile/promises.h,301
+#define SCM_PROMISES_H4,47
+#define SCM_F_PROMISE_COMPUTED 34,979
+#define SCM_PROMISE_COMPUTED_P(35,1020
+#define SCM_SET_PROMISE_COMPUTED(37,1116
+#define SCM_PROMISE_MUTEX 39,1217
+#define SCM_PROMISE_DATA 40,1265
+#define SCM_SET_PROMISE_DATA 41,1311
+SCM_API scm_t_bits scm_tc16_promise;44,1363
+
+/usr/local/include/guile/2.0/libguile/pthread-threads.h,1753
+#define SCM_PTHREADS_THREADS_H4,55
+#define scm_i_pthread_t 37,1127
+#define scm_i_pthread_self 38,1181
+#define scm_i_pthread_create 39,1238
+#define scm_i_pthread_detach 40,1300
+#define scm_i_pthread_exit 43,1392
+#define scm_i_pthread_exit 45,1458
+#define scm_i_pthread_cancel 49,1554
+#define scm_i_pthread_cancel 51,1622
+#define scm_i_pthread_cleanup_push 54,1689
+#define scm_i_pthread_cleanup_pop 55,1754
+#define scm_i_sched_yield 56,1818
+#define scm_i_pthread_sigmask 61,1922
+#define scm_i_pthread_sigmask 63,1991
+# define SCM_I_PTHREAD_MUTEX_INITIALIZER 69,2123
+# define SCM_I_PTHREAD_MUTEX_INITIALIZER 71,2204
+#define scm_i_pthread_mutex_t 73,2282
+#define scm_i_pthread_mutex_init 74,2342
+#define scm_i_pthread_mutex_destroy 75,2405
+#define scm_i_pthread_mutex_trylock 76,2471
+#define scm_i_pthread_mutex_lock 77,2537
+#define scm_i_pthread_mutex_unlock 78,2600
+#define SCM_I_PTHREAD_COND_INITIALIZER 83,2758
+#define scm_i_pthread_cond_t 84,2827
+#define scm_i_pthread_cond_init 85,2886
+#define scm_i_pthread_cond_destroy 86,2948
+#define scm_i_pthread_cond_signal 87,3013
+#define scm_i_pthread_cond_broadcast 88,3077
+#define scm_i_pthread_cond_wait 89,3144
+#define scm_i_pthread_cond_timedwait 90,3206
+#define scm_i_pthread_once_t 94,3287
+#define scm_i_pthread_once 95,3346
+#define SCM_I_PTHREAD_ONCE_INIT 97,3444
+#define SCM_I_PTHREAD_ONCE_INIT 99,3516
+#define scm_i_pthread_key_t 104,3617
+#define scm_i_pthread_key_create 105,3675
+#define scm_i_pthread_setspecific 106,3738
+#define scm_i_pthread_getspecific 107,3802
+#define scm_i_scm_pthread_mutex_lock 111,3896
+#define scm_i_dynwind_pthread_mutex_lock 112,3963
+#define scm_i_scm_pthread_cond_wait 113,4038
+#define scm_i_scm_pthread_cond_timedwait 114,4104
+
+/usr/local/include/guile/2.0/libguile/r6rs-ports.h,30
+#define SCM_R6RS_PORTS_H2,25
+
+/usr/local/include/guile/2.0/libguile/random.h,727
+#define SCM_RANDOM_H4,45
+typedef struct scm_t_rstate 41,1374
+  struct scm_t_rng *rng;rng42,1404
+  double normal_next;43,1429
+} scm_t_rstate;45,1510
+typedef struct scm_t_rng 47,1527
+  size_t rstate_size;48,1554
+  scm_t_uint32 (*random_bits)random_bits49,1610
+  void (*init_rstate)init_rstate50,1690
+  scm_t_rstate *(*copy_rstate)copy_rstate51,1760
+  void (*from_datum)from_datum52,1814
+  SCM (*to_datum)to_datum53,1869
+} scm_t_rng;54,1910
+SCM_API scm_t_rng scm_the_rng;56,1924
+#define scm_c_uniform32(65,2171
+SCM_API scm_t_bits scm_tc16_rstate;77,2618
+#define SCM_RSTATEP(78,2654
+#define SCM_RSTATE(79,2721
+SCM_API unsigned char scm_masktab[scm_masktab81,2786
+SCM_API SCM scm_var_random_state;83,2827
+
+/usr/local/include/guile/2.0/libguile/rdelim.h,26
+#define SCM_RDELIM_H4,45
+
+/usr/local/include/guile/2.0/libguile/read.h,247
+#define SCM_READ_H4,43
+#define SCM_LINE_INCREMENTORS 39,1252
+# define SCM_SINGLE_SPACES 42,1302
+# define SCM_SINGLE_SPACES 44,1369
+#define SCM_WHITE_SPACES 47,1429
+SCM_API SCM scm_sym_dot;53,1490
+SCM_INTERNAL void scm_i_input_error 61,1745
+
+/usr/local/include/guile/2.0/libguile/regex-posix.h,123
+#define SCM_REGEX_POSIX_H4,50
+SCM_API scm_t_bits scm_tc16_regex;28,937
+#define SCM_RGX(29,972
+#define SCM_RGXP(30,1023
+
+/usr/local/include/guile/2.0/libguile/root.h,24
+#define SCM_ROOT_H4,43
+
+/usr/local/include/guile/2.0/libguile/rw.h,22
+#define SCM_RW_H4,41
+
+/usr/local/include/guile/2.0/libguile/scmconfig.h,2275
+#define SCM_SCMCONFIG_H21,906
+#define SCM_HAVE_STDC_HEADERS 29,1036
+#define SCM_HAVE_SYS_SELECT_H 34,1145
+#define SCM_HAVE_WINSOCK2_H 35,1190
+#define SCM_ENABLE_DEPRECATED 42,1414
+#define SCM_STACK_GROWS_UP 45,1498
+#define SCM_C_INLINE 49,1620
+#define SCM_SIZEOF_CHAR 53,1702
+#define SCM_SIZEOF_UNSIGNED_CHAR 54,1728
+#define SCM_SIZEOF_SHORT 55,1763
+#define SCM_SIZEOF_UNSIGNED_SHORT 56,1790
+#define SCM_SIZEOF_LONG 57,1826
+#define SCM_SIZEOF_UNSIGNED_LONG 58,1852
+#define SCM_SIZEOF_INT 59,1887
+#define SCM_SIZEOF_UNSIGNED_INT 60,1912
+#define SCM_SIZEOF_SIZE_T 61,1946
+#define SCM_SIZEOF_LONG_LONG 65,2085
+#define SCM_SIZEOF_UNSIGNED_LONG_LONG 66,2116
+typedef int8_t scm_t_int8;69,2189
+typedef uint8_t scm_t_uint8;70,2216
+typedef int16_t scm_t_int16;71,2245
+typedef uint16_t scm_t_uint16;72,2274
+typedef int32_t scm_t_int32;73,2305
+typedef uint32_t scm_t_uint32;74,2334
+typedef intmax_t scm_t_intmax;75,2365
+typedef uintmax_t scm_t_uintmax;76,2396
+typedef intptr_t scm_t_intptr;77,2429
+typedef uintptr_t scm_t_uintptr;78,2460
+#define SCM_SIZEOF_INTMAX 79,2493
+#define SCM_HAVE_T_INT64 81,2522
+typedef int64_t scm_t_int64;82,2562
+#define SCM_HAVE_T_UINT64 83,2591
+typedef uint64_t scm_t_uint64;84,2632
+typedef ptrdiff_t scm_t_ptrdiff;88,2767
+#define SCM_SIZEOF_SCM_T_PTRDIFF 89,2800
+#define SCM_SIZEOF_INTPTR_T 92,2881
+#define SCM_SIZEOF_UINTPTR_T 94,2957
+typedef struct timespec scm_t_timespec;97,3045
+#define SCM_USE_PTHREAD_THREADS 101,3198
+#define SCM_USE_NULL_THREADS 103,3301
+#define SCM_NEED_BRACES_ON_PTHREAD_ONCE_INIT 105,3418
+#define SCM_NEED_BRACES_ON_PTHREAD_MUTEX_INITIALIZER 108,3568
+#define SCM_HAVE_GC_PTHREAD_CANCEL 109,3636
+#define SCM_HAVE_GC_PTHREAD_EXIT 110,3686
+#define SCM_HAVE_GC_PTHREAD_SIGMASK 111,3734
+#define SCM_HAVE_STRUCT_DIRENT64 116,3870
+#define SCM_HAVE_READDIR64_R 118,3971
+typedef scm_t_int64 scm_t_off;119,4015
+#define SCM_HAVE_THREAD_STORAGE_CLASS121,4120
+# define USE_THREADS 124,4190
+# define GUILE_ISELECT 125,4235
+# define READER_EXTENSIONS 126,4282
+# define DEBUG_EXTENSIONS 127,4333
+# define DYNAMIC_LINKING 128,4383
+#define SCM_HAVE_ARRAYS 131,4440
+#define SCM_ICONVEH_ERROR 134,4522
+#define SCM_ICONVEH_QUESTION_MARK 135,4550
+#define SCM_ICONVEH_ESCAPE_SEQUENCE 136,4586
+
+/usr/local/include/guile/2.0/libguile/scmsigs.h,121
+#define SCM_SCMSIGS_H4,46
+SCM_INTERNAL scm_i_thread *scm_i_signal_delivery_thread;scm_i_signal_delivery_thread49,1688
+
+/usr/local/include/guile/2.0/libguile/script.h,79
+#define SCM_SCRIPT_H4,45
+SCM_API char *scm_usage_name;scm_usage_name39,1388
+
+/usr/local/include/guile/2.0/libguile/simpos.h,26
+#define SCM_SIMPOS_H4,45
+
+/usr/local/include/guile/2.0/libguile/smob.h,2256
+#define SCM_SMOB_H4,43
+typedef struct scm_smob_descriptor34,1056
+  char const *name;name36,1093
+  size_t size;37,1113
+  SCM (*mark)mark38,1128
+  size_t (*free)free39,1149
+  int (*print)print40,1173
+  SCM (*equalp)equalp41,1234
+  scm_t_subr apply;42,1262
+  SCM apply_trampoline_objcode;44,1343
+} scm_smob_descriptor;45,1375
+#define SCM_SMOB_TYPE_MASK	48,1400
+#define SCM_SMOB_TYPE_BITS(49,1435
+#define SCM_TC2SMOBNUM(50,1472
+#define SCM_SMOBNUM(51,1520
+#define SCM_SMOBNAME(53,1629
+#define SCM_SMOB_PREDICATE(54,1686
+#define SCM_SMOB_DESCRIPTOR(55,1754
+#define SCM_SMOB_APPLICABLE_P(56,1815
+#define SCM_I_MAX_SMOB_TYPE_COUNT 59,1918
+SCM_API long scm_numsmob;61,1958
+SCM_API scm_smob_descriptor scm_smobs[scm_smobs62,1984
+scm_new_smob 86,2864
+scm_new_double_smob 97,3140
+#define SCM_NEWSMOB(109,3502
+#define SCM_RETURN_NEWSMOB(111,3598
+#define SCM_NEWSMOB2(114,3698
+#define SCM_RETURN_NEWSMOB2(117,3865
+#define SCM_NEWSMOB3(121,4052
+#define SCM_RETURN_NEWSMOB3(124,4269
+#define SCM_SMOB_DATA_N(130,4493
+#define SCM_SET_SMOB_DATA_N(131,4551
+#define SCM_SMOB_DATA_0(133,4631
+#define SCM_SMOB_DATA_1(134,4686
+#define SCM_SMOB_DATA_2(135,4741
+#define SCM_SMOB_DATA_3(136,4796
+#define SCM_SET_SMOB_DATA_0(137,4851
+#define SCM_SET_SMOB_DATA_1(138,4927
+#define SCM_SET_SMOB_DATA_2(139,5003
+#define SCM_SET_SMOB_DATA_3(140,5079
+#define SCM_SMOB_FLAGS(142,5156
+#define SCM_SMOB_DATA(143,5224
+#define SCM_SET_SMOB_FLAGS(144,5272
+#define SCM_SET_SMOB_DATA(145,5381
+#define SCM_SMOB_OBJECT_N(147,5453
+#define SCM_SET_SMOB_OBJECT_N(148,5514
+#define SCM_SMOB_OBJECT_N_LOC(149,5593
+#define SCM_SMOB_OBJECT_1(152,5725
+#define SCM_SMOB_OBJECT_2(153,5784
+#define SCM_SMOB_OBJECT_3(154,5843
+#define SCM_SET_SMOB_OBJECT_1(156,5983
+#define SCM_SET_SMOB_OBJECT_2(157,6060
+#define SCM_SET_SMOB_OBJECT_3(158,6137
+#define SCM_SMOB_OBJECT_0_LOC(159,6214
+#define SCM_SMOB_OBJECT_1_LOC(160,6281
+#define SCM_SMOB_OBJECT_2_LOC(161,6348
+#define SCM_SMOB_OBJECT_3_LOC(162,6415
+#define SCM_SMOB_OBJECT(164,6483
+#define SCM_SET_SMOB_OBJECT(165,6535
+#define SCM_SMOB_OBJECT_LOC(166,6607
+#define SCM_SMOB_APPLY_0(169,6670
+#define SCM_SMOB_APPLY_1(170,6716
+#define SCM_SMOB_APPLY_2(171,6770
+#define SCM_SMOB_APPLY_3(172,6831
+
+/usr/local/include/guile/2.0/libguile/snarf.h,2083
+#define SCM_SNARF_H4,44
+#define SCM_FUNC_CAST_ARBITRARY_ARGS 30,1091
+# define SCM_SUPPORT_STATIC_ALLOCATION35,1220
+#define scm_i_paste(39,1310
+#define scm_i_paste3(40,1348
+# define SCM_SNARF_HERE(64,2125
+# define SCM_SNARF_INIT_PREFIX 65,2152
+# define SCM_SNARF_INIT(66,2186
+# define SCM_SNARF_DOCS(67,2241
+#  define SCM_SNARF_HERE(70,2355
+#  define SCM_SNARF_INIT(71,2383
+#  define SCM_SNARF_DOCS(72,2411
+#  define SCM_SNARF_HERE(82,2648
+#  define SCM_SNARF_INIT(83,2678
+#  define SCM_SNARF_DOCS(84,2706
+#define SCM_DEFINE_GSUBR(88,2802
+#define SCM_DEFINE(103,3335
+#define SCM_DEFINE 137,5200
+#define SCM_PRIMITIVE_GENERIC(142,5283
+#define SCM_DEFINE_PUBLIC(156,5767
+#define SCM_PROC(168,6190
+#define SCM_REGISTER_PROC(173,6436
+#define SCM_GPROC(180,6811
+# define SCM_SYMBOL(192,7215
+# define SCM_GLOBAL_SYMBOL(200,7481
+# define SCM_SYMBOL(210,7792
+# define SCM_GLOBAL_SYMBOL(214,7941
+#define SCM_KEYWORD(220,8136
+#define SCM_GLOBAL_KEYWORD(224,8279
+#define SCM_VARIABLE(228,8422
+#define SCM_GLOBAL_VARIABLE(232,8568
+#define SCM_VARIABLE_INIT(236,8714
+#define SCM_GLOBAL_VARIABLE_INIT(240,8873
+#define SCM_MUTEX(244,9032
+#define SCM_GLOBAL_MUTEX(248,9176
+#define SCM_REC_MUTEX(252,9320
+#define SCM_GLOBAL_REC_MUTEX(256,9480
+#define SCM_SMOB(260,9640
+#define SCM_GLOBAL_SMOB(264,9789
+#define SCM_SMOB_MARK(268,9938
+#define SCM_GLOBAL_SMOB_MARK(272,10078
+#define SCM_SMOB_FREE(276,10218
+#define SCM_GLOBAL_SMOB_FREE(280,10361
+#define SCM_SMOB_PRINT(284,10504
+#define SCM_GLOBAL_SMOB_PRINT(288,10695
+#define SCM_SMOB_EQUALP(292,10886
+#define SCM_GLOBAL_SMOB_EQUALP(296,11048
+#define SCM_SMOB_APPLY(300,11210
+#define SCM_GLOBAL_SMOB_APPLY(304,11393
+#define SCM_IMMUTABLE_CELL(313,11673
+#define SCM_IMMUTABLE_DOUBLE_CELL(322,12185
+#define SCM_STATIC_DOUBLE_CELL(331,12541
+#define SCM_IMMUTABLE_STRINGBUF(340,12905
+#define SCM_IMMUTABLE_STRING(355,13280
+#define SCM_IMMUTABLE_POINTER(364,13646
+#define SCM_STATIC_SUBR_OBJVECT(368,13800
+#define SCM_STATIC_PROGRAM(377,14323
+#undef SCM_ASSERT395,15210
+#define SCM_ASSERT(396,15228
+
+/usr/local/include/guile/2.0/libguile/socket.h,26
+#define SCM_SOCKET_H4,45
+
+/usr/local/include/guile/2.0/libguile/sort.h,24
+#define SCM_SORT_H4,43
+
+/usr/local/include/guile/2.0/libguile/srcprop.h,294
+#define SCM_SRCPROP_H4,46
+#define SCM_PROCTRACEP(33,991
+#define SCM_SOURCE_PROPERTY_FLAG_BREAK 34,1075
+SCM_API scm_t_bits scm_tc16_srcprops;36,1117
+SCM_API SCM scm_sym_filename;38,1156
+SCM_API SCM scm_sym_copy;39,1186
+SCM_API SCM scm_sym_line;40,1212
+SCM_API SCM scm_sym_column;41,1238
+
+/usr/local/include/guile/2.0/libguile/srfi-1.h,28
+#define SCM_SRFI_1_H23,902
+
+/usr/local/include/guile/2.0/libguile/srfi-13.h,27
+#define SCM_SRFI_13_H2,22
+
+/usr/local/include/guile/2.0/libguile/srfi-14.h,1128
+#define SCM_SRFI_14_H2,22
+  scm_t_wchar lo;29,963
+  scm_t_wchar hi;30,981
+} scm_t_char_range;31,999
+  size_t len;35,1038
+  scm_t_char_range *ranges;ranges36,1052
+} scm_t_char_set;37,1080
+  size_t range;41,1116
+  scm_t_wchar n;42,1132
+} scm_t_char_set_cursor;43,1149
+#define SCM_CHARSET_GET(45,1175
+#define SCM_CHARSETP(48,1303
+SCM_API int scm_tc16_charset;51,1424
+SCM_API SCM scm_char_set_lower_case;105,4289
+SCM_API SCM scm_char_set_upper_case;106,4326
+SCM_API SCM scm_char_set_title_case;107,4363
+SCM_API SCM scm_char_set_letter;108,4400
+SCM_API SCM scm_char_set_digit;109,4433
+SCM_API SCM scm_char_set_letter_and_digit;110,4465
+SCM_API SCM scm_char_set_graphic;111,4508
+SCM_API SCM scm_char_set_printing;112,4542
+SCM_API SCM scm_char_set_whitespace;113,4577
+SCM_API SCM scm_char_set_iso_control;114,4614
+SCM_API SCM scm_char_set_punctuation;115,4652
+SCM_API SCM scm_char_set_symbol;116,4690
+SCM_API SCM scm_char_set_hex_digit;117,4723
+SCM_API SCM scm_char_set_blank;118,4759
+SCM_API SCM scm_char_set_ascii;119,4791
+SCM_API SCM scm_char_set_empty;120,4823
+SCM_API SCM scm_char_set_full;121,4855
+
+/usr/local/include/guile/2.0/libguile/srfi-4.h,26
+#define SCM_SRFI_4_H2,21
+
+/usr/local/include/guile/2.0/libguile/srfi-60.h,29
+#define SCM_SRFI_60_H23,887
+
+/usr/local/include/guile/2.0/libguile/stackchk.h,280
+#define SCM_STACKCHK_H4,47
+#define SCM_STACK_CHECKING_P 35,1094
+#  define SCM_STACK_OVERFLOW_P(40,1258
+#  define SCM_STACK_OVERFLOW_P(43,1372
+# define SCM_CHECK_STACK\SCM_CHECK_STACK46,1487
+# define SCM_CHECK_STACK 53,1669
+SCM_API int scm_stack_checking_enabled_p;56,1707
+
+/usr/local/include/guile/2.0/libguile/stacks.h,357
+#define SCM_STACKS_H4,45
+SCM_API SCM scm_stack_type;32,990
+#define SCM_STACK_LAYOUT 34,1019
+#define SCM_STACKP(39,1189
+#define SCM_STACK_LENGTH(40,1288
+#define SCM_SET_STACK_LENGTH(41,1362
+#define SCM_STACK_ID(42,1446
+#define SCM_SET_STACK_ID(43,1502
+#define SCM_STACK_FRAME(44,1566
+#define SCM_SET_STACK_FRAME(45,1625
+#define SCM_FRAMEP(47,1693
+
+/usr/local/include/guile/2.0/libguile/stime.h,116
+#define SCM_STIME_H4,44
+SCM_API long scm_c_time_units_per_second;30,945
+#define SCM_TIME_UNITS_PER_SECOND 31,987
+
+/usr/local/include/guile/2.0/libguile/strings.h,724
+#define SCM_STRINGS_H4,46
+  SCM_FAILED_CONVERSION_ERROR 96,3708
+  SCM_FAILED_CONVERSION_ERROR = SCM_ICONVEH_ERROR,96,3708
+  SCM_FAILED_CONVERSION_QUESTION_MARK 97,3759
+  SCM_FAILED_CONVERSION_QUESTION_MARK = SCM_ICONVEH_QUESTION_MARK,97,3759
+  SCM_FAILED_CONVERSION_ESCAPE_SEQUENCE 98,3826
+  SCM_FAILED_CONVERSION_ESCAPE_SEQUENCE = SCM_ICONVEH_ESCAPE_SEQUENCE98,3826
+} scm_t_string_failed_conversion_handler;99,3896
+SCM_INTERNAL SCM scm_nullstr;101,3939
+#define scm_tc7_ro_string 171,7166
+#define SCM_I_STRINGBUF_F_SHARED 174,7272
+#define SCM_I_STRINGBUF_F_WIDE 175,7316
+#define SCM_STRINGP(246,10304
+#define SCM_STRING_CHARS(247,10361
+#define SCM_STRING_LENGTH(248,10423
+#define SCM_STRING_UCHARS(249,10486
+
+/usr/local/include/guile/2.0/libguile/strorder.h,28
+#define SCM_STRORDER_H4,47
+
+/usr/local/include/guile/2.0/libguile/strports.h,203
+#define SCM_STRPORTS_H4,47
+#define SCM_STRPORTP(31,946
+#define SCM_OPSTRPORTP(33,1061
+#define SCM_OPINSTRPORTP(35,1176
+#define SCM_OPOUTSTRPORTP(37,1274
+SCM_API scm_t_bits scm_tc16_strport;42,1397
+
+/usr/local/include/guile/2.0/libguile/struct.h,2961
+#define SCM_STRUCT_H4,45
+#define SCM_VTABLE_BASE_LAYOUT 70,2221
+#define scm_vtable_index_layout 80,2741
+#define scm_vtable_index_flags	81,2851
+#define scm_vtable_index_self	82,2913
+#define scm_vtable_index_instance_finalize 83,2993
+#define scm_vtable_index_instance_printer 84,3089
+#define scm_vtable_index_name 85,3172
+#define scm_vtable_index_size 86,3244
+#define scm_vtable_index_reserved_7 87,3334
+#define scm_vtable_offset_user 88,3379
+#define SCM_APPLICABLE_BASE_LAYOUT 91,3529
+#define SCM_APPLICABLE_WITH_SETTER_BASE_LAYOUT 93,3602
+#define scm_applicable_struct_index_procedure 96,3722
+#define scm_applicable_struct_index_setter 100,4031
+#define SCM_VTABLE_FLAG_VALIDATED 105,4334
+#define SCM_VTABLE_FLAG_VTABLE 106,4426
+#define SCM_VTABLE_FLAG_APPLICABLE_VTABLE 107,4522
+#define SCM_VTABLE_FLAG_APPLICABLE 108,4629
+#define SCM_VTABLE_FLAG_SETTER_VTABLE 109,4721
+#define SCM_VTABLE_FLAG_SETTER 110,4836
+#define SCM_VTABLE_FLAG_SIMPLE 111,4937
+#define SCM_VTABLE_FLAG_SIMPLE_RW 112,5047
+#define SCM_VTABLE_FLAG_RESERVED_0 113,5162
+#define SCM_VTABLE_FLAG_RESERVED_1 114,5207
+#define SCM_VTABLE_FLAG_RESERVED_2 115,5252
+#define SCM_VTABLE_FLAG_SMOB_0 116,5298
+#define SCM_VTABLE_FLAG_GOOPS_0 117,5340
+#define SCM_VTABLE_FLAG_GOOPS_1 118,5383
+#define SCM_VTABLE_FLAG_GOOPS_2 119,5426
+#define SCM_VTABLE_FLAG_GOOPS_3 120,5469
+#define SCM_VTABLE_USER_FLAG_SHIFT 121,5512
+typedef void (*scm_t_struct_finalize)scm_t_struct_finalize123,5551
+#define SCM_STRUCTP(125,5601
+#define SCM_STRUCT_SLOTS(126,5676
+#define SCM_STRUCT_SLOT_REF(127,5736
+#define SCM_STRUCT_SLOT_SET(128,5798
+#define SCM_STRUCT_DATA(129,5864
+#define SCM_STRUCT_DATA_REF(130,5928
+#define SCM_STRUCT_DATA_SET(131,5989
+#define SCM_VTABLE_LAYOUT(135,6154
+#define SCM_SET_VTABLE_LAYOUT(136,6247
+#define SCM_VTABLE_FLAGS(137,6343
+#define SCM_SET_VTABLE_FLAGS(138,6433
+#define SCM_CLEAR_VTABLE_FLAGS(139,6530
+#define SCM_VTABLE_FLAG_IS_SET(140,6630
+#define SCM_VTABLE_INSTANCE_FINALIZER(141,6726
+#define SCM_SET_VTABLE_INSTANCE_FINALIZER(142,6852
+#define SCM_VTABLE_INSTANCE_PRINTER(143,6978
+#define SCM_SET_VTABLE_INSTANCE_PRINTER(144,7079
+#define SCM_VTABLE_NAME(145,7190
+#define SCM_SET_VTABLE_NAME(146,7279
+#define SCM_STRUCT_VTABLE_DATA(150,7521
+#define SCM_STRUCT_VTABLE_SLOTS(151,7615
+#define SCM_STRUCT_VTABLE(152,7702
+#define SCM_STRUCT_LAYOUT(155,7912
+#define SCM_STRUCT_PRINTER(156,8005
+#define SCM_STRUCT_FINALIZER(157,8109
+#define SCM_STRUCT_VTABLE_FLAGS(158,8237
+#define SCM_STRUCT_VTABLE_FLAG_IS_SET(159,8326
+#define SCM_STRUCT_APPLICABLE_P(161,8427
+#define SCM_STRUCT_SETTER_P(162,8529
+#define SCM_STRUCT_PROCEDURE(163,8631
+#define SCM_SET_STRUCT_PROCEDURE(164,8729
+#define SCM_STRUCT_SETTER(165,8836
+#define SCM_SET_STRUCT_SETTER(166,8938
+SCM_API SCM scm_standard_vtable_vtable;168,9040
+SCM_API SCM scm_applicable_struct_vtable_vtable;169,9080
+SCM_API SCM scm_applicable_struct_with_setter_vtable_vtable;170,9129
+
+/usr/local/include/guile/2.0/libguile/symbols.h,420
+#define SCM_SYMBOLS_H4,46
+#define scm_is_symbol(29,959
+#define scm_i_symbol_hash(31,1085
+#define scm_i_symbol_is_interned(32,1159
+#define SCM_I_F_SYMBOL_UNINTERNED 35,1253
+#define SCM_SYMBOLP(41,1346
+#define SCM_SYMBOL_FUNC(42,1391
+#define SCM_SET_SYMBOL_FUNC(43,1441
+#define SCM_SYMBOL_PROPS(44,1501
+#define SCM_SET_SYMBOL_PROPS(45,1552
+#define SCM_SYMBOL_HASH(46,1613
+#define SCM_SYMBOL_INTERNED_P(47,1665
+
+/usr/local/include/guile/2.0/libguile/tags.h,4681
+#define SCM_TAGS_H4,43
+typedef scm_t_intptr  scm_t_signed_bits;65,2271
+typedef scm_t_uintptr scm_t_bits;66,2312
+#define SCM_T_SIGNED_BITS_MAX 68,2347
+#define SCM_T_SIGNED_BITS_MIN 69,2394
+#define SCM_T_BITS_MAX 70,2441
+typedef union SCM 77,2670
+typedef union SCM { struct { scm_t_bits n;77,2670
+typedef union SCM { struct { scm_t_bits n; } n;77,2670
+typedef union SCM { struct { scm_t_bits n; } n; } SCM;77,2670
+#   define SCM_UNPACK(78,2725
+#   define SCM_PACK(79,2760
+    typedef struct scm_unused_struct 84,3001
+    typedef struct scm_unused_struct { char scm_unused_field;84,3001
+    typedef struct scm_unused_struct { char scm_unused_field; } *SCM;SCM84,3001
+#   define SCM_UNPACK(96,3522
+#   define SCM_UNPACK(98,3572
+#   define SCM_PACK(105,3765
+    typedef scm_t_bits SCM;112,3987
+#   define SCM_UNPACK(113,4015
+#   define SCM_PACK(114,4044
+#define scm_is_eq(121,4244
+#define SCM_IMP(359,16786
+#define SCM_NIMP(360,16828
+#define SCM_I_CONSP(372,17358
+#define scm_tc2_int 378,17463
+#define SCM_ITAG3(383,17528
+#define SCM_TYP3(384,17573
+#define scm_tc3_cons	386,17621
+#define scm_tc3_struct 387,17647
+#define scm_tc3_int_1	388,17677
+#define scm_tc3_unused	389,17719
+#define scm_tc3_imm24	390,17746
+#define scm_tc3_tc7_1	391,17772
+#define scm_tc3_int_2	392,17798
+#define scm_tc3_tc7_2	393,17840
+#define SCM_ITAG7(398,17896
+#define SCM_TYP7(399,17942
+#define SCM_TYP7S(400,17998
+#define scm_tc7_symbol	402,18056
+#define scm_tc7_variable 403,18082
+#define scm_tc7_vector	406,18130
+#define scm_tc7_wvect	407,18157
+#define scm_tc7_string	409,18184
+#define scm_tc7_number	410,18211
+#define scm_tc7_stringbuf 411,18238
+#define scm_tc7_bytevector	412,18273
+#define scm_tc7_pointer	414,18304
+#define scm_tc7_hashtable	415,18332
+#define scm_tc7_fluid	416,18361
+#define scm_tc7_dynamic_state	417,18387
+#define scm_tc7_frame	419,18421
+#define scm_tc7_objcode	420,18447
+#define scm_tc7_vm	421,18475
+#define scm_tc7_vm_cont	422,18498
+#define scm_tc7_prompt	424,18527
+#define scm_tc7_with_fluids	425,18554
+#define scm_tc7_unused_19	426,18585
+#define scm_tc7_program	427,18614
+#define scm_tc7_array	428,18642
+#define scm_tc7_bitvector	429,18668
+#define scm_tc7_unused_20	430,18697
+#define scm_tc7_unused_11	431,18726
+#define scm_tc7_unused_12	432,18755
+#define scm_tc7_unused_18	433,18785
+#define scm_tc7_unused_13	434,18815
+#define scm_tc7_unused_14	435,18845
+#define scm_tc7_unused_15	436,18875
+#define scm_tc7_unused_16	437,18905
+#define scm_tc7_port	440,18972
+#define scm_tc7_smob	446,19257
+#define SCM_TYP16(450,19338
+#define SCM_TYP16_PREDICATE(451,19390
+enum scm_tc8_tags459,19499
+  scm_tc8_flag 461,19519
+  scm_tc8_flag = scm_tc3_imm24 461,19519
+  scm_tc8_flag = scm_tc3_imm24 + 0x00,x00461,19519
+  scm_tc8_char 462,19591
+  scm_tc8_char = scm_tc3_imm24 462,19591
+  scm_tc8_char = scm_tc3_imm24 + 0x08,x08462,19591
+  scm_tc8_unused_0 463,19648
+  scm_tc8_unused_0 = scm_tc3_imm24 463,19648
+  scm_tc8_unused_0 = scm_tc3_imm24 + 0x10,x10463,19648
+  scm_tc8_unused_1 464,19691
+  scm_tc8_unused_1 = scm_tc3_imm24 464,19691
+  scm_tc8_unused_1 = scm_tc3_imm24 + 0x18x18464,19691
+#define SCM_ITAG8(467,19737
+#define SCM_MAKE_ITAG8_BITS(468,19783
+#define SCM_MAKE_ITAG8(469,19838
+#define SCM_ITAG8_DATA(470,19911
+#define SCM_IFLAGP(477,20082
+#define SCM_MAKIFLAG_BITS(478,20139
+#define SCM_IFLAGNUM(479,20211
+#define SCM_BOOL_F_BITS	512,21589
+#define SCM_ELISP_NIL_BITS	513,21636
+#define SCM_BOOL_F	515,21686
+#define SCM_ELISP_NIL	516,21733
+#define SCM_XXX_ANOTHER_LISP_FALSE_DONT_USE	519,21812
+#define SCM_EOL_BITS	522,21886
+#define SCM_BOOL_T_BITS 523,21930
+#define SCM_EOL	525,21978
+#define SCM_BOOL_T 526,22020
+#define SCM_XXX_ANOTHER_BOOLEAN_DONT_USE_0	529,22094
+#define SCM_XXX_ANOTHER_BOOLEAN_DONT_USE_1	530,22159
+#define SCM_XXX_ANOTHER_BOOLEAN_DONT_USE_2	531,22224
+#define SCM_UNSPECIFIED_BITS	534,22297
+#define SCM_UNDEFINED_BITS	535,22348
+#define SCM_EOF_VAL_BITS 536,22397
+#define SCM_UNSPECIFIED	538,22447
+#define SCM_UNDEFINED	539,22504
+#define SCM_EOF_VAL 540,22558
+#define SCM_UNBOUND_BITS	550,23133
+#define SCM_UNBOUND	551,23181
+#define SCM_UNBNDP(553,23231
+#define SCM_MATCHES_BITS_IN_COMMON(574,23933
+#define SCM_WITH_LEAST_SIGNIFICANT_1_BIT_CLEARED(584,24254
+#define SCM_HAS_EXACTLY_ONE_BIT_SET(585,24323
+#define SCM_HAS_EXACTLY_TWO_BITS_SET(587,24434
+#define SCM_BITS_DIFFER_IN_EXACTLY_ONE_BIT_POSITION(590,24560
+#define SCM_BITS_DIFFER_IN_EXACTLY_TWO_BIT_POSITIONS(592,24664
+#define scm_tcs_cons_imcar 607,25172
+#define scm_tcs_cons_nimcar 627,26480
+#define scm_tcs_struct 647,26961
+#define SCM_CELLP(669,27487
+#define SCM_NCELLP(670,27561
+
+/usr/local/include/guile/2.0/libguile/threads.h,2072
+#define SCM_THREADS_H4,46
+SCM_API scm_t_bits scm_tc16_thread;46,1350
+SCM_API scm_t_bits scm_tc16_mutex;47,1386
+SCM_API scm_t_bits scm_tc16_condvar;48,1421
+typedef struct scm_i_thread 50,1459
+  struct scm_i_thread *next_thread;next_thread51,1489
+  SCM handle;53,1526
+  scm_i_pthread_t pthread;54,1540
+  SCM cleanup_handler;56,1568
+  SCM join_queue;57,1591
+  scm_i_pthread_mutex_t admin_mutex;59,1610
+  SCM mutexes;60,1647
+  scm_i_pthread_mutex_t *held_mutex;held_mutex61,1662
+  SCM result;63,1700
+  int canceled;64,1714
+  int exited;65,1730
+  int guile_mode;68,1810
+  SCM sleep_object;70,1829
+  scm_i_pthread_mutex_t *sleep_mutex;sleep_mutex71,1849
+  scm_i_pthread_cond_t sleep_cond;72,1887
+  int sleep_fd,73,1922
+  int sleep_fd, sleep_pipe[sleep_pipe73,1922
+  void *current_mark_stack_ptr;current_mark_stack_ptr77,2092
+  void *current_mark_stack_limit;current_mark_stack_limit78,2124
+  SCM dynamic_state;82,2197
+  SCM dynwinds;83,2218
+  SCM active_asyncs;87,2265
+  unsigned int block_asyncs;89,2382
+  unsigned int pending_asyncs;91,2501
+  SCM continuation_root;107,3143
+  SCM_STACKITEM *continuation_base;continuation_base108,3168
+  SCM vm;111,3259
+  SCM_STACKITEM *base;base112,3269
+  scm_i_jmp_buf regs;113,3292
+  void *register_backing_store_base;register_backing_store_base115,3330
+  scm_t_contregs *pending_rbs_continuation;pending_rbs_continuation116,3367
+  int critical_section_level;120,3473
+} scm_i_thread;122,3504
+#define SCM_I_IS_THREAD(124,3521
+#define SCM_I_THREAD_DATA(125,3591
+#define SCM_VALIDATE_THREAD(127,3659
+#define SCM_VALIDATE_MUTEX(129,3743
+#define SCM_VALIDATE_CONDVAR(131,3825
+#define SCM_THREAD_SWITCHING_CODE 148,4529
+SCM_INTERNAL scm_i_pthread_key_t scm_i_thread_key;194,6268
+SCM_INTERNAL SCM_THREAD_LOCAL scm_i_thread *scm_i_current_thread;scm_i_current_thread198,6359
+#  define SCM_I_CURRENT_THREAD 199,6425
+#  define SCM_I_CURRENT_THREAD	203,6525
+# define scm_i_dynwinds(208,6678
+# define scm_i_set_dynwinds(209,6745
+SCM_INTERNAL scm_i_pthread_mutex_t scm_i_misc_mutex;214,6852
+
+/usr/local/include/guile/2.0/libguile/throw.h,222
+#define SCM_THROW_H4,44
+typedef SCM (*scm_t_catch_body)scm_t_catch_body30,934
+typedef SCM (*scm_t_catch_handler)scm_t_catch_handler31,980
+struct scm_body_thunk_data57,1794
+  SCM tag;62,1978
+  SCM body_proc;66,2092
+
+/usr/local/include/guile/2.0/libguile/trees.h,25
+#define SCM_TREES_H4,44
+
+/usr/local/include/guile/2.0/libguile/uniform.h,175
+#define SCM_UNIFORM_H4,46
+SCM_INTERNAL const size_t scm_i_array_element_type_sizes[scm_i_array_element_type_sizes36,1093
+#define SCM_ARRAY_ELEMENT_TYPE_IS_UNBOXED(37,1153
+
+/usr/local/include/guile/2.0/libguile/validate.h,3725
+#define SCM_VALIDATE_H4,47
+#define SCM_SYSERROR 29,995
+#define SCM_MEMORY_ERROR 31,1060
+#define SCM_SYSERROR_MSG(33,1133
+#define SCM_MISC_ERROR(36,1248
+#define SCM_WRONG_NUM_ARGS(39,1343
+#define SCM_WRONG_TYPE_ARG(42,1431
+#define SCM_NUM2SIZE(45,1532
+#define SCM_NUM2SIZE_DEF(47,1586
+#define SCM_NUM2PTRDIFF(50,1678
+#define SCM_NUM2PTRDIFF_DEF(52,1736
+#define SCM_NUM2SHORT(55,1832
+#define SCM_NUM2SHORT_DEF(57,1886
+#define SCM_NUM2USHORT(60,1978
+#define SCM_NUM2USHORT_DEF(62,2034
+#define SCM_NUM2INT(65,2128
+#define SCM_NUM2INT_DEF(67,2178
+#define SCM_NUM2UINT(70,2266
+#define SCM_NUM2UINT_DEF(72,2318
+#define SCM_NUM2ULONG(75,2408
+#define SCM_NUM2ULONG_DEF(77,2462
+#define SCM_NUM2LONG(80,2554
+#define SCM_NUM2LONG_DEF(82,2606
+#define SCM_NUM2LONG_LONG(85,2696
+#define SCM_NUM2LONG_LONG_DEF(87,2758
+#define SCM_NUM2ULONG_LONG(90,2858
+#define SCM_NUM2ULONG_LONG_DEF(92,2922
+#define SCM_NUM2FLOAT(95,3024
+#define SCM_NUM2DOUBLE(97,3087
+#define SCM_OUT_OF_RANGE(99,3143
+#define SCM_ASSERT_RANGE(102,3259
+#define SCM_MUST_MALLOC_TYPE(107,3426
+#define SCM_MUST_MALLOC_TYPE_NUM(110,3520
+#define SCM_MUST_MALLOC(113,3631
+#define SCM_MAKE_VALIDATE(115,3700
+#define SCM_I_MAKE_VALIDATE_MSG2(120,3840
+#define SCM_MAKE_VALIDATE_MSG(125,3982
+#define SCM_VALIDATE_REST_ARGUMENT(131,4097
+#define SCM_VALIDATE_NIM(140,4332
+#define SCM_VALIDATE_BOOL(142,4424
+#define SCM_VALIDATE_BOOL_COPY(147,4564
+#define SCM_VALIDATE_BYTEVECTOR(153,4732
+#define SCM_VALIDATE_CHAR(157,4873
+#define SCM_VALIDATE_CHAR_COPY(159,4963
+#define SCM_VALIDATE_STRING(165,5122
+#define SCM_VALIDATE_REAL(170,5262
+#define SCM_VALIDATE_NUMBER(172,5343
+#define SCM_VALIDATE_USHORT_COPY(174,5430
+#define SCM_VALIDATE_SHORT_COPY(179,5541
+#define SCM_VALIDATE_UINT_COPY(184,5650
+#define SCM_VALIDATE_INT_COPY(189,5757
+#define SCM_VALIDATE_ULONG_COPY(194,5862
+#define SCM_VALIDATE_LONG_COPY(199,5971
+#define SCM_VALIDATE_FLOAT_COPY(204,6078
+#define SCM_VALIDATE_DOUBLE_COPY(209,6187
+#define SCM_VALIDATE_DOUBLE_DEF_COPY(214,6298
+#define SCM_VALIDATE_NULL(227,6568
+#define SCM_VALIDATE_NULL_OR_NIL(230,6672
+#define SCM_VALIDATE_CONS(233,6782
+#define SCM_VALIDATE_LIST(236,6880
+#define SCM_VALIDATE_NONEMPTYLIST(241,7006
+#define SCM_VALIDATE_LIST_COPYLEN(246,7139
+#define SCM_VALIDATE_NONEMPTYLIST_COPYLEN(252,7298
+#define SCM_VALIDATE_ALISTCELL(258,7465
+#define SCM_VALIDATE_ALISTCELL_COPYSCM(264,7648
+#define SCM_VALIDATE_OPORT_VALUE(271,7886
+#define SCM_VALIDATE_PRINTSTATE(276,8029
+#define SCM_VALIDATE_SMOB(278,8130
+#define SCM_VALIDATE_THUNK(284,8301
+#define SCM_VALIDATE_SYMBOL(289,8443
+#define SCM_VALIDATE_VARIABLE(294,8583
+#define SCM_VALIDATE_MEMOIZED(296,8680
+#define SCM_VALIDATE_PROC(298,8783
+#define SCM_VALIDATE_NULLORCONS(303,8925
+#define SCM_VALIDATE_HOOK(308,9073
+#define SCM_VALIDATE_RGXP(310,9154
+#define SCM_VALIDATE_DIR(312,9236
+#define SCM_VALIDATE_PORT(314,9331
+#define SCM_VALIDATE_INPUT_PORT(316,9418
+#define SCM_VALIDATE_OUTPUT_PORT(319,9528
+#define SCM_VALIDATE_FPORT(322,9641
+#define SCM_VALIDATE_OPFPORT(324,9735
+#define SCM_VALIDATE_OPINPORT(326,9838
+#define SCM_VALIDATE_OPENPORT(329,9948
+#define SCM_VALIDATE_OPPORT(335,10112
+#define SCM_VALIDATE_OPOUTPORT(337,10208
+#define SCM_VALIDATE_OPOUTSTRPORT(340,10321
+#define SCM_VALIDATE_FLUID(343,10447
+#define SCM_VALIDATE_KEYWORD(346,10552
+#define SCM_VALIDATE_STACK(348,10642
+#define SCM_VALIDATE_FRAME(350,10726
+#define SCM_VALIDATE_RSTATE(352,10810
+#define SCM_VALIDATE_ARRAY(354,10913
+#define SCM_VALIDATE_VECTOR(361,11110
+#define SCM_VALIDATE_VECTOR_OR_DVECTOR(366,11236
+#define SCM_VALIDATE_STRUCT(373,11450
+#define SCM_VALIDATE_VTABLE(375,11537
+#define SCM_VALIDATE_VECTOR_LEN(380,11676
+
+/usr/local/include/guile/2.0/libguile/values.h,92
+#define SCM_VALUES_H4,45
+SCM_API SCM scm_values_vtable;28,923
+#define SCM_VALUESP(30,955
+
+/usr/local/include/guile/2.0/libguile/variable.h,160
+#define SCM_VARIABLE_H4,47
+#define SCM_VARIABLEP(33,979
+#define SCM_VARIABLE_REF(34,1059
+#define SCM_VARIABLE_SET(35,1111
+#define SCM_VARIABLE_LOC(36,1171
+
+/usr/local/include/guile/2.0/libguile/vectors.h,585
+#define SCM_VECTORS_H4,46
+#define SCM_SIMPLE_VECTOR_LENGTH(59,2122
+#define SCM_SIMPLE_VECTOR_REF(60,2186
+#define SCM_SIMPLE_VECTOR_SET(61,2257
+#define SCM_I_VECTOR_HEADER_SIZE 68,2465
+#define SCM_I_IS_VECTOR(70,2503
+#define SCM_I_IS_NONWEAK_VECTOR(71,2582
+#define SCM_I_VECTOR_ELTS(72,2664
+#define SCM_I_VECTOR_WELTS(73,2734
+#define SCM_I_VECTOR_LENGTH(74,2817
+#define SCM_I_WVECTP(81,3043
+#define SCM_I_WVECT_LENGTH 83,3174
+#define SCM_I_WVECT_VELTS 84,3234
+#define SCM_I_WVECT_GC_WVELTS 85,3292
+#define SCM_I_WVECT_EXTRA(86,3351
+#define SCM_I_SET_WVECT_EXTRA(87,3413
+
+/usr/local/include/guile/2.0/libguile/version.h,169
+#define SCM_VERSION_H4,46
+#define SCM_MAJOR_VERSION 30,948
+#define SCM_MINOR_VERSION 31,976
+#define SCM_MICRO_VERSION 32,1004
+#define SCM_EFFECTIVE_VERSION 33,1033
+
+/usr/local/include/guile/2.0/libguile/vm-engine.h,2791
+#define IP_REG 36,1282
+#define SP_REG 37,1308
+#define FP_REG 38,1334
+#define IP_REG 41,1384
+#define SP_REG 42,1410
+#define FP_REG 43,1436
+#define IP_REG 47,1502
+#define SP_REG 48,1527
+#define FP_REG 49,1553
+#define IP_REG 51,1585
+#define SP_REG 52,1610
+#define FP_REG 53,1636
+#define JT_REG 64,2055
+#define IP_REG 67,2144
+#define SP_REG 68,2169
+#define FP_REG 69,2194
+#define IP_REG 72,2242
+#define SP_REG 73,2269
+#define FP_REG 74,2296
+#define IP_REG 77,2349
+#define SP_REG 78,2374
+#define FP_REG79,2399
+#define IP_REG 82,2436
+#define SP_REG 83,2461
+#define FP_REG 84,2486
+#define IP_REG89,2541
+#define SP_REG92,2578
+#define FP_REG95,2615
+#define JT_REG98,2652
+#define VM_ASSERT(106,2699
+# define ASSERT(110,2845
+# define ASSERT(112,2909
+#define CACHE_REGISTER(117,3025
+#define SYNC_REGISTER(127,3316
+#define ASSERT_VARIABLE(135,3432
+#define ASSERT_BOUND_VARIABLE(138,3594
+#define CHECK_IP(145,3942
+#define ASSERT_ALIGNED_PROCEDURE(147,4038
+#define ASSERT_BOUND(149,4128
+#define CHECK_IP(153,4250
+#define ASSERT_ALIGNED_PROCEDURE(154,4269
+#define ASSERT_BOUND(155,4304
+#define SET_OBJECT_COUNT(159,4356
+#define SET_OBJECT_COUNT(161,4407
+#define CACHE_PROGRAM(165,4503
+#define SYNC_BEFORE_GC(180,5340
+#define SYNC_ALL(185,5406
+#define CHECK_OBJECT(197,5557
+#define CHECK_OBJECT(200,5677
+#define CHECK_FREE_VARIABLE(204,5740
+#define CHECK_FREE_VARIABLE(208,5918
+#undef RUN_HOOK216,5979
+#undef RUN_HOOK1217,5995
+#define RUN_HOOK(219,6029
+#define RUN_HOOK1(227,6412
+#define RUN_HOOK(238,6917
+#define RUN_HOOK1(239,6937
+#define APPLY_HOOK(242,6969
+#define PUSH_CONTINUATION_HOOK(244,7050
+#define POP_CONTINUATION_HOOK(246,7143
+#define NEXT_HOOK(248,7255
+#define ABORT_CONTINUATION_HOOK(250,7335
+#define RESTORE_CONTINUATION_HOOK(252,7429
+#define VM_HANDLE_INTERRUPTS 255,7525
+# define CHECK_STACK_LEAKN(264,7699
+# define CHECK_STACK_LEAK(265,7748
+# define NULLSTACK(266,7797
+# define NULLSTACK_FOR_NONLOCAL_EXIT(272,8228
+# define CHECK_STACK_LEAKN(274,8315
+# define CHECK_STACK_LEAK(275,8346
+# define NULLSTACK(276,8374
+# define NULLSTACK_FOR_NONLOCAL_EXIT(277,8397
+#define CHECK_OVERFLOW(283,8646
+#define PRE_CHECK_UNDERFLOW(288,8827
+#define CHECK_UNDERFLOW(290,8960
+#define PRE_CHECK_UNDERFLOW(292,9016
+#define CHECK_UNDERFLOW(293,9057
+#define PUSH(297,9102
+#define DROP(298,9169
+#define DROPN(299,9242
+#define POP(300,9325
+#define POP2(301,9408
+#define POP3(302,9505
+#define CONS(309,9918
+#define POP_LIST(317,10119
+#define PUSH_LIST(331,10551
+#define POP_LIST_MARK(340,10770
+#define POP_CONS_MARK(353,11002
+#define FETCH(371,11298
+#define FETCH_LENGTH(372,11323
+#undef NEXT_JUMP374,11420
+#define NEXT_JUMP(376,11466
+#define NEXT_JUMP(378,11546
+#define NEXT	381,11589
+#define DROP_FRAME(392,11874
+
+/usr/local/include/guile/2.0/libguile/vm-expand.h,476
+#define VM_LABEL(20,819
+#define VM_OPCODE(21,849
+#define VM_TAG(24,915
+#define VM_ADDR(25,950
+#define VM_TAG(27,1025
+#define VM_ADDR(28,1066
+#undef VM_DEFINE_FUNCTION32,1154
+#undef VM_DEFINE_LOADER33,1180
+#define VM_DEFINE_FUNCTION(34,1204
+#define VM_DEFINE_LOADER(36,1303
+#undef VM_DEFINE_INSTRUCTION39,1400
+#define VM_DEFINE_INSTRUCTION(44,1527
+#define VM_DEFINE_INSTRUCTION(56,2004
+#define VM_DEFINE_INSTRUCTION(63,2193
+#define VM_DEFINE_INSTRUCTION(69,2353
+
+/usr/local/include/guile/2.0/libguile/vm.h,1384
+#define _SCM_VM_H_20,839
+  SCM_VM_APPLY_HOOK,26,920
+  SCM_VM_PUSH_CONTINUATION_HOOK,27,941
+  SCM_VM_POP_CONTINUATION_HOOK,28,974
+  SCM_VM_NEXT_HOOK,29,1006
+  SCM_VM_ABORT_CONTINUATION_HOOK,30,1026
+  SCM_VM_RESTORE_CONTINUATION_HOOK,31,1060
+  SCM_VM_NUM_HOOKS,32,1096
+typedef SCM (*scm_t_vm_engine)scm_t_vm_engine37,1136
+#define SCM_VM_REGULAR_ENGINE 39,1213
+#define SCM_VM_DEBUG_ENGINE 40,1245
+#define SCM_VM_NUM_ENGINES 41,1275
+struct scm_vm 43,1305
+  scm_t_uint8 *ip;ip44,1321
+  SCM *sp;sp45,1367
+  SCM *fp;fp46,1400
+  size_t stack_size;47,1433
+  SCM *stack_base;stack_base48,1472
+  SCM *stack_limit;stack_limit49,1517
+  int engine;50,1564
+  SCM hooks[hooks51,1630
+  int trace_level;52,1673
+  scm_t_int64 cookie;53,1745
+SCM_API SCM scm_the_vm_fluid;56,1829
+#define SCM_VM_P(58,1860
+#define SCM_VM_DATA(59,1926
+#define SCM_VALIDATE_VM(60,1992
+#define SCM_F_VM_CONT_PARTIAL 86,2988
+#define SCM_F_VM_CONT_REWINDABLE 87,3022
+struct scm_vm_cont 89,3060
+  SCM *sp;sp90,3081
+  SCM *fp;fp91,3092
+  scm_t_uint8 *ra,ra92,3103
+  scm_t_uint8 *ra, *mvra;mvra92,3103
+  scm_t_ptrdiff stack_size;93,3129
+  SCM *stack_base;stack_base94,3157
+  scm_t_ptrdiff reloc;95,3176
+  scm_t_uint32 flags;96,3199
+#define SCM_VM_CONT_P(99,3225
+#define SCM_VM_CONT_DATA(100,3306
+#define SCM_VM_CONT_PARTIAL_P(101,3385
+#define SCM_VM_CONT_REWINDABLE_P(102,3478
+
+/usr/local/include/guile/2.0/libguile/vports.h,26
+#define SCM_VPORTS_H4,45
+
+/usr/local/include/guile/2.0/libguile/weaks.h,660
+#define SCM_WEAKS_H4,44
+#define SCM_WVECTF_WEAK_KEY 30,952
+#define SCM_WVECTF_WEAK_VALUE 31,984
+#define SCM_WVECT_WEAK_KEY_P(33,1017
+#define SCM_WVECT_WEAK_VALUE_P(34,1094
+#define SCM_I_WVECT_TYPE(36,1176
+#define SCM_I_SET_WVECT_TYPE(37,1237
+#define SCM_IS_WHVEC(39,1347
+#define SCM_IS_WHVEC_V(40,1409
+#define SCM_IS_WHVEC_B(41,1471
+#define SCM_IS_WHVEC_ANY(42,1533
+#define SCM_WEAK_PAIR_WORD_DELETED_P(52,1852
+#define SCM_WEAK_PAIR_CAR_DELETED_P(54,1963
+#define SCM_WEAK_PAIR_CDR_DELETED_P(56,2054
+#define SCM_WEAK_PAIR_DELETED_P(59,2146
+#define SCM_WEAK_PAIR_WORD(65,2393
+#define SCM_WEAK_PAIR_CAR(69,2556
+#define SCM_WEAK_PAIR_CDR(70,2624
+
+/usr/local/include/chipmunk/chipmunk.h,2103
+#define CHIPMUNK_H23,1164
+    #define _USE_MATH_DEFINES26,1200
+	#define CP_ALLOW_PRIVATE_ACCESS 45,1444
+	#define CP_PRIVATE(49,1520
+	#define CP_PRIVATE(51,1569
+	#define	cpAssertWarn(56,1767
+	#define cpAssertWarn(58,1815
+	#define	cpAssertSoft(62,1965
+	#define cpAssertSoft(64,2013
+#define cpAssertHard(68,2291
+	#define CP_BUFFER_BYTES 77,2564
+	#define cpcalloc 82,2654
+	#define cprealloc 87,2736
+	#define cpfree 92,2814
+typedef struct cpArray cpArray;95,2843
+typedef struct cpHashSet cpHashSet;96,2875
+typedef struct cpBody cpBody;98,2912
+typedef struct cpShape cpShape;100,2943
+typedef struct cpCircleShape cpCircleShape;101,2975
+typedef struct cpSegmentShape cpSegmentShape;102,3019
+typedef struct cpPolyShape cpPolyShape;103,3065
+typedef struct cpConstraint cpConstraint;105,3106
+typedef struct cpPinJoint cpPinJoint;106,3148
+typedef struct cpSlideJoint cpSlideJoint;107,3186
+typedef struct cpPivotJoint cpPivotJoint;108,3228
+typedef struct cpGrooveJoint cpGrooveJoint;109,3270
+typedef struct cpDampedSpring cpDampedSpring;110,3314
+typedef struct cpDampedRotarySpring cpDampedRotarySpring;111,3360
+typedef struct cpRotaryLimitJoint cpRotaryLimitJoint;112,3418
+typedef struct cpRatchetJoint cpRatchetJoint;113,3472
+typedef struct cpGearJoint cpGearJoint;114,3518
+typedef struct cpSimpleMotorJoint cpSimpleMotorJoint;115,3558
+typedef struct cpCollisionHandler cpCollisionHandler;117,3613
+typedef struct cpContactPointSet cpContactPointSet;118,3667
+typedef struct cpArbiter cpArbiter;119,3719
+typedef struct cpSpace cpSpace;121,3756
+#define CP_VERSION_MAJOR 139,4040
+#define CP_VERSION_MINOR 140,4067
+#define CP_VERSION_RELEASE 141,4094
+#define CP_CONVEX_HULL(191,6759
+cpClosetPointOnSegment(197,7082
+typedef void (^cpSpacePointQueryBlock)cpSpacePointQueryBlock218,8125
+typedef void (^cpSpaceSegmentQueryBlock)cpSpaceSegmentQueryBlock221,8360
+typedef void (^cpSpaceBBQueryBlock)cpSpaceBBQueryBlock224,8603
+typedef void (^cpSpaceShapeQueryBlock)cpSpaceShapeQueryBlock227,8754
+static inline cpVect operator 239,8972
+static inline cpBool operator 242,9240
+
+/usr/local/include/chipmunk/chipmunk_ffi.h,120
+  #define MAKE_REF(32,1435
+  #define MAKE_REF(34,1498
+ #define MAKE_REF(37,1537
+#define MAKE_PROPERTIES_REF(40,1602
+
+/usr/local/include/chipmunk/chipmunk_private.h,11139
+#define CHIPMUNK_PRIVATE_H22,1171
+#define CP_ALLOW_PRIVATE_ACCESS 27,1283
+#define CP_HASH_COEF 30,1340
+#define CP_HASH_PAIR(31,1376
+#define MAGIC_EPSILON 34,1497
+struct cpArray 39,1543
+	int num,40,1560
+	int num, max;40,1560
+	void **arr;arr41,1575
+typedef cpBool (*cpHashSetEqlFunc)cpHashSetEqlFunc58,1914
+typedef void *(*cpHashSetTransFunc)cpHashSetTransFunc59,1972
+typedef void (*cpHashSetIteratorFunc)cpHashSetIteratorFunc71,2477
+typedef cpBool (*cpHashSetFilterFunc)cpHashSetFilterFunc74,2616
+struct cpBody 80,2772
+	cpBodyVelocityFunc velocity_func;82,2814
+	cpBodyPositionFunc position_func;83,2849
+	cpFloat m;86,2912
+	cpFloat m_inv;87,2924
+	cpFloat i;90,2981
+	cpFloat i_inv;91,2993
+	cpVect cog;94,3033
+	cpVect p;97,3078
+	cpVect v;98,3089
+	cpVect f;99,3100
+	cpFloat a;102,3159
+	cpFloat w;103,3171
+	cpFloat t;104,3183
+	cpTransform transform;106,3197
+	cpDataPointer userData;108,3223
+	cpVect v_bias;112,3367
+	cpFloat w_bias;113,3383
+	cpSpace *space;space115,3402
+	cpShape *shapeList;shapeList117,3421
+	cpArbiter *arbiterList;arbiterList118,3442
+	cpConstraint *constraintList;constraintList119,3467
+		cpBody *root;root122,3510
+		cpBody *next;next123,3526
+		cpFloat idleTime;124,3542
+	} sleeping;125,3562
+enum cpArbiterState 144,4073
+	CP_ARBITER_STATE_FIRST_COLLISION,146,4146
+	CP_ARBITER_STATE_NORMAL,148,4236
+	CP_ARBITER_STATE_IGNORE,151,4396
+	CP_ARBITER_STATE_CACHED,153,4537
+	CP_ARBITER_STATE_INVALIDATED,155,4634
+struct cpArbiterThread 158,4669
+	struct cpArbiter *next,next159,4694
+	struct cpArbiter *next, *prev;prev159,4694
+struct cpContact 162,4730
+	cpVect r1,163,4749
+	cpVect r1, r2;163,4749
+	cpFloat nMass,165,4767
+	cpFloat nMass, tMass;165,4767
+	cpFloat bounce;166,4790
+	cpFloat jnAcc,168,4856
+	cpFloat jnAcc, jtAcc,168,4856
+	cpFloat jnAcc, jtAcc, jBias;168,4856
+	cpFloat bias;169,4886
+	cpHashValue hash;171,4903
+struct cpCollisionInfo 174,4926
+	const cpShape *a,a175,4951
+	const cpShape *a, *b;b175,4951
+	cpCollisionID id;176,4974
+	cpVect n;178,4995
+	int count;180,5008
+	struct cpContact *arr;arr182,5066
+struct cpArbiter 185,5094
+	cpFloat e;186,5113
+	cpFloat u;187,5125
+	cpVect surface_vr;188,5137
+	cpDataPointer data;190,5159
+	const cpShape *a,a192,5182
+	const cpShape *a, *b;b192,5182
+	cpBody *body_a,body_a193,5205
+	cpBody *body_a, *body_b;body_b193,5205
+	struct cpArbiterThread thread_a,194,5231
+	struct cpArbiterThread thread_a, thread_b;194,5231
+	int count;196,5277
+	struct cpContact *contacts;contacts197,5289
+	cpVect n;198,5318
+	cpCollisionHandler *handler,handler201,5390
+	cpCollisionHandler *handler, *handlerA,handlerA201,5390
+	cpCollisionHandler *handler, *handlerA, *handlerB;handlerB201,5390
+	cpBool swapped;202,5442
+	cpTimestamp stamp;204,5461
+	enum cpArbiterState state;205,5481
+cpArbiterThreadForBody(211,5619
+struct cpShapeMassInfo 226,6086
+	cpFloat m;227,6111
+	cpFloat i;228,6123
+	cpVect cog;229,6135
+	cpFloat area;230,6148
+typedef enum cpShapeType{cpShapeType233,6167
+	CP_CIRCLE_SHAPE,234,6193
+	CP_SEGMENT_SHAPE,235,6211
+	CP_POLY_SHAPE,236,6230
+	CP_NUM_SHAPES237,6246
+} cpShapeType;238,6261
+typedef cpBB (*cpShapeCacheDataImpl)cpShapeCacheDataImpl240,6277
+typedef void (*cpShapeDestroyImpl)cpShapeDestroyImpl241,6354
+typedef void (*cpShapePointQueryImpl)cpShapePointQueryImpl242,6406
+typedef void (*cpShapeSegmentQueryImpl)cpShapeSegmentQueryImpl243,6501
+typedef struct cpShapeClass cpShapeClass;245,6627
+struct cpShapeClass 247,6670
+	cpShapeType type;248,6692
+	cpShapeCacheDataImpl cacheData;250,6713
+	cpShapeDestroyImpl destroy;251,6746
+	cpShapePointQueryImpl pointQuery;252,6775
+	cpShapeSegmentQueryImpl segmentQuery;253,6810
+struct cpShape 256,6853
+	const cpShapeClass *klass;klass257,6870
+	cpSpace *space;space259,6900
+	cpBody *body;body260,6917
+	struct cpShapeMassInfo massInfo;261,6932
+	cpBB bb;262,6966
+	cpBool sensor;264,6978
+	cpFloat e;266,6996
+	cpFloat u;267,7008
+	cpVect surfaceV;268,7020
+	cpDataPointer userData;270,7039
+	cpCollisionType type;272,7066
+	cpShapeFilter filter;273,7089
+	cpShape *next;next275,7114
+	cpShape *prev;prev276,7130
+	cpHashValue hashid;278,7148
+struct cpCircleShape 281,7173
+	cpShape shape;282,7196
+	cpVect c,284,7214
+	cpVect c, tc;284,7214
+	cpFloat r;285,7229
+struct cpSegmentShape 288,7245
+	cpShape shape;289,7269
+	cpVect a,291,7287
+	cpVect a, b,291,7287
+	cpVect a, b, n;291,7287
+	cpVect ta,292,7304
+	cpVect ta, tb,292,7304
+	cpVect ta, tb, tn;292,7304
+	cpFloat r;293,7324
+	cpVect a_tangent,295,7338
+	cpVect a_tangent, b_tangent;295,7338
+struct cpSplittingPlane 298,7372
+	cpVect v0,299,7398
+	cpVect v0, n;299,7398
+#define CP_POLY_SHAPE_INLINE_ALLOC 302,7417
+struct cpPolyShape 304,7455
+	cpShape shape;305,7476
+	cpFloat r;307,7494
+	int count;309,7508
+	struct cpSplittingPlane *planes;planes311,7600
+	struct cpSplittingPlane _planes[_planes314,7712
+cpShapeActive(320,7914
+CircleSegmentQuery(331,8357
+cpShapeFilterReject(355,9039
+typedef void (*cpConstraintPreStepImpl)cpConstraintPreStepImpl373,9469
+typedef void (*cpConstraintApplyCachedImpulseImpl)cpConstraintApplyCachedImpulseImpl374,9548
+typedef void (*cpConstraintApplyImpulseImpl)cpConstraintApplyImpulseImpl375,9643
+typedef cpFloat (*cpConstraintGetImpulseImpl)cpConstraintGetImpulseImpl376,9727
+typedef struct cpConstraintClass 378,9801
+	cpConstraintPreStepImpl preStep;379,9836
+	cpConstraintApplyCachedImpulseImpl applyCachedImpulse;380,9870
+	cpConstraintApplyImpulseImpl applyImpulse;381,9926
+	cpConstraintGetImpulseImpl getImpulse;382,9970
+} cpConstraintClass;383,10010
+struct cpConstraint 385,10032
+	const cpConstraintClass *klass;klass386,10054
+	cpSpace *space;space388,10089
+	cpBody *a,a390,10108
+	cpBody *a, *b;b390,10108
+	cpConstraint *next_a,next_a391,10124
+	cpConstraint *next_a, *next_b;next_b391,10124
+	cpFloat maxForce;393,10158
+	cpFloat errorBias;394,10177
+	cpFloat maxBias;395,10197
+	cpBool collideBodies;397,10217
+	cpConstraintPreSolveFunc preSolve;399,10242
+	cpConstraintPostSolveFunc postSolve;400,10278
+	cpDataPointer userData;402,10318
+struct cpPinJoint 405,10347
+	cpConstraint constraint;406,10367
+	cpVect anchorA,407,10393
+	cpVect anchorA, anchorB;407,10393
+	cpFloat dist;408,10419
+	cpVect r1,410,10436
+	cpVect r1, r2;410,10436
+	cpVect n;411,10452
+	cpFloat nMass;412,10463
+	cpFloat jnAcc;414,10481
+	cpFloat bias;415,10497
+struct cpSlideJoint 418,10516
+	cpConstraint constraint;419,10538
+	cpVect anchorA,420,10564
+	cpVect anchorA, anchorB;420,10564
+	cpFloat min,421,10590
+	cpFloat min, max;421,10590
+	cpVect r1,423,10611
+	cpVect r1, r2;423,10611
+	cpVect n;424,10627
+	cpFloat nMass;425,10638
+	cpFloat jnAcc;427,10656
+	cpFloat bias;428,10672
+struct cpPivotJoint 431,10691
+	cpConstraint constraint;432,10713
+	cpVect anchorA,433,10739
+	cpVect anchorA, anchorB;433,10739
+	cpVect r1,435,10767
+	cpVect r1, r2;435,10767
+	cpMat2x2 k;436,10783
+	cpVect jAcc;438,10798
+	cpVect bias;439,10812
+struct cpGrooveJoint 442,10830
+	cpConstraint constraint;443,10853
+	cpVect grv_n,444,10879
+	cpVect grv_n, grv_a,444,10879
+	cpVect grv_n, grv_a, grv_b;444,10879
+	cpVect  anchorB;445,10908
+	cpVect grv_tn;447,10928
+	cpFloat clamp;448,10944
+	cpVect r1,449,10960
+	cpVect r1, r2;449,10960
+	cpMat2x2 k;450,10976
+	cpVect jAcc;452,10991
+	cpVect bias;453,11005
+struct cpDampedSpring 456,11023
+	cpConstraint constraint;457,11047
+	cpVect anchorA,458,11073
+	cpVect anchorA, anchorB;458,11073
+	cpFloat restLength;459,11099
+	cpFloat stiffness;460,11120
+	cpFloat damping;461,11140
+	cpDampedSpringForceFunc springForceFunc;462,11158
+	cpFloat target_vrn;464,11202
+	cpFloat v_coef;465,11223
+	cpVect r1,467,11242
+	cpVect r1, r2;467,11242
+	cpFloat nMass;468,11258
+	cpVect n;469,11274
+	cpFloat jAcc;471,11287
+struct cpDampedRotarySpring 474,11306
+	cpConstraint constraint;475,11336
+	cpFloat restAngle;476,11362
+	cpFloat stiffness;477,11382
+	cpFloat damping;478,11402
+	cpDampedRotarySpringTorqueFunc springTorqueFunc;479,11420
+	cpFloat target_wrn;481,11472
+	cpFloat w_coef;482,11493
+	cpFloat iSum;484,11512
+	cpFloat jAcc;485,11527
+struct cpRotaryLimitJoint 488,11546
+	cpConstraint constraint;489,11574
+	cpFloat min,490,11600
+	cpFloat min, max;490,11600
+	cpFloat iSum;492,11621
+	cpFloat bias;494,11639
+	cpFloat jAcc;495,11654
+struct cpRatchetJoint 498,11673
+	cpConstraint constraint;499,11697
+	cpFloat angle,500,11723
+	cpFloat angle, phase,500,11723
+	cpFloat angle, phase, ratchet;500,11723
+	cpFloat iSum;502,11757
+	cpFloat bias;504,11775
+	cpFloat jAcc;505,11790
+struct cpGearJoint 508,11809
+	cpConstraint constraint;509,11830
+	cpFloat phase,510,11856
+	cpFloat phase, ratio;510,11856
+	cpFloat ratio_inv;511,11879
+	cpFloat iSum;513,11901
+	cpFloat bias;515,11919
+	cpFloat jAcc;516,11934
+struct cpSimpleMotor 519,11953
+	cpConstraint constraint;520,11976
+	cpFloat rate;521,12002
+	cpFloat iSum;523,12019
+	cpFloat jAcc;525,12037
+cpConstraintActivateBodies(531,12186
+relative_velocity(538,12359
+normal_relative_velocity(546,12647
+apply_impulse(551,12801
+apply_impulses(557,13025
+apply_bias_impulse(564,13179
+apply_bias_impulses(571,13424
+k_scalar_body(578,13596
+k_scalar(585,13769
+k_tensor(594,14013
+bias_coef(630,14979
+struct cpSpace 638,15080
+	int iterations;639,15097
+	cpVect gravity;641,15116
+	cpFloat damping;642,15133
+	cpFloat idleSpeedThreshold;644,15153
+	cpFloat sleepTimeThreshold;645,15182
+	cpFloat collisionSlop;647,15213
+	cpFloat collisionBias;648,15237
+	cpTimestamp collisionPersistence;649,15261
+	cpDataPointer userData;651,15298
+	cpTimestamp stamp;653,15325
+	cpFloat curr_dt;654,15345
+	cpArray *dynamicBodies;dynamicBodies656,15364
+	cpArray *staticBodies;staticBodies657,15389
+	cpArray *rousedBodies;rousedBodies658,15413
+	cpArray *sleepingComponents;sleepingComponents659,15437
+	cpHashValue shapeIDCounter;661,15469
+	cpSpatialIndex *staticShapes;staticShapes662,15498
+	cpSpatialIndex *dynamicShapes;dynamicShapes663,15529
+	cpArray *constraints;constraints665,15563
+	cpArray *arbiters;arbiters667,15588
+	cpContactBufferHeader *contactBuffersHead;contactBuffersHead668,15608
+	cpHashSet *cachedArbiters;cachedArbiters669,15652
+	cpArray *pooledArbiters;pooledArbiters670,15680
+	cpArray *allocatedBuffers;allocatedBuffers672,15708
+	unsigned int locked;673,15736
+	cpBool usesWildcards;675,15760
+	cpHashSet *collisionHandlers;collisionHandlers676,15783
+	cpCollisionHandler defaultHandler;677,15814
+	cpBool skipPostStep;679,15852
+	cpArray *postStepCallbacks;postStepCallbacks680,15874
+	cpBody *staticBody;staticBody682,15905
+	cpBody _staticBody;683,15926
+#define cpAssertSpaceUnlocked(686,15951
+typedef struct cpPostStepCallback 702,16509
+	cpPostStepFunc func;703,16545
+	void *key;key704,16567
+	void *data;data705,16579
+} cpPostStepCallback;706,16592
+cpSpaceUncacheArbiter(718,16997
+cpSpaceArrayForBodyType(728,17336
+cpConstraintNext(740,17684
+#define CP_BODY_FOREACH_CONSTRAINT(745,17797
+cpArbiterNext(749,17955
+#define CP_BODY_FOREACH_ARBITER(754,18081
+#define CP_BODY_FOREACH_SHAPE(757,18201
+#define CP_BODY_FOREACH_COMPONENT(760,18303
+
+/usr/local/include/chipmunk/chipmunk_types.h,2884
+#define CHIPMUNK_TYPES_H23,1170
+	#define CP_USE_CGTYPES 37,1548
+		#define CP_USE_DOUBLES 49,1827
+		#define CP_USE_DOUBLES 51,1861
+	#define CP_USE_DOUBLES 57,1976
+	typedef double cpFloat;67,2210
+	#define cpfsqrt 68,2235
+	#define cpfsin 69,2257
+	#define cpfcos 70,2277
+	#define cpfacos 71,2297
+	#define cpfatan2 72,2319
+	#define cpfmod 73,2343
+	#define cpfexp 74,2364
+	#define cpfpow 75,2384
+	#define cpffloor 76,2404
+	#define cpfceil 77,2428
+	#define CPFLOAT_MIN 78,2450
+	typedef float cpFloat;80,2485
+	#define cpfsqrt 81,2509
+	#define cpfsin 82,2532
+	#define cpfcos 83,2553
+	#define cpfacos 84,2574
+	#define cpfatan2 85,2597
+	#define cpfmod 86,2622
+	#define cpfexp 87,2644
+	#define cpfpow 88,2665
+	#define cpffloor 89,2686
+	#define cpfceil 90,2711
+	#define CPFLOAT_MIN 91,2734
+		union MSVC_EVIL_FLOAT_HACK96,2805
+			unsigned __int8 Bytes[Bytes98,2838
+			float Value;99,2867
+		static union MSVC_EVIL_FLOAT_HACK INFINITY_HACK 101,2888
+		#define INFINITY 102,2968
+		#define INFINITY 106,3036
+		#define INFINITY 110,3101
+	#define M_PI 115,3158
+	#define M_E 119,3230
+static inline cpFloat cpfmax(124,3326
+static inline cpFloat cpfmin(130,3443
+static inline cpFloat cpfabs(136,3568
+static inline cpFloat cpfclamp(142,3687
+static inline cpFloat cpfclamp01(148,3835
+static inline cpFloat cpflerp(156,4008
+static inline cpFloat cpflerpconst(162,4175
+	typedef CP_HASH_VALUE_TYPE cpHashValue;169,4336
+	typedef uintptr_t cpHashValue;171,4383
+typedef uint32_t cpCollisionID;176,4534
+	typedef CP_BOOL_TYPE cpBool;181,4699
+	typedef unsigned char cpBool;183,4735
+	#define cpTrue 188,4805
+	#define cpFalse 193,4864
+	typedef CP_DATA_POINTER_TYPE cpDataPointer;197,4919
+	typedef void * cpDataPointer;200,5008
+	typedef CP_COLLISION_TYPE_TYPE cpCollisionType;204,5077
+	typedef uintptr_t cpCollisionType;207,5174
+	typedef CP_GROUP_TYPE cpGroup;211,5239
+	typedef uintptr_t cpGroup;214,5310
+	typedef CP_BITMASK_TYPE cpLayers;218,5369
+	typedef unsigned int cpBitmask;221,5461
+	typedef CP_TIMESTAMP_TYPE cpTimestamp;225,5527
+	typedef unsigned int cpTimestamp;228,5623
+	#define CP_NO_GROUP 233,5754
+	#define CP_ALL_CATEGORIES 238,5894
+	#define CP_WILDCARD_COLLISION_TYPE 243,6057
+	typedef CGPoint cpVect;251,6251
+	typedef struct cpVect{cpVect255,6336
+	typedef struct cpVect{cpFloat x,255,6336
+	typedef struct cpVect{cpFloat x,y;255,6336
+	typedef struct cpVect{cpFloat x,y;} cpVect;255,6336
+	typedef CGAffineTransform cpTransform;259,6408
+	typedef struct cpTransform 262,6490
+		cpFloat a,263,6520
+		cpFloat a, b,263,6520
+		cpFloat a, b, c,263,6520
+		cpFloat a, b, c, d,263,6520
+		cpFloat a, b, c, d, tx,263,6520
+		cpFloat a, b, c, d, tx, ty;263,6520
+	} cpTransform;264,6550
+typedef struct cpMat2x2 268,6582
+	cpFloat a,270,6636
+	cpFloat a, b,270,6636
+	cpFloat a, b, c,270,6636
+	cpFloat a, b, c, d;270,6636
+} cpMat2x2;271,6657
+
+/usr/local/include/chipmunk/chipmunk_unsafe.h,34
+#define CHIPMUNK_UNSAFE_H40,2048
+
+/usr/local/include/chipmunk/cpArbiter.h,313
+#define CP_MAX_CONTACTS_PER_ARBITER 28,1392
+#define CP_ARBITER_GET_SHAPES(63,3048
+#define CP_ARBITER_GET_BODIES(71,3533
+struct cpContactPointSet 74,3727
+	int count;76,3800
+	cpVect normal;79,3848
+		cpVect pointA,84,3974
+		cpVect pointA, pointB;84,3974
+		cpFloat distance;87,4206
+	} points[points88,4226
+
+/usr/local/include/chipmunk/cpBB.h,778
+#define CHIPMUNK_BB_H23,1167
+typedef struct cpBB{cpBB33,1431
+	cpFloat l,34,1452
+	cpFloat l, b,34,1452
+	cpFloat l, b, r 34,1452
+	cpFloat l, b, r ,t;34,1452
+} cpBB;35,1473
+static inline cpBB cpBBNew(38,1528
+cpBBNewForExtents(46,1763
+static inline cpBB cpBBNewForCircle(52,1966
+static inline cpBool cpBBIntersects(58,2121
+static inline cpBool cpBBContainsBB(64,2313
+static inline cpBool cpBBContainsVect(70,2512
+static inline cpBB cpBBMerge(76,2713
+static inline cpBB cpBBExpand(86,2933
+cpBBCenter(97,3165
+static inline cpFloat cpBBArea(103,3289
+static inline cpFloat cpBBMergedArea(109,3445
+static inline cpFloat cpBBSegmentQuery(115,3690
+static inline cpBool cpBBIntersectsSegment(146,4611
+cpBBClampVect(153,4797
+cpBBWrapVect(160,4972
+cpBBOffset(175,5366
+
+/usr/local/include/chipmunk/cpBody.h,506
+typedef enum cpBodyType 28,1470
+	CP_BODY_TYPE_DYNAMIC,29,1496
+	CP_BODY_TYPE_KINEMATIC,30,1519
+	CP_BODY_TYPE_STATIC,31,1544
+} cpBodyType;32,1566
+typedef void (*cpBodyVelocityFunc)cpBodyVelocityFunc35,1627
+typedef void (*cpBodyPositionFunc)cpBodyPositionFunc37,1768
+typedef void (*cpBodyShapeIteratorFunc)cpBodyShapeIteratorFunc166,7236
+typedef void (*cpBodyConstraintIteratorFunc)cpBodyConstraintIteratorFunc171,7533
+typedef void (*cpBodyArbiterIteratorFunc)cpBodyArbiterIteratorFunc176,7857
+
+/usr/local/include/chipmunk/cpConstraint.h,150
+typedef void (*cpConstraintPreSolveFunc)cpConstraintPreSolveFunc26,1261
+typedef void (*cpConstraintPostSolveFunc)cpConstraintPostSolveFunc28,1412
+
+/usr/local/include/chipmunk/cpDampedRotarySpring.h,89
+typedef cpFloat (*cpDampedRotarySpringTorqueFunc)cpDampedRotarySpringTorqueFunc29,1402
+
+/usr/local/include/chipmunk/cpDampedSpring.h,75
+typedef cpFloat (*cpDampedSpringForceFunc)cpDampedSpringForceFunc29,1367
+
+/usr/local/include/chipmunk/cpShape.h,645
+typedef struct cpPointQueryInfo 27,1278
+	const cpShape *shape;shape29,1371
+	cpVect point;31,1470
+	cpFloat distance;33,1576
+	cpVect gradient;36,1729
+} cpPointQueryInfo;37,1747
+typedef struct cpSegmentQueryInfo 40,1799
+	const cpShape *shape;shape42,1894
+	cpVect point;44,1943
+	cpVect normal;46,1994
+	cpFloat alpha;48,2084
+} cpSegmentQueryInfo;49,2100
+typedef struct cpShapeFilter 51,2123
+	cpGroup group;52,2154
+	cpBitmask categories;53,2170
+	cpBitmask mask;54,2193
+} cpShapeFilter;55,2210
+static const cpShapeFilter CP_SHAPE_FILTER_ALL 57,2228
+static const cpShapeFilter CP_SHAPE_FILTER_NONE 58,2330
+cpShapeFilterNew(61,2464
+
+/usr/local/include/chipmunk/cpSimpleMotor.h,52
+typedef struct cpSimpleMotor cpSimpleMotor;26,1245
+
+/usr/local/include/chipmunk/cpSpace.h,2847
+typedef struct cpContactBufferHeader cpContactBufferHeader;27,1204
+typedef void (*cpSpaceArbiterApplyImpulseFunc)cpSpaceArbiterApplyImpulseFunc28,1264
+typedef cpBool (*cpCollisionBeginFunc)cpCollisionBeginFunc33,1535
+typedef cpBool (*cpCollisionPreSolveFunc)cpCollisionPreSolveFunc36,1786
+typedef void (*cpCollisionPostSolveFunc)cpCollisionPostSolveFunc38,1940
+typedef void (*cpCollisionSeparateFunc)cpCollisionSeparateFunc40,2091
+struct cpCollisionHandler 42,2189
+	cpCollisionType typeA,43,2217
+	cpCollisionType typeA, typeB;43,2217
+	cpCollisionBeginFunc beginFunc;44,2248
+	cpCollisionPreSolveFunc preSolveFunc;45,2281
+	cpCollisionPostSolveFunc postSolveFunc;46,2320
+	cpCollisionSeparateFunc separateFunc;47,2361
+	cpDataPointer userData;48,2400
+typedef void (*cpPostStepFunc)cpPostStepFunc167,7607
+typedef void (*cpSpacePointQueryFunc)cpSpacePointQueryFunc181,8248
+typedef void (*cpSpaceSegmentQueryFunc)cpSpaceSegmentQueryFunc188,8850
+typedef void (*cpSpaceBBQueryFunc)cpSpaceBBQueryFunc195,9562
+typedef void (*cpSpaceShapeQueryFunc)cpSpaceShapeQueryFunc201,9941
+typedef void (*cpSpaceBodyIteratorFunc)cpSpaceBodyIteratorFunc209,10302
+typedef void (*cpSpaceShapeIteratorFunc)cpSpaceShapeIteratorFunc214,10543
+typedef void (*cpSpaceConstraintIteratorFunc)cpSpaceConstraintIteratorFunc219,10796
+typedef struct cpSpaceDebugColor 247,11737
+	float r,248,11772
+	float r, g,248,11772
+	float r, g, b,248,11772
+	float r, g, b, a;248,11772
+} cpSpaceDebugColor;249,11791
+typedef void (*cpSpaceDebugDrawCircleImpl)cpSpaceDebugDrawCircleImpl251,11813
+typedef void (*cpSpaceDebugDrawSegmentImpl)cpSpaceDebugDrawSegmentImpl252,11981
+typedef void (*cpSpaceDebugDrawFatSegmentImpl)cpSpaceDebugDrawFatSegmentImpl253,12091
+typedef void (*cpSpaceDebugDrawPolygonImpl)cpSpaceDebugDrawPolygonImpl254,12256
+typedef void (*cpSpaceDebugDrawDotImpl)cpSpaceDebugDrawDotImpl255,12430
+typedef cpSpaceDebugColor (*cpSpaceDebugDrawColorForShapeImpl)cpSpaceDebugDrawColorForShapeImpl256,12542
+typedef enum cpSpaceDebugDrawFlags 258,12643
+	CP_SPACE_DEBUG_DRAW_SHAPES 259,12680
+	CP_SPACE_DEBUG_DRAW_CONSTRAINTS 260,12716
+	CP_SPACE_DEBUG_DRAW_COLLISION_POINTS 261,12757
+} cpSpaceDebugDrawFlags;262,12803
+typedef struct cpSpaceDebugDrawOptions 264,12829
+	cpSpaceDebugDrawCircleImpl drawCircle;265,12870
+	cpSpaceDebugDrawSegmentImpl drawSegment;266,12910
+	cpSpaceDebugDrawFatSegmentImpl drawFatSegment;267,12952
+	cpSpaceDebugDrawPolygonImpl drawPolygon;268,13000
+	cpSpaceDebugDrawDotImpl drawDot;269,13042
+	cpSpaceDebugDrawFlags flags;271,13078
+	cpSpaceDebugColor shapeOutlineColor;272,13108
+	cpSpaceDebugDrawColorForShapeImpl colorForShape;273,13146
+	cpSpaceDebugColor constraintColor;274,13196
+	cpSpaceDebugColor collisionPointColor;275,13232
+	cpDataPointer data;277,13274
+} cpSpaceDebugDrawOptions;278,13295
+
+/usr/local/include/chipmunk/cpSpatialIndex.h,2846
+typedef cpBB (*cpSpatialIndexBBFunc)cpSpatialIndexBBFunc45,2174
+typedef void (*cpSpatialIndexIteratorFunc)cpSpatialIndexIteratorFunc47,2281
+typedef cpCollisionID (*cpSpatialIndexQueryFunc)cpSpatialIndexQueryFunc49,2390
+typedef cpFloat (*cpSpatialIndexSegmentQueryFunc)cpSpatialIndexSegmentQueryFunc51,2544
+typedef struct cpSpatialIndexClass cpSpatialIndexClass;54,2633
+typedef struct cpSpatialIndex cpSpatialIndex;55,2689
+struct cpSpatialIndex 58,2749
+	cpSpatialIndexClass *klass;klass59,2773
+	cpSpatialIndexBBFunc bbfunc;61,2804
+	cpSpatialIndex *staticIndex,staticIndex63,2836
+	cpSpatialIndex *staticIndex, *dynamicIndex;dynamicIndex63,2836
+typedef struct cpSpaceHash cpSpaceHash;69,2908
+typedef struct cpBBTree cpBBTree;86,3763
+typedef cpVect (*cpBBTreeVelocityFunc)cpBBTreeVelocityFunc100,4364
+typedef struct cpSweep1D cpSweep1D;106,4609
+typedef void (*cpSpatialIndexDestroyImpl)cpSpatialIndexDestroyImpl117,5065
+typedef int (*cpSpatialIndexCountImpl)cpSpatialIndexCountImpl119,5132
+typedef void (*cpSpatialIndexEachImpl)cpSpatialIndexEachImpl120,5195
+typedef cpBool (*cpSpatialIndexContainsImpl)cpSpatialIndexContainsImpl122,5304
+typedef void (*cpSpatialIndexInsertImpl)cpSpatialIndexInsertImpl123,5404
+typedef void (*cpSpatialIndexRemoveImpl)cpSpatialIndexRemoveImpl124,5500
+typedef void (*cpSpatialIndexReindexImpl)cpSpatialIndexReindexImpl126,5597
+typedef void (*cpSpatialIndexReindexObjectImpl)cpSpatialIndexReindexObjectImpl127,5663
+typedef void (*cpSpatialIndexReindexQueryImpl)cpSpatialIndexReindexQueryImpl128,5766
+typedef void (*cpSpatialIndexQueryImpl)cpSpatialIndexQueryImpl130,5880
+typedef void (*cpSpatialIndexSegmentQueryImpl)cpSpatialIndexSegmentQueryImpl131,6006
+struct cpSpatialIndexClass 133,6174
+	cpSpatialIndexDestroyImpl destroy;134,6203
+	cpSpatialIndexCountImpl count;136,6241
+	cpSpatialIndexEachImpl each;137,6273
+	cpSpatialIndexContainsImpl contains;139,6305
+	cpSpatialIndexInsertImpl insert;140,6343
+	cpSpatialIndexRemoveImpl remove;141,6377
+	cpSpatialIndexReindexImpl reindex;143,6413
+	cpSpatialIndexReindexObjectImpl reindexObject;144,6449
+	cpSpatialIndexReindexQueryImpl reindexQuery;145,6497
+	cpSpatialIndexQueryImpl query;147,6545
+	cpSpatialIndexSegmentQueryImpl segmentQuery;148,6577
+static inline void cpSpatialIndexDestroy(157,6994
+static inline int cpSpatialIndexCount(163,7163
+static inline void cpSpatialIndexEach(169,7356
+static inline cpBool cpSpatialIndexContains(176,7655
+static inline void cpSpatialIndexInsert(183,7931
+static inline void cpSpatialIndexRemove(190,8199
+static inline void cpSpatialIndexReindex(196,8388
+static inline void cpSpatialIndexReindexObject(202,8538
+static inline void cpSpatialIndexQuery(208,8793
+static inline void cpSpatialIndexSegmentQuery(214,9069
+static inline void cpSpatialIndexReindexQuery(222,9566
+
+/usr/local/include/chipmunk/cpTransform.h,572
+#define CHIPMUNK_TRANSFORM_H23,1174
+static const cpTransform cpTransformIdentity 30,1302
+cpTransformNew(37,1553
+cpTransformNewTranspose(45,1775
+cpTransformInverse(53,1991
+cpTransformMult(64,2307
+cpTransformPoint(74,2634
+cpTransformVect(81,2807
+cpTransformbBB(88,2946
+cpTransformTranslate(102,3390
+cpTransformScale(112,3579
+cpTransformRotate(122,3771
+cpTransformRigid(133,4019
+cpTransformRigidInverse(144,4285
+cpTransformWrap(155,4526
+cpTransformWrapInverse(161,4695
+cpTransformOrtho(167,4871
+cpTransformBoneScale(176,5082
+cpTransformAxialScale(186,5266
+
+/usr/local/include/chipmunk/cpVect.h,1122
+#define CHIPMUNK_VECT_H23,1169
+static const cpVect cpvzero 32,1362
+static inline cpVect cpv(35,1454
+static inline cpBool cpveql(42,1637
+static inline cpVect cpvadd(48,1764
+static inline cpVect cpvsub(54,1896
+static inline cpVect cpvneg(60,2023
+static inline cpVect cpvmult(66,2124
+static inline cpFloat cpvdot(72,2242
+static inline cpFloat cpvcross(80,2517
+static inline cpVect cpvperp(86,2675
+static inline cpVect cpvrperp(92,2807
+static inline cpVect cpvproject(98,2931
+static inline cpVect cpvforangle(104,3123
+static inline cpFloat cpvtoangle(110,3278
+static inline cpVect cpvrotate(116,3466
+static inline cpVect cpvunrotate(122,3623
+static inline cpFloat cpvlengthsq(128,3854
+static inline cpFloat cpvlength(134,3960
+static inline cpVect cpvlerp(140,4088
+static inline cpVect cpvnormalize(146,4264
+cpvslerp(154,4496
+cpvslerpconst(170,5076
+static inline cpVect cpvclamp(179,5338
+static inline cpVect cpvlerpconst(185,5539
+static inline cpFloat cpvdist(191,5704
+static inline cpFloat cpvdistsq(197,5923
+static inline cpBool cpvnear(203,6101
+cpMat2x2New(216,6354
+cpMat2x2Transform(223,6475
+
+/usr/local/include/chipmunk/cpSlideJoint.h,0
+
+/usr/local/include/chipmunk/cpRotaryLimitJoint.h,0
+
+/usr/local/include/chipmunk/cpRatchetJoint.h,0
+
+/usr/local/include/chipmunk/cpPolyShape.h,0
+
+/usr/local/include/chipmunk/cpPivotJoint.h,0
+
+/usr/local/include/chipmunk/cpPinJoint.h,0
+
+/usr/local/include/chipmunk/cpGrooveJoint.h,0
+
+/usr/local/include/chipmunk/cpGearJoint.h,0
+
+src/LuaInit.h,0
+
+src/GuileTypes.h,0
+
+src/Chipmunk.h,0
+
+src/LuaInit.c,0

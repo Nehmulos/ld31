@@ -1,0 +1,11 @@
+Default/
+*~
+Debug/
+Game
+*.o
+bin/
+objects/
+Chipmunk Game Dynamics Manual.html
+Chipmunk Game Dynamics Manual-Dateien/
+Chipmunk2D/
+guile-manual/
